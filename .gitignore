@@ -21,3 +21,5 @@ coverage/
 *.tar.gz
 details-for-developer.md
 mydetails.md
+!README.md
+*.md
