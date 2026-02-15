@@ -1,0 +1,114 @@
+// ==========================================
+// NAVBAR STYLES
+// ==========================================
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(25, 29, 43, 0.8); // Dark semi-transparent
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    &.scrolled {
+        background: rgba(25, 29, 43, 0.95);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--color-white);
+
+    .dot {
+        color: var(--color-secondary);
+    }
+}
+
+.desktop-menu {
+    display: none; // Hidden on mobile
+    align-items: center;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+
+    .nav-link {
+        background: none;
+        border: none;
+        color: var(--color-grey-1);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        padding: 0.5rem;
+
+        &:hover {
+            color: var(--color-secondary);
+        }
+    }
+}
+
+.mobile-toggle {
+    display: block; // Visible on mobile
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--color-white);
+    z-index: 1001;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; // Hidden by default
+    width: 70%; // Drawer width
+    height: 100vh;
+    background: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+
+    &.open {
+        right: 0;
+    }
+
+    .mobile-link {
+        background: none;
+        border: none;
+        color: var(--color-white);
+        font-size: 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--color-secondary);
+        }
+    }
+}

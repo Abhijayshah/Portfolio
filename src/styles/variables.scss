@@ -1,0 +1,66 @@
+// ==========================================
+// CSS VARIABLES - MOBILE FIRST
+// ==========================================
+
+:root {
+    // COLORS - Dark Theme (Default)
+    --color-primary: #0f0f0f; // Main background (very dark)
+    --color-secondary: #ff386a; // Accent color (pink/red)
+    --color-black: #1a1a1a; // Card background
+    --color-white: #ffffff; // Primary text
+    --color-grey-0: #f8f8f8;
+    --color-grey-1: #b8b8b8; // Secondary text
+    --color-grey-2: #6c7983;
+    --color-grey-3: #3e3e3e;
+    --color-grey-4: #2a2a2a;
+
+    // GRADIENTS
+    --gradient-primary: linear-gradient(135deg, #ff386a 0%, #ff8a00 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 56, 106, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+
+    // SHADOWS
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 50px rgba(255, 56, 106, 0.2);
+
+    // SPACING (Mobile-first)
+    --spacing-xs: 0.5rem; // 8px
+    --spacing-sm: 1rem; // 16px
+    --spacing-md: 1.5rem; // 24px
+    --spacing-lg: 2rem; // 32px
+    --spacing-xl: 3rem; // 48px
+    --spacing-2xl: 4rem; // 64px
+
+    // BORDER RADIUS
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-full: 50%;
+
+    // TRANSITIONS
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    // Z-INDEX LAYERS
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-tooltip: 500;
+}
+
+// Light Theme Variables
+[data-theme="light"] {
+    --color-primary: #ffffff;
+    --color-secondary: #ff386a;
+    --color-black: #f5f5f5;
+    --color-white: #0f0f0f;
+    --color-grey-1: #6c7983;
+    --color-grey-2: #b8b8b8;
+    --color-grey-3: #e0e0e0;
+    --color-grey-4: #f0f0f0;
+}

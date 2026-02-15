@@ -1,0 +1,139 @@
+// src/styles/sections/_hero.scss
+
+.hero-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1.2fr 1fr; // Text takes more space
+        gap: 5rem;
+    }
+}
+
+.hero-text {
+    order: 2;
+
+    @media (min-width: 1024px) {
+        order: 1;
+    }
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+
+    .gradient-text {
+        background: linear-gradient(135deg, var(--color-secondary) 0%, #ff8a00 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: var(--color-grey-1);
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+
+    .tag {
+        padding: 0.6rem 1.2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--color-grey-1);
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.hero-image {
+    order: 1;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+        order: 2;
+        justify-content: flex-end;
+    }
+}
+
+.hero-img-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(255, 56, 106, 0.3);
+        border: 3px solid rgba(255, 56, 106, 0.2);
+    }
+
+    // Floating decorations
+    .hero-decoration {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-secondary), #ff8a00);
+        opacity: 0.15;
+        z-index: -1;
+        animation: float 6s ease-in-out infinite;
+
+        &--1 {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        &--2 {
+            width: 150px;
+            height: 150px;
+            bottom: -40px;
+            left: -40px;
+            animation-delay: 3s;
+        }
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}

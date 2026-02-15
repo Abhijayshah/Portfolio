@@ -1,0 +1,285 @@
+// Variables
+@import './variables';
+
+// Components
+@import './components/navigation';
+@import './components/theme-toggle';
+@import './components/cards';
+@import './components/buttons';
+
+// Sections
+@import './sections/hero';
+@import './sections/projects';
+@import './sections/about';
+@import './sections/skills';
+@import './sections/experience';
+@import './sections/education';
+@import './sections/certificates';
+@import './sections/contact';
+
+
+// ==========================================
+// MOBILE-FIRST BASE STYLES
+// ==========================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; // Base font size
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+    @media (min-width: 768px) {
+        font-size: 17px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 18px;
+    }
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--color-primary);
+    color: var(--color-white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// ==========================================
+// APP LAYOUT - MOBILE FIRST
+// ==========================================
+
+.app {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 80px; // Space for bottom nav on mobile
+
+    @media (min-width: 1024px) {
+        padding-bottom: 0;
+        padding-left: 100px; // Space for sidebar on desktop
+    }
+}
+
+.main-content {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+// ==========================================
+// SECTION LAYOUT - MOBILE FIRST
+// ==========================================
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 1rem; // Mobile padding
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @media (min-width: 768px) {
+        padding: 5rem 2rem; // Tablet padding
+    }
+
+    @media (min-width: 1024px) {
+        padding: 6rem 3rem; // Desktop padding
+    }
+
+    @media (min-width: 1440px) {
+        padding: 7rem 5rem; // Large desktop padding
+    }
+}
+
+.section-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+// Section Headers - Mobile First
+.section-title {
+    font-size: 2rem; // Mobile
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+
+    @media (min-width: 768px) {
+        font-size: 2.5rem; // Tablet
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 3rem; // Desktop
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: var(--gradient-primary);
+        border-radius: 2px;
+
+        @media (min-width: 768px) {
+            width: 80px;
+        }
+    }
+}
+
+.section-subtitle {
+    font-size: 1rem; // Mobile
+    text-align: center;
+    color: var(--color-grey-1);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+
+    @media (min-width: 768px) {
+        font-size: 1.1rem; // Tablet
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 1.2rem; // Desktop
+    }
+}
+
+// ==========================================
+// IMAGE HANDLING - MOBILE FIRST
+// ==========================================
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Prevent layout shift
+.img-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// ==========================================
+// UTILITY CLASSES
+// ==========================================
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (min-width: 768px) {
+        padding: 0 2rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 0 3rem;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hide-mobile {
+    display: none;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
+.hide-desktop {
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+// ==========================================
+// SECTION HEADERS (LEGACY SUPPORT & NEW)
+// ==========================================
+
+.main-title {
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    position: relative;
+
+    h2 {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 700;
+        z-index: 1;
+
+        @media (min-width: 768px) {
+            font-size: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            font-size: 4rem;
+        }
+
+        span {
+            color: var(--color-secondary);
+        }
+
+        .bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: var(--color-grey-5);
+            transition: all .4s ease-in-out;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            font-weight: 800;
+            font-size: 3rem;
+            white-space: nowrap;
+            opacity: 0.4;
+            user-select: none;
+            width: 100%;
+
+            @media (min-width: 768px) {
+                font-size: 4.5rem;
+            }
+
+            @media (min-width: 1024px) {
+                font-size: 6.3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+// src/styles/sections/_projects.scss
+
+.projects-container {
+    width: 100%;
+}
+
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+
+    .filter-btn {
+        padding: 0.8rem 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        color: var(--color-grey-1);
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+        }
+
+        &.active {
+            background: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: white;
+        }
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}

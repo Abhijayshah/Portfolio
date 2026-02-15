@@ -1,0 +1,177 @@
+// ==========================================
+// BUTTON SYSTEM
+// ==========================================
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+
+    // Ripple effect
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    &:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:focus-visible {
+        outline: 3px solid var(--color-secondary);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 6px rgba(39, 174, 96, 0.2);
+    }
+
+    // PRIMARY BUTTON
+    &--primary {
+        background: var(--color-secondary);
+        color: white;
+        border: 2px solid var(--color-secondary);
+
+        &:hover {
+            background: transparent;
+            color: var(--color-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 56, 106, 0.3);
+        }
+    }
+
+    // SECONDARY BUTTON
+    &--secondary {
+        background: transparent;
+        color: var(--color-secondary);
+        border: 2px solid var(--color-secondary);
+
+        &:hover {
+            background: var(--color-secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 56, 106, 0.3);
+        }
+    }
+
+    // OUTLINE BUTTON
+    &--outline {
+        background: transparent;
+        color: var(--color-white);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+
+        &:hover {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+    }
+
+    // GHOST BUTTON
+    &--ghost {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--color-white);
+        border: none;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+            background: rgba(255, 56, 106, 0.15);
+            color: var(--color-secondary);
+        }
+    }
+
+    // ICON BUTTON
+    &--icon {
+        padding: 0.8rem;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+
+        svg {
+            font-size: 1.2rem;
+        }
+    }
+
+    // SMALL SIZE
+    &--sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    // LARGE SIZE
+    &--lg {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
+    }
+
+    // DISABLED STATE
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    // LOADING STATE
+    &--loading {
+        position: relative;
+        color: transparent;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// ==========================================
+// BUTTON GROUPS
+// ==========================================
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        .btn {
+            width: 100%;
+        }
+    }
+}

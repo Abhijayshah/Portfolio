@@ -1,0 +1,291 @@
+// ==========================================
+// CARD SYSTEM
+// ==========================================
+
+.card {
+    background: var(--color-black);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    // Hover effect
+    &:hover {
+        border-color: var(--color-secondary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    // Card variants
+    &--glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    &--gradient {
+        background: linear-gradient(135deg,
+                rgba(255, 56, 106, 0.1) 0%,
+                rgba(0, 0, 0, 0.5) 100%);
+        border: 1px solid rgba(255, 56, 106, 0.2);
+    }
+}
+
+// ==========================================
+// PROJECT CARD
+// ==========================================
+
+.project-card {
+    background: var(--color-black);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    height: 100%; // Equal height cards
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        transform: translateY(-8px);
+        border-color: var(--color-secondary);
+        box-shadow: 0 20px 40px rgba(255, 56, 106, 0.2);
+
+        .project-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    // Image container
+    .project-img-container {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.15);
+        }
+    }
+
+    // Overlay with buttons
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+        }
+    }
+
+    // Content area
+    .project-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-category {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        background: var(--color-secondary);
+        color: white;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+        width: fit-content;
+    }
+
+    .project-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        color: var(--color-white);
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+        color: var(--color-grey-1);
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+        flex: 1;
+    }
+
+    // Tech stack
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        .tech-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--color-grey-1);
+        }
+    }
+
+    // Links at bottom
+    .project-links {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: auto; // Push to bottom
+
+        .btn {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            font-size: 0.85rem;
+        }
+    }
+}
+
+// ==========================================
+// STAT CARD (For About section)
+// ==========================================
+
+.stat-card {
+    background: var(--color-black);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: var(--color-secondary);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 56, 106, 0.15);
+    }
+
+    .stat-icon {
+        font-size: 2.5rem;
+        color: var(--color-secondary);
+        margin-bottom: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-white);
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.95rem;
+        color: var(--color-grey-1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+// ==========================================
+// EXPERIENCE/EDUCATION CARD
+// ==========================================
+
+.timeline-card {
+    background: var(--color-black);
+    border-radius: 16px;
+    padding: 2rem;
+    border-left: 4px solid var(--color-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateX(10px);
+        border-left-color: var(--color-secondary);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .timeline-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-secondary);
+            color: white;
+            font-size: 1.5rem;
+        }
+    }
+
+    .timeline-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+    }
+
+    .timeline-company {
+        font-size: 1rem;
+        color: var(--color-secondary);
+        font-weight: 600;
+    }
+
+    .timeline-date {
+        font-size: 0.9rem;
+        color: var(--color-grey-1);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .timeline-description {
+        color: var(--color-grey-1);
+        line-height: 1.7;
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding-left: 1.5rem;
+                margin-bottom: 0.8rem;
+                position: relative;
+
+                &::before {
+                    content: '▹';
+                    position: absolute;
+                    left: 0;
+                    color: var(--color-secondary);
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}

@@ -1,128 +1,168 @@
-ABHIJAY KUMAR SHAH
-Singrauli - 486886 (MP), India
-Phone: +91 7879028316
-Email: abhijayshah74@gmail.com
-GitHub: Abhijayshah
-Portfolio: abhijayshah.online
-LinkedIn (old): Abhijay Shah
-LinkedIn profile 👤 ( New Updated 🔴 ) ➤ : Abhijay Shah
+# Portfolio Content
 
-EDUCATION
-VELLORE INSTITUTE OF TECHNOLOGY (VIT)
-Bachelor of Technology in Computer Science Engineering
-Expected May 2026
-Cumulative CGPA: 8.43
-DAV PUBLIC SCHOOL, DUDHICHUA
-2019 – 2021 | Singrauli, India
-Senior Secondary (Class XII)
-CGPA: 9.20
-DAV PUBLIC SCHOOL, SURYA VIHAR
-2018 – 2019 | Singrauli, India
-Secondary (Class X)
-CGPA: 9.85
+## 1. Home (Hero Section)
 
-TECHNICAL SKILLS
-Programming: Python, C, C++, SQL
-Web Development: HTML5, CSS3, React, Next.js, Tailwind CSS, Bootstrap, Express.js, MySQL, MongoDB
-Frameworks/Tools: Git, GitHub, Vercel, Render, Netlify, Supabase, Firebase, Docker, Postman, Figma
-Other: Cloud (AWS: EC2, S3, Lambda), Generative AI Integration, REST APIs, WebSockets, UI/UX Design, Authentication (Firebase, Clerk, JWT), Chatbot Development
+**Main Title:** Building Intelligent Digital Experiences with Purpose.
 
-Frameworks/Tools: Git, GitHub, Vercel, Render, Netlify, Supabase, Firebase, Docker, Postman, Figma Other: Cloud (AWS: EC2, S3, Lambda), Generative AI Integration, REST APIs, WebSockets, UI/UX Design, Authentication (Firebase, Clerk, JWT), Chatbot Development.
-PROJECTS
-FULLSTACK STORE RATING PLATFORM (Backend)
-GitHub: Store-Rating-Platform | Aug 2025 — In progress (adding to Hotel)
-Designed and developed RESTful APIs with Node.js and Express.js to support role-based access for admins, users, and store owners.
-Implemented secure authentication and authorization using JWT, input validation, and role-based permissions (RBAC).
-Architected a normalized PostgreSQL schema enabling scalable store management, ratings, filtering, and sorting operations.
-Technologies: Node.js, Express.js, PostgreSQL, JWT
-ENGLISH TUTOR AI
-GitHub: English-Tutor-AI | Apr 2025 — In progress
-Built a real-time backend system using Node.js and Socket.IO to handle bi-directional voice interactions.
-Integrated AI-powered language processing via OpenRouter for grammar correction, pronunciation feedback, and vocabulary enhancement.
-Implemented event-driven communication and session handling to support low-latency, multi-user interactions.
-Technologies: Node.js, Socket.IO, Web Speech API, OpenRouter
-CAT CATCH CODE
-Live: catcatchcode.online | 2025 – Ongoing
-Built an educational platform inspired by GFG & JavaTpoint to help college students learn DSA and Development through short, easy explanations.
-Created separate modules — Cat_Catch_DSA & Cat_Catch_Development — and currently merging them into a full MERN-based platform offering roadmaps, AI-assisted learning, and beginner-friendly project guidance.
-Technologies: HTML/CSS/JS, MERN (in progress)
-SATSANG VACHAN SATSANG SEVA
-Live: abhijayshah.github.io/satsang_vachan_satsang_seva | 2025 – Ongoing
-Developed a spiritual knowledge website for 20 crores followers of Baba Jai Gurudev, converting patrikas (published since 1969) into visual posters, summaries, and digital content.
-Integrated AI summarization pipelines to transform long teachings into simple visuals, making spiritual concepts accessible to youth and preserving decades of knowledge online.
-Technologies: HTML/CSS/JS, AI Tools (in progress)
-COMFORTABLE STAY – HOTEL + RESTAURANT ALLIANCE
-Live: abhijayshah.github.io/ComForTable_And_Stay | 2024 – Ongoing
-Created a real-world PG/Hotel visibility system linking restaurants and hotels through a QR-based free-stay model.
-Enabled customers to earn 1-day stays based on bill amount, allowing PGs to gain visibility and increasing occupancy.
-Designed interactive UI, charts, partner listings, and automated deployment using GitHub Pages.
-Technologies: HTML/CSS/JS, Chart.js, GitHub Pages
-Advanced Multi-Video Player for Windows & macOS
-Live: abhijayshah.github.io/MultiSync-VideoPlayer/ | May 2024
-Designed for Windows and macOS, this tool lets you play and compare multiple videos (up to 9) at once, with adjustable speeds up to 10x. Includes built-in playlist management, file corruption checks, and individual controls for each video, making multitasking smooth and hassle-free.
-No installation required, simply open in your browser for a consistent experience across all devices.
-Technologies: HTML/CSS/JS
+**Sub-headline:** I am Abhijay Kumar Shah. I architect scalable MERN applications, native iOS experiences, and AI-driven systems. From automating academic workflows at VIT to preserving global spiritual heritage, I turn complex logic into elegant, performant solutions.
 
-CERTIFICATIONS
-MERN Full Stack Certificate — April 2025
-Blockchain Certificate — November 2025
+**Dynamic Tagline:** > Full-Stack Developer | AI Orchestrator | Native iOS Builder | EdTech Founder
 
-ADDITIONAL INFORMATION
-Languages: English and Hindi
+**Call to Action:**
+- [View My Work](#projects)
+- [Let's Connect](#contact)
 
-ABHIJAY KUMAR SHAH
-+91 78790 28316 abhijayshah74@gmail.com linkedin.com/in/abhijayshah/ github.com/Abhijayshah
-Education
-Vellore Institute of Technology B.Tech in Computer Science & Engineering DAV Public School, Dudhichua 2019–2021
-Senior Secondary (Class XII) DAV Public School, Surya Vihar Secondary (Class X) Jul 2026 (Expected)
-CGPA: 8.44 / 10.0
-CGPA: 9.20 / 10.0
-2018–2019
-CGPA: 9.85 / 10.0
-Technical Skills
-Languages: C++, Python, JavaScript, SQL, HTML/CSS
-Backend & Databases: Node.js, Express.js, REST APIs, WebSockets, MongoDB, PostgreSQL
-Cloud, Tools & Networking: AWS (EC2, S3, Lambda), JWT Authentication, Docker, Git, Postman
-Projects
-Comfortable Stay — Hotel Plus Restaurant Alliance
-HTML, CSS, JavaScript, Chart.js — Backend via External Services (MERN Planned) – Designed a QR-driven alliance platform improving discoverability for PGs and budget hotels via bill-based free stay eligibility.
-– Implemented eligibility rules and room-tier allocation (waiting room, non-AC, AC beds) with dashboards and booking workflows.
-– Extending the model to hospital partnerships for low-cost patient attendant stays.
-– Planned backend migration to REST APIs, database-backed persistence, validation, and role-based access.
-[Link]
-BACKEND STORE RATING PLATFORM
-Node.js, Express.js, PostgreSQL, JWT [Link]
-– Designed and developed RESTful APIs with Node.js and Express.js to support role-based access for admins, users, and store owners.
-– Implemented secure authentication and authorization using JWT, input validation, and role-based permissions (RBAC).
-– Architected a normalized PostgreSQL schema enabling scalable store management, ratings, filtering, and sorting operations.
-ENGLISH TUTOR AI
-Node.js, Socket.IO, Web Speech API, OpenRouter (in progress) – Built a real-time backend system using Node.js and Socket.IO to handle bi-directional voice interactions.
-– Integrated AI-powered language processing via OpenRouter for grammar correction, pronunciation feedback, and vocabulary
-enhancement.
-[Link]
-– Implemented event-driven communication and session handling to support low-latency, multi-user interactions.
-Advanced Multi-Video Player
-JavaScript, Browser APIs, Performance Optimization — Windows and MacOS [Link]
-– Engineered a multi-instance video playback system supporting up to 9 concurrent players, synchronized controls, and playback speeds
-up to 10× using optimized event handling.
-– Implemented intelligent file validation and corruption detection, ensuring safe loading with real-time error reporting and recovery
-mechanisms.
-– Designed resource-efficient state and memory management to maintain stable performance across Windows and macOS, including
-real-time performance monitoring and cleanup of unused media resources.
-Leadership / Achievements
-CatCatchCode catcatchcode.online – Jul 2025 – Present
-Team Lead — VIT [Link]
-– Founded an ed-tech initiative providing placement guidance, curated study material, and senior mentorship for students.
-– Led a 5-member team to produce 100+ technical learning videos, impacting 100+ students.
-– Designed beginner-to-intermediate learning roadmaps for DSA, Full-Stack development, and AI automation.
-– Expanded content across LinkedIn, YouTube, Instagram, and GitHub, building an early-stage learning community.
-Co-Founder & Project Lead, Satsang Vachan Satsang Seva satsangvachansatsangseva.online – Sept 2025 – Present
-Digital Preservation & Social Impact Initiative [Link]
-– Leading a digital preservation initiative to convert decades of archival literature into modern visual and multimedia formats.
-– Spearheading a digitization initiative to preserve 50+ years of archival literature for a global community of 200 Million+ followers.
-– Collaborating with contributors to produce posters, magazines, podcasts, and animated content for large-scale audiences.
-– Applying AI-assisted summarization to transform long-form textual material into concise, accessible visuals.
-– Designing a scalable content platform focused on accessibility, maintainability, and positive social impact.
-Certifications
-MERN Full Stack Certificate — Apr 2025 [Link]
+---
 
+## 2. About Me
+
+"Hello! I’m a Final Year CS student at Vellore Institute of Technology (VIT) with a 8.44 CGPA and a passion for engineering systems that scale.
+
+My journey isn't just about syntax; it's about solving real-world friction. Whether it’s building a multi-model AI platform like English-Tutor-AI, orchestrating 9-stream video synchronization, or leading a digital preservation initiative for a community of 200 million, I thrive at the intersection of efficiency and impact.
+
+As the founder of CatCatchCode, I'm currently mentoring the next generation of developers by bridging the gap between university theory and industry-grade engineering."
+
+---
+
+## 3. Skills (Tech Ecosystem)
+
+### Core Languages & Foundations
+- **Languages:** C++, Java (Advanced DSA), Python (Asynchronous), JavaScript (ES6+), Swift 5 (Native iOS), SQL.
+- **Conceptual:** Data Structures & Algorithms, Object-Oriented Programming (OOPS), DBMS, Operating Systems.
+
+### Frontend Engineering
+- **Frameworks:** React.js, Next.js, Vite.
+- **Native Mobile:** SwiftUI, Combine (Reactive Programming).
+- **Styling & Motion:** Tailwind CSS, Framer Motion, CSS Variables (BEM Methodology), Bootstrap.
+- **State Management:** Redux Toolkit (RTK Query), Context API.
+
+### Backend & Systems Architecture
+- **Frameworks:** Node.js, Express.js, FastAPI (Python).
+- **Real-time & APIs:** Socket.io (WebSockets), RESTful API Design, Web Speech API (STT/TTS).
+- **Security & Auth:** JWT (JSON Web Tokens), Role-Based Access Control (RBAC), Bcrypt Hashing, Helmet.js Security Headers, Rate Limiting.
+
+### Database & Cloud Storage
+- **NoSQL:** MongoDB (Mongoose ODM, Aggregation Pipelines).
+- **Relational:** PostgreSQL, SQLite.
+- **Mobile/Cloud Persistence:** CoreData (Offline-first), Supabase, MongoDB Atlas.
+
+### AI & Intelligent Systems
+- **AI Orchestration:** Multi-model integration (GPT-4, Claude 3, Gemini Pro) via OpenRouter API.
+- **Prompt Engineering:** Specialized System Prompts for Pedagogical and Technical AI Agents.
+- **Tools:** Generative AI Integration, Automated Document Analysis, Chatbot Development.
+
+### DevOps, Cloud & Tools
+- **Workflow:** GitHub Actions (CI/CD), Git, GitHub.
+- **Deployment:** Docker, Docker-Compose, Nginx (Reverse Proxy), Vercel, Render, Netlify, Heroku.
+- **Cloud Services:** AWS (EC2, S3, Lambda), Firebase.
+- **Dev Tools:** Postman (API Testing), PM2 (Process Management), Figma (UI/UX).
+
+---
+
+## 4. Work Experience
+
+### Founder & Technical Lead | CatCatchCode (EdTech Initiative)
+**July 2025 – Present | Remote**
+
+*CatCatchCode is a mission-driven EdTech platform designed to bridge the gap between academic curriculum and industry expectations for engineering students.*
+
+- **Platform Architecture:** Engineered a structured learning ecosystem using a MERN stack roadmap, transitioning from static GitHub Pages to a dynamic platform for centralized resource delivery.
+- **Technical Mentorship:** Led a team of 5 contributors to produce 100+ technical learning videos and documentation, directly impacting the learning curve of over 100+ students.
+- **Curriculum Engineering:** Designed high-velocity "Learn-n-Copy" roadmaps for Data Structures & Algorithms (C++) and Full-Stack Development, focusing on high-yield skills required for Tier-1 placements.
+- **AI-Enhanced Learning:** Developed a "Logic-First" methodology, teaching students how to integrate AI tools (ChatGPT/Gemini) into their debugging and system design workflows effectively.
+- **Community Growth:** Managed cross-platform content strategy across LinkedIn, YouTube, and GitHub, fostering an early-stage community of student developers.
+
+### Co-Founder & Project Lead | Satsang Vachan (Digital Preservation Initiative)
+**September 2025 – Present | Remote**
+
+*Satsang Vachan is a large-scale digital transformation project aimed at preserving five decades of spiritual heritage for a global community of 200 Million+ followers of Baba Jaigurudev.*
+
+- **Digital Transformation:** Spearheading the digitization of archival literature (since 1969), creating a scalable system to preserve "Patrikas" and spiritual teachings for future generations.
+- **AI Content Pipelines:** Implementing AI-assisted summarization and NLP tools to transform dense, decades-old archival text into modern, bite-sized visual content and infographics.
+- **Multimedia Orchestration:** Collaborating with global contributors to produce podcasts, animated content, and magazines, ensuring the teachings are accessible to the younger, mobile-first demographic.
+- **Platform Leadership:** Leading the frontend strategy and UX design for the web portal, ensuring accessibility and high performance across devices for a massive, diverse user base.
+- **Social Impact:** Built a scalable system for content distribution focused on promoting social ethics, vegetarianism, and meditation through modern digital storytelling.
+
+---
+
+## 5. Projects (Master Directory)
+
+| Project Name | Tech Stack & Focus | Key Features & Impact | Links |
+| :--- | :--- | :--- | :--- |
+| **English-Tutor-AI** | **AI + Real-time**<br>Node.js, Socket.io, OpenRouter | Multi-model orchestration (GPT-4/Claude/Gemini). Features real-time voice feedback, audio visualization, and specialized tutoring personalities. | [Live Demo](#) / [Video](#) / [GitHub](#) |
+| **Scholara** | **Full-Stack Logic**<br>MERN, JWT, Multer | Automated academic workflow with an approval pipeline. Includes AI-driven PDF analysis to verify report compliance and structural alignment. | [Live Demo](#) / [Video](#) / [GitHub](#) |
+| **Rately** | **MERN Stack**<br>React, TypeScript, MongoDB | Multi-tenant store rating platform with Google OAuth. Features separate User/Owner/Admin dashboards and an integrated AI support chatbot. | [Live Demo](#) / [Video](#) / [GitHub](#) |
+| **Premium iOS App** | **Native Mobile**<br>SwiftUI, CoreData, Supabase | Production-grade productivity app with an offline-first architecture. Features FaceID security, real-time cloud sync, and OpenAI smart input. | [App Showcase](#) / [Video](#) / [GitHub](#) |
+| **MultiSync Player** | **System Utility**<br>Vanilla JS, Media API | Native engine capable of playing 9 synchronized video streams at 10x speed. Features file corruption detection and M1/M2 optimization. | [Live Site](#) / [Video](#) / [GitHub](#) |
+| **Political Tracker** | **AI + Web**<br>Gemini AI, React, Node.js | Tracks minister promises by using Gemini AI to classify RSS news feeds. Visualizes performance trends through interactive Chart.js dashboards. | [Live Demo](#) / [Video](#) / [GitHub](#) |
+| **Ticket Support** | **Backend Logic**<br>Node.js, Redux Toolkit | Enterprise support system featuring RTK Query for state sync and a custom JWT blacklisting strategy with MongoDB TTL indexing. | [Project Link](#) / [Video](#) / [GitHub](#) |
+| **AI Support Bot** | **Python Backend**<br>FastAPI, SQLite, Gemini | High-performance asynchronous support bot. Features session persistence and automated escalation logic to human agents when needed. | [API Docs](#) / [Video](#) / [GitHub](#) |
+| **VoiceGPT** | **Voice AI**<br>Web Speech API, Socket.io | Interactive voice chatbot for English practice. Real-time STT/TTS processing with a lightweight, fast-loading JavaScript architecture. | [Live Demo](#) / [Video](#) / [GitHub](#) |
+| **Comfortable Stay** | **Product MVP**<br>Chart.js, GitHub Actions | Hyper-local hospitality platform with QR-based deep linking and localStorage persistence for rapid, zero-cost static deployment. | [Live Site](#) / [Video](#) / [GitHub](#) |
+| **ParkEasy** | **Web Service**<br>MERN, Context API | Smart parking reservation system. Handles time-based booking logic, digital ticket generation, and real-time slot availability tracking. | [Project Link](#) / [Video](#) / [GitHub](#) |
+| **TravelExplore** | **Frontend Dev**<br>HTML5, CSS3, JS | Multi-page tourism portal with AOS animations. Focuses on a polished user journey, interactive components, and responsive grid layouts. | [Live Demo](#) / [Video](#) / [GitHub](#) |
+
+---
+
+## 6. Education
+
+### Bachelor of Technology in Computer Science & Engineering
+**Vellore Institute of Technology (VIT) | Bhopal, India**
+*Expected May 2026 | CGPA: 8.44 / 10.0*
+- **Specialization:** Full-Stack Development, AI Orchestration, and Systems Engineering.
+- **Leadership:** Founder & Technical Lead of CatCatchCode, directing a team of 5 to build EdTech solutions for 100+ students.
+- **Core Coursework:** Data Structures & Algorithms (C++/Java), Database Management Systems (PostgreSQL/MongoDB), Operating Systems, Software Engineering, and AI & Machine Learning.
+- **Focus:** Bridging the gap between university theory and production-grade engineering through 12+ full-stack projects.
+
+### Senior Secondary (Class XII)
+**DAV Public School, Dudhichua | Singrauli, India**
+*2019 – 2021 | Result: 92.0%*
+- **Stream:** Science (Physics, Chemistry, Mathematics, Computer Science).
+- **Achievement:** Graduated with Distinction; strong foundation in analytical problem-solving and mathematical logic.
+
+### Secondary (Class X)
+**DAV Public School, Surya Vihar | Singrauli, India**
+*2018 – 2019 | Result: 98.5%*
+- **Achievement:** Outstanding academic performance; topped school in mathematics and science.
+- **Foundations:** Early interest in logic-based programming and computer fundamentals.
+
+---
+
+## 7. Certificates
+
+- **MERN Full Stack Certificate** (April 2025) - Mastered MongoDB, Express, React, and Node.js.
+- **Blockchain Certificate** (November 2025) - Explored decentralized ledger technologies and smart contracts.
+
+---
+
+## 8. Contact
+
+"I'm currently seeking SDE Internships and Full-time roles for the 2026 cohort. If you’re looking for a developer who can handle the full lifecycle from system design to deployment, let’s talk."
+
+### Personal Professional Presence
+| Platform Name | Connection Link | Purpose | Description |
+| :--- | :--- | :--- | :--- |
+| **Portfolio Website** | [abhijayshah.online](https://abhijayshah.online/) | Master Hub | The central showcase for all my AI, Full-Stack, and Mobile engineering projects. |
+| **LinkedIn** | [linkedin.com/in/abhijayshah/](https://www.linkedin.com/in/abhijayshah/) | Professional Networking | Primary channel for career updates, industry networking, and placement opportunities. |
+| **GitHub** | [github.com/Abhijayshah](https://github.com/Abhijayshah) | Source Code & Tech | Hosting the architecture and codebases for my production-grade projects. |
+| **Satsang Vachan** | [satsangvachansatsangseva.online](https://satsangvachansatsangseva.online/) | Social Impact Hub | My digital preservation initiative focused on spiritual heritage and community service. |
+| **Personal YouTube** | [abhijayshah.online (YouTube)](https://www.youtube.com/channel/UCX8i_v1eL9VuLWG1fKwEXhw) | Skill Validation | Video demonstrations of my coding projects, technical logic, and system walkthroughs. |
+| **Personal Instagram** | [@abhijayshah74](https://www.instagram.com/abhijayshah74/) | Life & Creativity | A behind-the-scenes look at my life as a developer, student, and creative thinker. |
+| **X (Twitter)** | [@abhijayshah74](https://x.com/abhijayshah74) | Tech Discourse | Engaging with the global developer community and following AI/Web trends. |
+| **Mastodon** | [@Abhijayshah](https://mastodon.social/@Abhijayshah) | Open-Source Sync | Participating in decentralized tech communities and open-web discussions. |
+| **Facebook** | [abhijayshah74](https://www.facebook.com/abhijayshah74) | Social Connections | Staying connected with friends, family, and long-term acquaintances. |
+| **Reddit** | [Zestyclose-Pass-9556](https://www.reddit.com/user/Zestyclose-Pass-9556/) | Discussion & Forums | Participating in technical subreddits and developer support communities. |
+
+### Community & EdTech Presence: Cat Catch Code
+| Platform Name | Connection Link | Purpose | Description |
+| :--- | :--- | :--- | :--- |
+| **Official Website** | [catcatchcode.online](https://catcatchcode.online/) | Learning Hub | The primary portal for EdTech roadmaps, DSA guides, and student project resources. |
+| **LinkedIn (Official)** | [linkedin.com/in/catcatchcode/](https://www.linkedin.com/in/catcatchcode/) | Community Building | Professional hub for announcing hackathons, student achievements, and hiring updates. |
+| **YouTube (Official)** | [catcatchcode.online (YouTube)](https://www.youtube.com/channel/UCgzmNjDq8kI3StWFrIv7QZg) | Curriculum Delivery | Hosting a massive library of 100+ technical videos, project tutorials, and logic-first guides. |
+| **GitHub (Organization)** | [github.com/catcatchcode](https://github.com/catcatchcode) | Open-Source Learning | A collaborative space for students to contribute to open-source learning repositories. |
+| **Instagram (Official)** | [@cat_catch_code](https://www.instagram.com/cat_catch_code/) | Youth Engagement | Daily technical tips, bite-sized tutorials, and visual roadmaps for modern developers. |
+| **X (Twitter)** | [@catcatchcode](https://x.com/catcatchcode) | Global Visibility | Connecting with the global EdTech community and sharing initiative milestones. |
+| **Facebook Page** | [Cat Catch Code (FB)](https://www.facebook.com/profile.php?id=61584628988988) | Mass Outreach | Engaging with a broader demographic of learners and parents seeking career guidance. |
+| **Reddit Community** | [Super_Cartoonist1246](https://www.reddit.com/user/Super_Cartoonist1246/) | Discussion & Support | Answering student queries and hosting community discussions on placement strategies. |
+
+> **Current Focus:** Currently seeking collaborations with industry mentors and developers to expand the Cat Catch Code curriculum. If you share our 'Logic-First' philosophy, let's talk!

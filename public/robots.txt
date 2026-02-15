@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abhijayshah.online/sitemap.xml
