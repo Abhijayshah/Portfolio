@@ -134,10 +134,12 @@
 
                 .submit-btn {
                     display: flex;
-                    justify-content: flex-start;
+                    justify-content: center;
 
                     button {
                         padding: 0.8rem 2.5rem;
+                        width: 100%;
+                        max-width: 260px;
                         border-radius: 30px;
                         background-color: var(--color-secondary);
                         color: var(--color-white);
