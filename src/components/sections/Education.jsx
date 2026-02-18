@@ -1,6 +1,6 @@
 import React from 'react';
-import { education, certificates } from '../../data/education';
-import { FaGraduationCap, FaCertificate, FaUniversity, FaSchool } from 'react-icons/fa';
+import { education } from '../../data/education';
+import { FaUniversity, FaSchool } from 'react-icons/fa';
 import Card from '../ui/Card';
 
 const Education = () => {
@@ -50,24 +50,6 @@ const Education = () => {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
-                    </Card>
-                ))}
-            </div>
-
-            {/* Certificates Section */}
-            <div className="main-title" style={{ marginTop: '4rem' }}>
-                <h2>My <span>Certificates</span></h2>
-            </div>
-
-            <div className="certificates-grid">
-                {certificates && certificates.map((cert, index) => (
-                    <Card key={index} className="certificate-item">
-                        <div className="cert-icon"><FaCertificate /></div>
-                        <div>
-                            <h5>{cert.name}</h5>
-                            <p className="cert-date">{cert.date}</p>
-                            <p>{cert.description}</p>
                         </div>
                     </Card>
                 ))}

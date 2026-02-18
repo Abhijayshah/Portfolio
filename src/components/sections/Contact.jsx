@@ -77,6 +77,9 @@ const Contact = () => {
                         </div>
                     </div>
 
+                    <h5 style={{ marginTop: '1.5rem', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        📱 CONNECT WITH ME:
+                    </h5>
                     <div className="contact-icons">
                         {Object.values(socialLinks).flat().map((social, index) => (
                             <a
