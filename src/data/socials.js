@@ -33,15 +33,15 @@ export const socialLinks = {
             link: "https://mastodon.social/@Abhijayshah"
         },
         {
-            name: "Portfolio Website",
+            name: "🌐 💼 My Work & Portfolio ➤ abhijayshah.online",
             link: "https://abhijayshah.online/"
         },
         {
-            name: "CatCatchCode Website",
+            name: "🌐 Career & CAT – CatCatchCode (catcatchcode.online)",
             link: "https://catcatchcode.online/"
         },
         {
-            name: "Satsang Vachan Website",
+            name: "🌐 Website for Soul (Satsang) – Satsang Vachan",
             link: "https://satsangvachansatsangseva.online/"
         }
     ]
