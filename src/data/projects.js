@@ -11,12 +11,10 @@ export const projects = [
             "Real-time audio visualization",
             "Specialized tutoring personalities"
         ],
-        image: "/img/project-placeholder.svg", // Placeholder
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        image: "/img/project-placeholder.svg",
+        liveLink: "https://github.com/Abhijayshah/English-Tutor-AI",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/English-Tutor-AI"
     },
     {
         id: 2,
@@ -31,11 +29,9 @@ export const projects = [
             "Report compliance verification"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "",
+        videoLink: "https://school-system-murex.vercel.app",
+        githubLink: "https://github.com/Abhijayshah/School-System"
     },
     {
         id: 3,
@@ -50,11 +46,9 @@ export const projects = [
             "Integrated AI support chatbot"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://rately-ten.vercel.app/",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/Rately"
     },
     {
         id: 4,
@@ -69,11 +63,9 @@ export const projects = [
             "Real-time cloud sync"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#", // App Store link or similar
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://github.com/Abhijayshah/ios-todo-app",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/ios-todo-app"
     },
     {
         id: 5,
@@ -88,11 +80,9 @@ export const projects = [
             "File corruption detection"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://abhijayshah.github.io/MultiSync-VideoPlayer/",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/MultiSync-VideoPlayer"
     },
     {
         id: 6,
@@ -107,11 +97,9 @@ export const projects = [
             "Interactive performance dashboards"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "",
+        videoLink: "https://github.com/Abhijayshah/political_promise_tracking_dashboard.git",
+        githubLink: "https://github.com/Abhijayshah/political_promise_tracking_dashboard.git"
     },
     {
         id: 7,
@@ -126,11 +114,9 @@ export const projects = [
             "MongoDB TTL indexing"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://github.com/Abhijayshah/Ticket_Support_System.git",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/Ticket_Support_System.git"
     },
     {
         id: 8,
@@ -145,11 +131,9 @@ export const projects = [
             "Automated human escalation"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#", // API Docs
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://github.com/Abhijayshah/ai-customer-support-bot-2.git",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/ai-customer-support-bot-2.git"
     },
     {
         id: 9,
@@ -164,11 +148,9 @@ export const projects = [
             "Interactive voice interface"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://github.com/Abhijayshah/Simple-AI-ChatBot/blob/main/web-speech-ai/README.md",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/Simple-AI-ChatBot/blob/main/web-speech-ai/README.md"
     },
     {
         id: 10,
@@ -183,11 +165,9 @@ export const projects = [
             "Zero-cost static deployment"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "https://abhijayshah.github.io/ComForTable_And_Stay",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://abhijayshah.github.io/ComForTable_And_Stay/",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/ComForTable_And_Stay"
     },
     {
         id: 11,
@@ -202,11 +182,9 @@ export const projects = [
             "Real-time availability"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://park-easy-tndl.vercel.app/",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/parkEasy"
     },
     {
         id: 12,
@@ -221,10 +199,8 @@ export const projects = [
             "Interactive components"
         ],
         image: "/img/project-placeholder.svg",
-        links: {
-            live: "#",
-            video: "#",
-            github: "https://github.com/Abhijayshah"
-        }
+        liveLink: "https://github.com/Abhijayshah/TravelExplore",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/TravelExplore"
     }
 ];
