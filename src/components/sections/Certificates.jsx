@@ -2,7 +2,6 @@ import React from 'react';
 import { certificates } from '../../data/education';
 import { FaAward } from 'react-icons/fa';
 import Card from '../ui/Card';
-import Button from '../ui/Button';
 
 const Certificates = () => {
     // If certificates is undefined in education.js, fallback to empty array
@@ -23,12 +22,25 @@ const Certificates = () => {
                         <h4>
                             {cert.name}
                         </h4>
-                        <span className="cert-date">
-                            {cert.date}
-                        </span>
+                        {cert.date && (
+                            <span className="cert-date">
+                                {cert.date}
+                            </span>
+                        )}
                         <p>
                             {cert.description}
                         </p>
+                        {cert.link && (
+                            <a
+                                href={cert.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="btn btn--ghost btn--sm"
+                                style={{ marginTop: '0.5rem', width: 'fit-content' }}
+                            >
+                                View Certificate
+                            </a>
+                        )}
                     </Card>
                 ))}
             </div>
