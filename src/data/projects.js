@@ -29,8 +29,8 @@ export const projects = [
             "Report compliance verification"
         ],
         image: "/img/project-placeholder.svg",
-        liveLink: "",
-        videoLink: "https://school-system-murex.vercel.app",
+        liveLink: "https://school-system-murex.vercel.app/",
+        videoLink: "https://school-system-murex.vercel.app/",
         githubLink: "https://github.com/Abhijayshah/School-System"
     },
     {
