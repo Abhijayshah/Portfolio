@@ -30,6 +30,11 @@ export const experience = [
             "Multimedia Orchestration: Collaborating with global contributors to produce podcasts, animated content, and magazines, ensuring the teachings are accessible to the younger, mobile-first demographic.",
             "Platform Leadership: Leading the frontend strategy and UX design for the web portal, ensuring accessibility and high performance across devices for a massive, diverse user base.",
             "Social Impact: Built a scalable system for content distribution focused on promoting social ethics, vegetarianism, and meditation through modern digital storytelling."
-        ]
+        ],
+        links: {
+            website: "https://satsangvachan.org",
+            github: "https://github.com/SatsangVachan",
+            youtube: "https://youtube.com/@SatsangSeva"
+        }
     }
 ];
