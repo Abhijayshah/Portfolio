@@ -29,7 +29,7 @@ const Experience = () => {
                         }}>
                             {job.company.includes('CatCatchCode') ? (
                                 <img 
-                                    src="https://avatars.githubusercontent.com/u/115077886?v=4" 
+                                    src="/img/abhijay_photo_chat.png" 
                                     alt="CatCatchCode" 
                                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                                 />
