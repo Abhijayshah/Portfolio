@@ -11,9 +11,6 @@ const About = () => {
             </div>
 
             <div className="about-container">
-                <div className="about-image-section">
-                    <img src="/img/abhijay_photo_chat.png" alt="Abhijay Kumar Shah" className="about-profile-img" />
-                </div>
                 <div className="left-about">
                     <h4>Information About me</h4>
                     <p>

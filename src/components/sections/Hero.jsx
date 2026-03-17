@@ -55,7 +55,7 @@ function Hero() {
                 {/* Image Content */}
                 <div className="hero-image">
                     <div className="hero-img-wrapper">
-                        <img src="/img/hero.png" alt="Abhijay Kumar Shah" loading="lazy" />
+                        <img src="/img/abhijay_photo_chat.png" alt="Abhijay Kumar Shah" loading="lazy" />
 
                         {/* Floating decoration */}
                         <div className="hero-decoration hero-decoration--1"></div>
