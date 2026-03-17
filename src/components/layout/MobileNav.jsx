@@ -62,16 +62,6 @@ function MobileNav() {
 
     return (
         <>
-            {/* Top Bar (Mobile) */}
-            <div className="mobile-top-bar">
-                <div className="nav-logo" onClick={() => handleNavClick('home')}>
-                    <div className="logo-img-wrapper">
-                        <img src="/img/abhijay_photo_chat.png" alt="Logo" className="nav-logo-img" />
-                    </div>
-                    <span className="logo-text">Abhijay</span>
-                </div>
-            </div>
-
             {/* Bottom Navigation Bar (Mobile) */}
             <nav className="mobile-nav">
                 {/* Show 4 main items */}

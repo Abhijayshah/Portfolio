@@ -185,108 +185,21 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 120px;
-    background: rgba(26, 26, 26, 0.98);
+    width: 100px;
+    background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(20px);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     display: none;
     z-index: var(--z-fixed);
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
-    flex-direction: column;
-    padding-top: 2rem;
 
     @media (min-width: 1024px) {
         display: flex;
         align-items: center;
-    }
-
-    .nav-logo {
-        margin-bottom: 3rem;
-        cursor: pointer;
-        display: flex;
         justify-content: center;
-        width: 100%;
-        
-        .logo-img-wrapper {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: 3px solid var(--color-secondary);
-            overflow: hidden;
-            background: var(--color-black);
-            box-shadow: 0 0 15px rgba(255, 56, 106, 0.3);
-            transition: all 0.3s ease;
-
-            &:hover {
-                transform: scale(1.1) rotate(5deg);
-                box-shadow: 0 0 25px rgba(255, 56, 106, 0.5);
-            }
-        }
-
-        .nav-logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     }
 }
 
-// ==========================================
-// MOBILE TOP BAR
-// ==========================================
-
-.mobile-top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    padding: 0 1.5rem;
-    z-index: var(--z-fixed);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-
-    @media (min-width: 1024px) {
-        display: none;
-    }
-
-    .nav-logo {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-        cursor: pointer;
-
-        .logo-img-wrapper {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: 2px solid var(--color-secondary);
-            overflow: hidden;
-            background: var(--color-black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--color-white);
-            text-transform: uppercase;
-        }
-    }
-}
 
 .desktop-nav-items {
     display: flex;

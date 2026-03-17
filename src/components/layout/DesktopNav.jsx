@@ -58,11 +58,6 @@ function DesktopNav() {
 
     return (
         <nav className="desktop-nav">
-            <div className="nav-logo" onClick={() => handleNavClick('home')}>
-                <div className="logo-img-wrapper">
-                    <img src="/img/abhijay_photo_chat.png" alt="Logo" className="nav-logo-img" />
-                </div>
-            </div>
             <div className="desktop-nav-items">
                 {navItems.map((item) => {
                     const Icon = item.icon;
