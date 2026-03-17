@@ -1,6 +1,6 @@
 import React from 'react';
 import { experience } from '../../data/experience';
-import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube, FaInstagram } from 'react-icons/fa';
+import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube, FaInstagram, FaCat, FaPrayingHands } from 'react-icons/fa';
 import { FiCheckCircle } from 'react-icons/fi';
 import Card from '../ui/Card';
 
@@ -28,11 +28,9 @@ const Experience = () => {
                             overflow: 'hidden'
                         }}>
                             {job.company.includes('CatCatchCode') ? (
-                                <img 
-                                    src="/img/abhijay_photo_chat.png" 
-                                    alt="CatCatchCode" 
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-                                />
+                                <FaCat />
+                            ) : job.company.includes('Satsang Vachan') ? (
+                                <FaPrayingHands />
                             ) : (
                                 <FaBriefcase />
                             )}
