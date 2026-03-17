@@ -30,14 +30,37 @@
     justify-content: space-between;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     cursor: pointer;
-    color: var(--color-white);
 
-    .dot {
-        color: var(--color-secondary);
+    .nav-logo-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--color-secondary);
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-white);
+
+        @media (max-width: 480px) {
+            display: none; // Hide text on very small screens to save space
+        }
+
+        .dot {
+            color: var(--color-secondary);
+        }
     }
 }
 

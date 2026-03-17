@@ -45,8 +45,9 @@ function Navbar() {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="nav-container">
                 {/* Logo */}
-                <div className="logo" onClick={() => scrollToSection('home')}>
-                    Abhijay<span className="dot">.</span>
+                <div className="logo-container" onClick={() => scrollToSection('home')}>
+                    <img src="https://avatars.githubusercontent.com/u/115077886?v=4" alt="Logo" className="nav-logo-img" />
+                    <span className="logo-text">Abhijay<span className="dot">.</span></span>
                 </div>
 
                 {/* Desktop Menu */}
