@@ -11,7 +11,7 @@ const About = () => {
             </div>
 
             <div className="about-container">
-                <div className="about-image-mobile">
+                <div className="about-image-section">
                     <img src="https://avatars.githubusercontent.com/u/115077886?v=4" alt="Abhijay Kumar Shah" className="about-profile-img" />
                 </div>
                 <div className="left-about">

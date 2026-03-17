@@ -64,7 +64,7 @@ body {
 
     @media (min-width: 1024px) {
         padding-bottom: 0;
-        padding-left: 100px; // Space for sidebar on desktop
+        padding-left: 120px; // Updated for wider desktop-nav
     }
 }
 
@@ -72,6 +72,11 @@ body {
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
+    padding-top: 60px; // Space for mobile top bar
+
+    @media (min-width: 1024px) {
+        padding-top: 0;
+    }
 }
 
 // ==========================================
