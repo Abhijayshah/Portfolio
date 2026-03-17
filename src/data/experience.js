@@ -34,8 +34,7 @@ export const experience = [
         links: {
             website: "https://satsangvachansatsangseva.online/",
             youtube: "https://www.youtube.com/channel/UCsAvsUouGa6g1VSNGhyfO5w",
-            instagram: "https://www.instagram.com/satsang_vachan_satsang_seva/",
-            github: "https://github.com/SatsangVachan"
+            instagram: "https://www.instagram.com/satsang_vachan_satsang_seva/"
         }
     }
 ];
