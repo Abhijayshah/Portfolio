@@ -28,7 +28,7 @@ export const education = [
         institution: "DAV Public School, Surya Vihar",
         location: "Singrauli, India",
         duration: "2018 – 2019",
-        grade: "CGPA: 9.85 / 10.0",
+        grade: "CGPA: 9.60 / 10.0",
         details: [
             "Achievement: Outstanding academic performance; topped school in mathematics and science.",
             "Foundations: Early interest in logic-based programming and computer fundamentals."
