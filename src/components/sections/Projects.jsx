@@ -15,7 +15,7 @@ function Projects() {
         <div className="projects-container">
             <h2 className="section-title">Featured Projects</h2>
             <p className="section-subtitle">
-                A showcase of 13+ production-ready applications spanning Full-Stack AI, MERN development, and iOS engineering.
+                A showcase of 13+ production-ready applications spanning MERN Full-Stack, Next.js, and n8n automation.
             </p>
 
             {/* Filter Tabs */}

@@ -17,15 +17,15 @@ function Hero() {
 
                     <p className="hero-subtitle">
                         I am <strong>Abhijay Kumar Shah</strong>. I architect scalable MERN applications,
-                        native iOS experiences, and AI-driven systems. From automating academic workflows
-                        at VIT to preserving global spiritual heritage, I turn complex logic into elegant,
+                        automated n8n workflows, and AI-driven systems. From exploring Next.js to
+                        deploying production-grade apps, I turn complex logic into elegant,
                         performant solutions.
                     </p>
 
                     <div className="hero-tags">
-                        <span className="tag">Full-Stack Developer</span>
+                        <span className="tag">MERN Full-Stack Developer</span>
+                        <span className="tag">Next.js & n8n Automation</span>
                         <span className="tag">AI Orchestrator</span>
-                        <span className="tag">Native iOS Builder</span>
                         <span className="tag">EdTech Founder</span>
                     </div>
 
