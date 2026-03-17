@@ -24,9 +24,18 @@ const Experience = () => {
                             justifyContent: 'center',
                             fontSize: '1.6rem',
                             color: 'var(--color-white)',
-                            marginBottom: '1rem'
+                            marginBottom: '1rem',
+                            overflow: 'hidden'
                         }}>
-                            <FaBriefcase />
+                            {job.company.includes('CatCatchCode') ? (
+                                <img 
+                                    src="https://avatars.githubusercontent.com/u/115077886?v=4" 
+                                    alt="CatCatchCode" 
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                                />
+                            ) : (
+                                <FaBriefcase />
+                            )}
                         </div>
 
                         <div className="tl-content">

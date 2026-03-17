@@ -5,6 +5,25 @@
     gap: 2rem;
     padding-top: 3rem;
 
+    .about-image-mobile {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .about-profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid var(--color-secondary);
+        object-fit: cover;
+        box-shadow: 0 0 20px rgba(255, 56, 106, 0.3);
+      }
+
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+
     @media (min-width: 1024px) {
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
