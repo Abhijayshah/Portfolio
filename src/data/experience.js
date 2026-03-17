@@ -32,9 +32,10 @@ export const experience = [
             "Social Impact: Built a scalable system for content distribution focused on promoting social ethics, vegetarianism, and meditation through modern digital storytelling."
         ],
         links: {
-            website: "https://satsangvachan.org",
-            github: "https://github.com/SatsangVachan",
-            youtube: "https://youtube.com/@SatsangSeva"
+            website: "https://satsangvachansatsangseva.online/",
+            youtube: "https://www.youtube.com/channel/UCsAvsUouGa6g1VSNGhyfO5w",
+            instagram: "https://www.instagram.com/satsang_vachan_satsang_seva/",
+            github: "https://github.com/SatsangVachan"
         }
     }
 ];

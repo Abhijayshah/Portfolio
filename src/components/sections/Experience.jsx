@@ -1,6 +1,6 @@
 import React from 'react';
 import { experience } from '../../data/experience';
-import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { FiCheckCircle } from 'react-icons/fi';
 import Card from '../ui/Card';
 
@@ -58,6 +58,11 @@ const Experience = () => {
                                     {job.links.youtube && (
                                         <a href={job.links.youtube} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-secondary)', display: 'flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none' }}>
                                             <FaYoutube /> YouTube
+                                        </a>
+                                    )}
+                                    {job.links.instagram && (
+                                        <a href={job.links.instagram} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-secondary)', display: 'flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none' }}>
+                                            <FaInstagram /> Instagram
                                         </a>
                                     )}
                                 </div>
