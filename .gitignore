@@ -19,7 +19,7 @@ pnpm-debug.log*
 coverage/
 *.tgz
 *.tar.gz
-details-for-developer.md
+
 mydetails.md
 !README.md
 *.md
