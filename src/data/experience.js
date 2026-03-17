@@ -1,17 +1,22 @@
 export const experience = [
     {
-        role: "Founder & Technical Lead",
-        company: "CatCatchCode (EdTech Initiative)",
+        role: "Co-Founder & Technical Lead",
+        company: "CatCatchCode",
         duration: "July 2025 – Present",
         type: "Remote",
-        description: "CatCatchCode is a mission-driven EdTech platform designed to bridge the gap between academic curriculum and industry expectations for engineering students.",
+        description: "Leading a cross-functional team of 5 to bridge the gap between academic theory and industry-grade software delivery through high-impact engineering and mentorship.",
         achievements: [
-            "Platform Architecture: Engineered a structured learning ecosystem using a MERN stack roadmap, transitioning from static GitHub Pages to a dynamic platform for centralized resource delivery.",
-            "Technical Mentorship: Led a team of 5 contributors to produce 100+ technical learning videos and documentation, directly impacting the learning curve of over 100+ students.",
-            "Curriculum Engineering: Designed high-velocity 'Learn-n-Copy' roadmaps for Data Structures & Algorithms (C++) and Full-Stack Development, focusing on high-yield skills required for Tier-1 placements.",
-            "AI-Enhanced Learning: Developed a 'Logic-First' methodology, teaching students how to integrate AI tools (ChatGPT/Gemini) into their debugging and system design workflows effectively.",
-            "Community Growth: Managed cross-platform content strategy across LinkedIn, YouTube, and GitHub, fostering an early-stage community of student developers."
-        ]
+            "Full-Stack Engineering: Architected and deployed 20+ production-grade web and mobile applications using MERN, Next.js, and React Native, managing the full SDLC from requirement gathering to cloud deployment (Vercel/Render/Play Store).",
+            "AI & Automation: Engineered custom AI Agent integrations and n8n automation workflows for small businesses, reducing manual operational tasks by 40% through LLM-driven process optimization.",
+            "Infrastructure & DevOps: Orchestrated the launch of 10+ Android applications to the Google Play Store, managing cloud persistence (Supabase/MongoDB Atlas), environment security (JWT/RBAC), and CI/CD pipelines.",
+            "Technical Communication: Produced 100+ deep-dive engineering modules on AI and System Design for a community of 100+ developers, translating complex architectural concepts into scalable learning roadmaps.",
+            "Product Growth: Scaled the platform's digital presence to 50k+ organic engagements, leveraging data-driven content strategy to expand community reach."
+        ],
+        links: {
+            website: "https://catcatchcode.online",
+            github: "https://github.com/CatCatchCode",
+            youtube: "https://youtube.com/@CatCatchCode"
+        }
     },
     {
         role: "Co-Founder & Project Lead",

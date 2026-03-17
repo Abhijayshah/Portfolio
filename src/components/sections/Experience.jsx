@@ -1,6 +1,6 @@
 import React from 'react';
 import { experience } from '../../data/experience';
-import { FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
+import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube } from 'react-icons/fa';
 import { FiCheckCircle } from 'react-icons/fi';
 import Card from '../ui/Card';
 
@@ -37,6 +37,31 @@ const Experience = () => {
                             <h5>
                                 {job.role} <span>{job.company}</span>
                             </h5>
+
+                            {job.links && (
+                                <div className="tl-links" style={{
+                                    display: 'flex',
+                                    gap: '1rem',
+                                    marginBottom: '1rem',
+                                    fontSize: '0.9rem'
+                                }}>
+                                    {job.links.website && (
+                                        <a href={job.links.website} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-secondary)', display: 'flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none' }}>
+                                            <FaGlobe /> Website
+                                        </a>
+                                    )}
+                                    {job.links.github && (
+                                        <a href={job.links.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-secondary)', display: 'flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none' }}>
+                                            <FaGithub /> GitHub
+                                        </a>
+                                    )}
+                                    {job.links.youtube && (
+                                        <a href={job.links.youtube} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-secondary)', display: 'flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none' }}>
+                                            <FaYoutube /> YouTube
+                                        </a>
+                                    )}
+                                </div>
+                            )}
 
                             <p>
                                 {job.description}

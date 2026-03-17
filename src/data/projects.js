@@ -1,9 +1,26 @@
 export const projects = [
     {
         id: 1,
+        name: "ProjectHub",
+        category: "Full-Stack AI",
+        tag: "MERN + LLM",
+        techStack: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "JWT", "OpenRouter AI", "Cloudinary"],
+        description: "Enterprise-grade MERN system for academic project management with integrated LLM report analysis.",
+        features: [
+            "LLM-powered analyzer using OpenRouter GPT-3.5-turbo for automated academic scoring",
+            "Role-based authentication (JWT + bcrypt) with separate Student/Faculty workflows",
+            "Multi-cloud deployment pipeline across Vercel, Render, MongoDB Atlas, and Cloudinary"
+        ],
+        image: "/img/port1.jpg",
+        liveLink: "https://projecthub-flame.vercel.app",
+        videoLink: "",
+        githubLink: "https://github.com/Abhijayshah/projecthub"
+    },
+    {
+        id: 2,
         name: "English-Tutor-AI",
-        category: "AI Systems",
-        tag: "AI-Powered",
+        category: "AI/LLM",
+        tag: "Voice AI",
         techStack: ["Node.js", "Socket.io", "OpenRouter", "GPT-4", "Claude"],
         description: "Multi-model orchestration with real-time voice feedback for language learning.",
         features: [
@@ -11,16 +28,16 @@ export const projects = [
             "Real-time audio visualization",
             "Specialized tutoring personalities"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/port2.jpg",
         liveLink: "https://github.com/Abhijayshah/English-Tutor-AI",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/English-Tutor-AI"
     },
     {
-        id: 2,
+        id: 3,
         name: "Scholara",
-        category: "Full-Stack",
-        tag: "Workflow Auto",
+        category: "MERN Stack",
+        tag: "Academic",
         techStack: ["MERN", "JWT", "Multer", "PDF-Lib"],
         description: "Automated academic workflow with an approval pipeline and AI report analysis.",
         features: [
@@ -28,16 +45,16 @@ export const projects = [
             "AI-driven PDF analysis",
             "Report compliance verification"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/port3.jpg",
         liveLink: "https://school-system-murex.vercel.app/",
         videoLink: "https://school-system-murex.vercel.app/",
         githubLink: "https://github.com/Abhijayshah/School-System"
     },
     {
-        id: 3,
+        id: 4,
         name: "Rately",
-        category: "Full-Stack",
-        tag: "SaaS Platform",
+        category: "MERN Stack",
+        tag: "Multi-Tenant",
         techStack: ["React", "TypeScript", "MongoDB", "Google OAuth"],
         description: "Multi-tenant store rating platform with separate dashboards and AI support.",
         features: [
@@ -45,16 +62,16 @@ export const projects = [
             "Google OAuth integration",
             "Integrated AI support chatbot"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/port4.jpg",
         liveLink: "https://rately-ten.vercel.app/",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/Rately"
     },
     {
-        id: 4,
+        id: 5,
         name: "Premium iOS App",
-        category: "Mobile",
-        tag: "Native iOS",
+        category: "iOS Native",
+        tag: "CoreData",
         techStack: ["SwiftUI", "CoreData", "Supabase", "FaceID"],
         description: "Offline-first productivity app with biometric security and real-time sync.",
         features: [
@@ -62,16 +79,16 @@ export const projects = [
             "FaceID security",
             "Real-time cloud sync"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/port5.jpg",
         liveLink: "https://github.com/Abhijayshah/ios-todo-app",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/ios-todo-app"
     },
     {
-        id: 5,
+        id: 6,
         name: "MultiSync Player",
-        category: "Web Tools",
-        tag: "Performance",
+        category: "Dev Tools",
+        tag: "Engine",
         techStack: ["Vanilla JS", "Media API", "HTML5"],
         description: "High-performance engine playing 9 synchronized video streams at 10x speed.",
         features: [
@@ -79,16 +96,16 @@ export const projects = [
             "10x playback speed",
             "File corruption detection"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/port6.jpg",
         liveLink: "https://abhijayshah.github.io/MultiSync-VideoPlayer/",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/MultiSync-VideoPlayer"
     },
     {
-        id: 6,
+        id: 7,
         name: "Political Tracker",
-        category: "AI Systems",
-        tag: "Data Viz",
+        category: "AI/LLM",
+        tag: "Analytics",
         techStack: ["Gemini AI", "React", "Node.js", "Chart.js"],
         description: "Tracks minister promises using AI to classify RSS feeds and visualize trends.",
         features: [
@@ -96,16 +113,16 @@ export const projects = [
             "RSS feed integration",
             "Interactive performance dashboards"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/port7.jpg",
         liveLink: "",
         videoLink: "https://github.com/Abhijayshah/political_promise_tracking_dashboard.git",
         githubLink: "https://github.com/Abhijayshah/political_promise_tracking_dashboard.git"
     },
     {
-        id: 7,
+        id: 8,
         name: "Ticket Support",
-        category: "Full-Stack",
-        tag: "Enterprise",
+        category: "MERN Stack",
+        tag: "Redux/Auth",
         techStack: ["Node.js", "Redux Toolkit", "RTK Query", "MongoDB"],
         description: "Enterprise support system with real-time state sync and JWT security.",
         features: [
@@ -113,16 +130,16 @@ export const projects = [
             "Custom JWT blacklisting",
             "MongoDB TTL indexing"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/blog1.jpg",
         liveLink: "https://github.com/Abhijayshah/Ticket_Support_System.git",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/Ticket_Support_System.git"
     },
     {
-        id: 8,
+        id: 9,
         name: "AI Support Bot",
-        category: "AI Systems",
-        tag: "Backend AI",
+        category: "AI/LLM",
+        tag: "FastAPI",
         techStack: ["FastAPI", "SQLite", "Gemini", "Python"],
         description: "High-performance async bot with session persistence and human escalation.",
         features: [
@@ -130,16 +147,16 @@ export const projects = [
             "Session persistence",
             "Automated human escalation"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/blog2.jpg",
         liveLink: "https://github.com/Abhijayshah/ai-customer-support-bot-2.git",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/ai-customer-support-bot-2.git"
     },
     {
-        id: 9,
+        id: 10,
         name: "VoiceGPT",
-        category: "AI Systems",
-        tag: "Voice AI",
+        category: "AI/LLM",
+        tag: "Real-time",
         techStack: ["Web Speech API", "Socket.io", "JavaScript"],
         description: "Interactive voice chatbot with real-time STT/TTS processing.",
         features: [
@@ -147,16 +164,16 @@ export const projects = [
             "Lightweight architecture",
             "Interactive voice interface"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/blog3.jpg",
         liveLink: "https://github.com/Abhijayshah/Simple-AI-ChatBot/blob/main/web-speech-ai/README.md",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/Simple-AI-ChatBot/blob/main/web-speech-ai/README.md"
     },
     {
-        id: 10,
+        id: 11,
         name: "Comfortable Stay",
-        category: "Web Tools",
-        tag: "MVP",
+        category: "Dev Tools",
+        tag: "Hospitality",
         techStack: ["Chart.js", "GitHub Actions", "LocalStorage"],
         description: "Hyper-local hospitality platform with QR-based deep linking.",
         features: [
@@ -164,16 +181,16 @@ export const projects = [
             "LocalStorage persistence",
             "Zero-cost static deployment"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/hero.png",
         liveLink: "https://abhijayshah.github.io/ComForTable_And_Stay/",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/ComForTable_And_Stay"
     },
     {
-        id: 11,
+        id: 12,
         name: "ParkEasy",
-        category: "Full-Stack",
-        tag: "Service",
+        category: "MERN Stack",
+        tag: "Booking",
         techStack: ["MERN", "Context API", "React"],
         description: "Smart parking reservation system with real-time slot tracking.",
         features: [
@@ -181,15 +198,15 @@ export const projects = [
             "Digital ticket generation",
             "Real-time availability"
         ],
-        image: "/img/project-placeholder.svg",
+        image: "/img/hero1.png",
         liveLink: "https://park-easy-tndl.vercel.app/",
         videoLink: "",
         githubLink: "https://github.com/Abhijayshah/parkEasy"
     },
     {
-        id: 12,
+        id: 13,
         name: "TravelExplore",
-        category: "Web Tools",
+        category: "Dev Tools",
         tag: "Frontend",
         techStack: ["HTML5", "CSS3", "JavaScript", "AOS"],
         description: "Multi-page tourism portal with polished user journey and animations.",

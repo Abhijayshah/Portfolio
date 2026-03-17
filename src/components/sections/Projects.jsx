@@ -5,18 +5,17 @@ import { FiExternalLink, FiGithub, FiPlayCircle } from 'react-icons/fi';
 function Projects() {
     const [activeFilter, setActiveFilter] = useState('All');
 
-    const categories = ['All', 'AI Systems', 'Full-Stack', 'Mobile', 'Web Tools'];
+    const categories = ['All', 'Full-Stack AI', 'AI/LLM', 'MERN Stack', 'iOS Native', 'Dev Tools'];
 
     const filteredProjects = activeFilter === 'All'
         ? projects
-        : projects.filter(p => p.category.includes(activeFilter));
+        : projects.filter(p => p.category.toLowerCase().includes(activeFilter.toLowerCase()) || (p.tag && p.tag.toLowerCase().includes(activeFilter.toLowerCase())));
 
     return (
         <div className="projects-container">
             <h2 className="section-title">Featured Projects</h2>
             <p className="section-subtitle">
-                A showcase of 12+ production-ready applications spanning AI orchestration,
-                full-stack development, and native iOS engineering.
+                A showcase of 13+ production-ready applications spanning Full-Stack AI, MERN development, and iOS engineering.
             </p>
 
             {/* Filter Tabs */}
@@ -53,7 +52,10 @@ function Projects() {
 
                         {/* Content */}
                         <div className="project-content">
-                            <span className="project-category">{project.category}</span>
+                            <div className="project-header">
+                                <span className="project-category">{project.category}</span>
+                                {project.tag && <span className="project-tag-badge">{project.tag}</span>}
+                            </div>
                             <h3 className="project-title">{project.name}</h3>
                             <p className="project-description">{project.description}</p>
 
