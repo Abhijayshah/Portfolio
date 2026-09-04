@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
                     <div className="hero-img-wrapper">
                         <Image
                             src="/img/abhijay_photo_chat.webp"
-                            alt="Abhijay Kumar Shah"
+                            alt="Abhijay Kumar Shah - Full-Stack Software Engineer & Applied AI Developer"
                             width={450}
                             height={450}
                             priority

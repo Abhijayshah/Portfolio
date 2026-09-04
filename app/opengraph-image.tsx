@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Abhijay Kumar Shah | Full-Stack Developer & AI Engineer';
+export const alt = 'Abhijay Kumar Shah | Full-Stack Software Engineer & Applied AI Developer';
 export const size = {
     width: 1200,
     height: 630,
@@ -63,7 +63,7 @@ export default async function Image() {
                         gap: '16px',
                     }}
                 >
-                    {['MERN Stack', 'Next.js', 'AI Systems', 'Native iOS'].map((tag) => (
+                    {['MERN & Next.js', 'Healthcare Queue Systems', 'Applied AI', 'Competitive Programming'].map((tag) => (
                         <div
                             key={tag}
                             style={{
