@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import {
     FiChevronLeft,
     FiChevronRight,
@@ -12,6 +12,13 @@ import {
     FiX,
 } from 'react-icons/fi';
 
+import fullstackImg from '@/public/img/carousel/fullstack.jpg';
+import healthcareImg from '@/public/img/carousel/healthcare.jpg';
+import retailPosImg from '@/public/img/carousel/retail_pos.jpg';
+import voiceAiImg from '@/public/img/carousel/voice_ai.jpg';
+import authorBooksImg from '@/public/img/carousel/author_books.jpg';
+import videoSlideImg from '@/public/img/carousel/video_slide.jpg';
+
 export interface CarouselSlide {
     id: string;
     tag: string;
@@ -19,7 +26,7 @@ export interface CarouselSlide {
     title: string;
     titleHighlight?: string;
     description: string;
-    image: string;
+    image: StaticImageData | string;
     imageAlt: string;
     primaryCta: {
         label: string;
@@ -47,7 +54,7 @@ export const carouselSlides: CarouselSlide[] = [
         titleHighlight: 'Resilient, Scalable',
         description:
             'Engineering end-to-end production web applications, distributed APIs, and resilient cloud systems with Next.js, React, Node.js, and TypeScript. Delivering sub-second response times and scalable cloud infrastructure.',
-        image: '/img/carousel/fullstack.jpg',
+        image: fullstackImg,
         imageAlt: 'Full-Stack Software Engineering and Cloud Systems',
         primaryCta: { label: 'View My Work', href: '#projects' },
         secondaryCta: { label: 'Hire for a Project', href: '#contact' },
@@ -64,7 +71,7 @@ export const carouselSlides: CarouselSlide[] = [
         titleHighlight: 'Real-Time Telemetry',
         description:
             'Architected production healthcare platforms (Dr Heal) with real-time PostgreSQL & Supabase queue sync, cutting OPD patient wait times by 65% across multi-department clinics.',
-        image: '/img/carousel/healthcare.jpg',
+        image: healthcareImg,
         imageAlt: 'Healthcare Queue Architecture and Hospital Management Systems',
         primaryCta: { label: 'View My Work', href: '#projects' },
         secondaryCta: { label: 'Hire for a Project', href: '#contact' },
@@ -79,7 +86,7 @@ export const carouselSlides: CarouselSlide[] = [
         titleHighlight: 'Offline-Resilient',
         description:
             'Built high-throughput point-of-sale architectures supporting multi-register offline caching, instant thermal barcode scanning, and automated distributed ledger synchronization.',
-        image: '/img/carousel/retail_pos.jpg',
+        image: retailPosImg,
         imageAlt: 'Retail Point of Sale and Commerce Billing Systems',
         primaryCta: { label: 'View My Work', href: '#projects' },
         secondaryCta: { label: 'Hire for a Project', href: '#contact' },
@@ -94,7 +101,7 @@ export const carouselSlides: CarouselSlide[] = [
         titleHighlight: 'Autonomous Voice Agents',
         description:
             'Pioneering bidirectional real-time audio agents, semantic search embeddings, and complex LLM tool-calling pipelines using the latest Gemini Live API and intelligent agents.',
-        image: '/img/carousel/voice_ai.jpg',
+        image: voiceAiImg,
         imageAlt: 'Voice AI and LLM Orchestration Architectures',
         primaryCta: { label: 'View My Work', href: '#projects' },
         secondaryCta: { label: 'Hire for a Project', href: '#contact' },
@@ -109,7 +116,7 @@ export const carouselSlides: CarouselSlide[] = [
         titleHighlight: 'Published Author',
         description:
             'Author of 2 technical books published on Amazon KDP demystifying scalable systems engineering, clean software design patterns, and developer productivity.',
-        image: '/img/carousel/author_books.jpg',
+        image: authorBooksImg,
         imageAlt: 'Published Technical Books on Amazon KDP',
         primaryCta: { label: 'View My Work', href: '#publications' },
         secondaryCta: { label: 'Hire for a Project', href: '#contact' },
@@ -124,7 +131,7 @@ export const carouselSlides: CarouselSlide[] = [
         titleHighlight: 'Architecture Demos',
         description:
             'Watch in-depth engineering breakdowns: native iOS app builds with SwiftUI + Supabase + AI, full-stack EdTech platforms, and live queue telemetry on my YouTube engineering channel.',
-        image: '/img/carousel/video_slide.jpg',
+        image: videoSlideImg,
         imageAlt: 'Engineering Architecture Video Walkthroughs and Live App Demos',
         primaryCta: { label: 'Watch Video Walkthrough', href: '#youtube' },
         secondaryCta: { label: 'Explore YouTube Channel', href: 'https://www.youtube.com/@abhijayshah.online' },
