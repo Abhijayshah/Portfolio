@@ -23,7 +23,6 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { id: 'home', icon: FiHome, label: 'Home' },
     { id: 'about', icon: FiUser, label: 'About' },
     { id: 'experience', icon: FiBriefcase, label: 'Experience' },
     { id: 'skills', icon: FiCode, label: 'Skills' },
@@ -36,10 +35,10 @@ const navItems: NavItem[] = [
     { id: 'contact', icon: FiMail, label: 'Contact' },
 ];
 
-const primaryMobileIds = ['home', 'about', 'projects', 'youtube'];
+const primaryMobileIds = ['about', 'skills', 'projects', 'youtube'];
 
 export const MobileNav: React.FC = () => {
-    const [activeSection, setActiveSection] = useState('home');
+    const [activeSection, setActiveSection] = useState('about');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {

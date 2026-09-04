@@ -7,6 +7,8 @@
 @import './components/theme-toggle';
 @import './components/cards';
 @import './components/buttons';
+@import './components/profile-card';
+@import './components/top-nav';
 
 // Sections
 @import './sections/hero';
@@ -35,7 +37,7 @@
 html {
     font-size: 16px; // Base font size
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
 
     @media (min-width: 768px) {
         font-size: 17px;
@@ -51,7 +53,7 @@ body {
     background: var(--color-primary);
     color: var(--color-white);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -67,18 +69,194 @@ body {
     padding-bottom: 80px; // Space for bottom nav on mobile
 
     @media (min-width: 1024px) {
-        padding-bottom: 0;
+        padding-bottom: 2rem;
     }
 }
 
-.main-content {
+// ==========================================
+// PORTFOLIO BENTO / vCARD TWO-COLUMN LAYOUT
+// ==========================================
+
+.portfolio-layout {
     width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden;
-    transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+
+    @media (min-width: 768px) {
+        padding: 1.75rem 1.5rem 80px;
+    }
 
     @media (min-width: 1024px) {
-        padding-left: var(--sidebar-width);
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 2.25rem 2rem 3rem;
+        gap: 2rem;
+    }
+
+    @media (min-width: 1280px) {
+        padding: 2.5rem 2.5rem 3.5rem;
+        gap: 2.5rem;
+    }
+}
+
+.portfolio-sidebar-col {
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        width: 320px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 1.5rem;
+        align-self: flex-start;
+        z-index: 30;
+    }
+
+    @media (min-width: 1280px) {
+        width: 335px;
+    }
+}
+
+.portfolio-content-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.portfolio-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+// Main Section Card matching BENTO UI
+.section-card {
+    width: 100%;
+    background: #18181b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.25rem 1.5rem;
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+    scroll-margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    @media (min-width: 640px) {
+        padding: 2.5rem 2rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 2.75rem 2.5rem;
+        border-radius: 24px;
+    }
+
+    .section-title {
+        text-align: left;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.75rem;
+        padding-bottom: 0.75rem;
+        color: var(--color-white);
+        position: relative;
+
+        @media (min-width: 768px) {
+            font-size: 2.3rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: none;
+            width: 44px;
+            height: 4.5px;
+            background: var(--color-secondary);
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(217, 20, 72, 0.4);
+        }
+    }
+
+    .section-subtitle {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    // Hero section integration inside Section Card
+    .hero-container {
+        min-height: auto;
+        padding: 0;
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            grid-template-columns: none;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .hero-image {
+            display: none; // Profile photo is prominently showcased in the sticky left ProfileCard!
+        }
+
+        .hero-title {
+            font-size: 2.25rem;
+            line-height: 1.25;
+            text-align: left;
+
+            @media (min-width: 768px) {
+                font-size: 2.6rem;
+            }
+        }
+
+        .hero-subtitle {
+            text-align: left;
+            max-width: 100%;
+            font-size: 1.05rem;
+        }
+
+        .hero-tags {
+            justify-content: flex-start;
+        }
+
+        .btn-group {
+            justify-content: flex-start;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+// Light Mode Overrides for Section Card
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .section-card {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+
+        .section-title {
+            color: #0f172a;
+
+            &::after {
+                background: #d91448;
+                box-shadow: 0 0 8px rgba(217, 20, 72, 0.3);
+            }
+        }
+
+        .section-subtitle {
+            color: #475569;
+        }
     }
 }
 

@@ -1,0 +1,108 @@
+// ==========================================
+// TOP HORIZONTAL PILL NAVIGATION (Right Side)
+// ==========================================
+
+.top-nav-bar {
+    position: sticky;
+    top: 1rem;
+    z-index: 40;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.top-nav-container {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.55rem;
+    background: rgba(24, 24, 27, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.top-nav-tab {
+    position: relative;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 0.5rem 0.85rem;
+    color: var(--color-grey-1);
+    font-size: 0.86rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        color: var(--color-white);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+        color: var(--color-white);
+        background: #25252b;
+        border-color: rgba(255, 255, 255, 0.08);
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+        .tab-active-indicator {
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 2.5px;
+            border-radius: 2px;
+            background: var(--color-secondary);
+            box-shadow: 0 0 8px var(--color-secondary);
+        }
+    }
+}
+
+// ==========================================
+// LIGHT MODE
+// ==========================================
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .top-nav-container {
+        background: rgba(241, 245, 249, 0.94);
+        border-color: #cbd5e1;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .top-nav-tab {
+        color: #475569;
+
+        &:hover {
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        &.active {
+            color: #0f172a;
+            background: #ffffff;
+            border-color: #cbd5e1;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+
+            .tab-active-indicator {
+                background: #d91448;
+                box-shadow: 0 0 8px rgba(217, 20, 72, 0.4);
+            }
+        }
+    }
+}

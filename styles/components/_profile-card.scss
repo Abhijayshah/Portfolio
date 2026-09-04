@@ -1,0 +1,345 @@
+// ==========================================
+// PROFILE CARD (Sticky Left Sidebar)
+// ==========================================
+
+.profile-card {
+    width: 100%;
+    background: #18181b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.75rem 1.25rem;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+
+    @media (min-width: 1024px) {
+        max-height: calc(100vh - 3rem);
+        overflow-y: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+// Photo with Glowing Outline
+.profile-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.1rem;
+}
+
+.profile-photo-frame {
+    position: relative;
+    width: 135px;
+    height: 135px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid rgba(217, 20, 72, 0.7);
+    box-shadow: 0 0 24px rgba(217, 20, 72, 0.3);
+    background: #121214;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 32px rgba(217, 20, 72, 0.5);
+    }
+}
+
+.profile-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+// Name
+.profile-name {
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.2px;
+}
+
+// Bio Badge Pill
+.profile-bio-badge {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 0.65rem 0.85rem;
+    margin-bottom: 0.5rem;
+
+    p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+        text-align: center;
+        color: var(--color-grey-1);
+        margin: 0;
+    }
+}
+
+// Divider Line
+.profile-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 1.1rem 0;
+}
+
+// Email Block
+.profile-contact-block {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.25rem 0.25rem;
+
+    .contact-icon-box {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(217, 20, 72, 0.15);
+        color: var(--color-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        border: 1px solid rgba(217, 20, 72, 0.25);
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-width: 0;
+
+        .contact-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--color-grey-2);
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-value {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--color-white);
+            text-decoration: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: var(--color-secondary);
+            }
+        }
+    }
+}
+
+// Sections: CONNECT & CODING
+.profile-section {
+    .profile-section-title {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--color-grey-2);
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+}
+
+// Social Media Icons
+.profile-social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+
+    .social-icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--color-grey-1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.22s ease;
+
+        &:hover {
+            background: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 20, 72, 0.35);
+        }
+    }
+}
+
+// Coding Profile Grid
+.profile-coding-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+
+    .coding-profile-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        padding: 0.65rem 0.25rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        text-decoration: none;
+        transition: all 0.22s ease;
+
+        .coding-tile-icon-box {
+            font-size: 1.35rem;
+            color: var(--color-grey-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.22s ease;
+        }
+
+        .coding-tile-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--color-grey-2);
+            text-align: center;
+            transition: color 0.22s ease;
+        }
+
+        &:hover {
+            background: rgba(217, 20, 72, 0.1);
+            border-color: rgba(217, 20, 72, 0.3);
+            transform: translateY(-2px);
+
+            .coding-tile-icon-box {
+                color: var(--color-secondary);
+                transform: scale(1.12);
+            }
+
+            .coding-tile-label {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+
+// ==========================================
+// LIGHT MODE CALIBRATION
+// ==========================================
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .profile-card {
+        background: #f8fafc;
+        border-color: #cbd5e1;
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+
+        .profile-photo-frame {
+            background: #ffffff;
+            border-color: rgba(217, 20, 72, 0.85);
+            box-shadow: 0 0 20px rgba(217, 20, 72, 0.25);
+        }
+
+        .profile-name {
+            color: #0f172a;
+        }
+
+        .profile-bio-badge {
+            background: #ffffff;
+            border-color: #e2e8f0;
+
+            p {
+                color: #334155;
+            }
+        }
+
+        .profile-divider {
+            border-top-color: #e2e8f0;
+        }
+
+        .profile-contact-block {
+            .contact-icon-box {
+                background: rgba(217, 20, 72, 0.1);
+                border-color: rgba(217, 20, 72, 0.2);
+                color: #d91448;
+            }
+
+            .contact-details {
+                .contact-label {
+                    color: #64748b;
+                }
+
+                .contact-value {
+                    color: #0f172a;
+
+                    &:hover {
+                        color: #d91448;
+                    }
+                }
+            }
+        }
+
+        .profile-section {
+            .profile-section-title {
+                color: #64748b;
+            }
+        }
+
+        .profile-social-icons {
+            .social-icon-btn {
+                background: #ffffff;
+                border-color: #cbd5e1;
+                color: #475569;
+
+                &:hover {
+                    background: #d91448;
+                    border-color: #d91448;
+                    color: #ffffff;
+                }
+            }
+        }
+
+        .profile-coding-grid {
+            .coding-profile-tile {
+                background: #ffffff;
+                border-color: #e2e8f0;
+
+                .coding-tile-icon-box {
+                    color: #475569;
+                }
+
+                .coding-tile-label {
+                    color: #64748b;
+                }
+
+                &:hover {
+                    background: rgba(217, 20, 72, 0.08);
+                    border-color: #d91448;
+
+                    .coding-tile-icon-box {
+                        color: #d91448;
+                    }
+
+                    .coding-tile-label {
+                        color: #0f172a;
+                    }
+                }
+            }
+        }
+    }
+}

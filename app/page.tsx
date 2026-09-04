@@ -1,7 +1,8 @@
 import React from 'react';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import MobileNav from '@/components/layout/MobileNav';
-import DesktopNav from '@/components/layout/DesktopNav';
+import ProfileCard from '@/components/layout/ProfileCard';
+import TopNav from '@/components/layout/TopNav';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Experience from '@/components/sections/Experience';
@@ -21,105 +22,103 @@ export const dynamic = 'force-static';
 export default function Home() {
     return (
         <div className="app">
-            {/* Theme Toggle (visible on all screens) */}
+            {/* Theme Toggle (floating top-right) */}
             <ThemeToggle />
 
-            {/* Mobile Navigation (visible only on mobile/tablet) */}
+            {/* Mobile Navigation (bottom bar on mobile phones) */}
             <MobileNav />
 
-            {/* Desktop Navigation (visible only on desktop) */}
-            <DesktopNav />
+            {/* BENTO / vCard Two-Column Layout */}
+            <div className="portfolio-layout">
+                {/* Left Column: Sticky Profile Card */}
+                <div className="portfolio-sidebar-col">
+                    <ProfileCard />
+                </div>
 
-            {/* Main Content */}
-            <main className="main-content">
-                <section id="home" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Hero />
-                        </MotionSection>
-                    </div>
-                </section>
+                {/* Right Column: Top Navigation Bar + Main Section Cards */}
+                <main className="portfolio-content-col" id="main-content">
+                    {/* Top Horizontal Navigation Pill Bar */}
+                    <TopNav />
 
-                <section id="about" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <About />
-                        </MotionSection>
-                    </div>
-                </section>
+                    <div className="portfolio-sections">
+                        {/* Invisible anchor target for backwards compatibility */}
+                        <div id="home" style={{ position: 'relative', top: '-60px' }} />
 
-                <section id="experience" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Experience />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* About / Overview Section */}
+                        <section id="about" className="section-card">
+                            <MotionSection>
+                                <Hero />
+                                <div style={{ marginTop: '2.5rem', paddingTop: '2.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                                    <About />
+                                </div>
+                            </MotionSection>
+                        </section>
 
-                <section id="skills" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Skills />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Experience Section */}
+                        <section id="experience" className="section-card">
+                            <MotionSection>
+                                <Experience />
+                            </MotionSection>
+                        </section>
 
-                <section id="projects" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Projects />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Skills Section */}
+                        <section id="skills" className="section-card">
+                            <MotionSection>
+                                <Skills />
+                            </MotionSection>
+                        </section>
 
-                <section id="education" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Education />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Projects Section */}
+                        <section id="projects" className="section-card">
+                            <MotionSection>
+                                <Projects />
+                            </MotionSection>
+                        </section>
 
-                <section id="certificates" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Certificates />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Education Section */}
+                        <section id="education" className="section-card">
+                            <MotionSection>
+                                <Education />
+                            </MotionSection>
+                        </section>
 
-                <section id="publications" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Publications />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Certificates Section */}
+                        <section id="certificates" className="section-card">
+                            <MotionSection>
+                                <Certificates />
+                            </MotionSection>
+                        </section>
 
-                <section id="achievements" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Achievements />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Publications Section */}
+                        <section id="publications" className="section-card">
+                            <MotionSection>
+                                <Publications />
+                            </MotionSection>
+                        </section>
 
-                <section id="youtube" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <YouTube />
-                        </MotionSection>
-                    </div>
-                </section>
+                        {/* Achievements Section */}
+                        <section id="achievements" className="section-card">
+                            <MotionSection>
+                                <Achievements />
+                            </MotionSection>
+                        </section>
 
-                <section id="contact" className="section">
-                    <div className="section-container">
-                        <MotionSection>
-                            <Contact />
-                        </MotionSection>
+                        {/* YouTube Section */}
+                        <section id="youtube" className="section-card">
+                            <MotionSection>
+                                <YouTube />
+                            </MotionSection>
+                        </section>
+
+                        {/* Contact Section */}
+                        <section id="contact" className="section-card">
+                            <MotionSection>
+                                <Contact />
+                            </MotionSection>
+                        </section>
                     </div>
-                </section>
-            </main>
+                </main>
+            </div>
         </div>
     );
 }
