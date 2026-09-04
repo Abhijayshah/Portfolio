@@ -54,3 +54,29 @@
         gap: 3rem;
     }
 }
+
+// Light Mode Overrides
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .project-filters {
+        .filter-btn {
+            background: #ffffff;
+            border-color: #cbd5e1;
+            color: #334155;
+
+            &:hover {
+                border-color: #d91448;
+                color: #d91448;
+            }
+
+            &.active {
+                background: #d91448;
+                border-color: #d91448;
+                color: #ffffff;
+                box-shadow: 0 4px 12px rgba(217, 20, 72, 0.3);
+            }
+        }
+    }
+}

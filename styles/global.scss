@@ -9,6 +9,7 @@
 @import './components/buttons';
 @import './components/profile-card';
 @import './components/top-nav';
+@import './components/latest-rail';
 
 // Sections
 @import './sections/hero';
@@ -43,6 +44,11 @@ html {
         font-size: 17px;
     }
 
+    @media (min-width: 1024px) {
+        height: 100vh;
+        overflow: hidden; // Zero page-level scrolling on desktop
+    }
+
     @media (min-width: 1440px) {
         font-size: 18px;
     }
@@ -56,6 +62,11 @@ body {
     overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    @media (min-width: 1024px) {
+        height: 100vh;
+        overflow: hidden; // Zero page-level scrolling on desktop
+    }
 }
 
 // ==========================================
@@ -69,69 +80,119 @@ body {
     padding-bottom: 80px; // Space for bottom nav on mobile
 
     @media (min-width: 1024px) {
-        padding-bottom: 2rem;
+        height: 100vh;
+        overflow: hidden;
+        padding-bottom: 0;
     }
 }
 
 // ==========================================
-// PORTFOLIO BENTO / vCARD TWO-COLUMN LAYOUT
+// THREE-COLUMN APPLICATION SHELL (Desktop)
 // ==========================================
 
-.portfolio-layout {
+.app-shell {
     width: 100%;
-    max-width: 1440px;
     margin: 0 auto;
-    padding: 1.25rem 1rem 80px;
+    padding: 1rem 0.75rem 80px;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.5rem;
 
     @media (min-width: 768px) {
-        padding: 1.75rem 1.5rem 80px;
+        padding: 1.25rem 1rem 80px;
     }
 
     @media (min-width: 1024px) {
         flex-direction: row;
-        align-items: flex-start;
-        padding: 2.25rem 2rem 3rem;
-        gap: 2rem;
+        align-items: stretch;
+        height: 100vh;
+        overflow: hidden;
+        padding: 1rem 1.25rem;
+        gap: 1.25rem;
     }
 
     @media (min-width: 1280px) {
-        padding: 2.5rem 2.5rem 3.5rem;
-        gap: 2.5rem;
+        padding: 1.25rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 1440px) {
+        max-width: 1680px;
+        padding: 1.25rem 1.75rem;
+        gap: 1.75rem;
     }
 }
 
-.portfolio-sidebar-col {
+// Left Column: Fixed Profile Sidebar (Never Scrolls)
+.app-sidebar-left {
     width: 100%;
 
     @media (min-width: 1024px) {
-        width: 320px;
+        width: 285px;
         flex-shrink: 0;
-        position: sticky;
-        top: 1.5rem;
-        align-self: flex-start;
-        z-index: 30;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     @media (min-width: 1280px) {
-        width: 335px;
+        width: 295px;
     }
 }
 
-.portfolio-content-col {
+// Center Column: Independent Scroll Container (THE ONLY SCROLLING COLUMN)
+.app-content-center {
     flex: 1;
     min-width: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 1024px) {
+        height: 100%;
+        overflow-y: auto; // Only this column scrolls!
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        padding-right: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 4px;
+        }
+    }
+}
+
+// Right Column: Fixed Latest Activity Rail
+.app-rail-right {
     width: 100%;
+
+    @media (min-width: 1024px) {
+        width: 275px;
+        flex-shrink: 0;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (min-width: 1280px) {
+        width: 285px;
+    }
 }
 
 .portfolio-sections {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.75rem;
     width: 100%;
 }
 
@@ -256,6 +317,14 @@ body.light-mode,
 
         .section-subtitle {
             color: #475569;
+        }
+    }
+
+    .app-content-center {
+        scrollbar-color: rgba(15, 23, 42, 0.18) transparent;
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(15, 23, 42, 0.18);
         }
     }
 }

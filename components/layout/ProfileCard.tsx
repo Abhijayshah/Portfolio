@@ -62,15 +62,15 @@ export const ProfileCard: React.FC = () => {
     };
 
     return (
-        <aside className="profile-card" aria-label="Abhijay Kumar Shah Profile Card">
+        <aside className="profile-card" aria-label="Abhijay Kumar Shah Profile">
             {/* Top Photo with Glowing Rounded Frame */}
             <div className="profile-photo-wrapper">
                 <div className="profile-photo-frame">
                     <Image
                         src="/img/abhijay_photo_chat.webp"
                         alt="Abhijay Kumar Shah"
-                        width={140}
-                        height={140}
+                        width={110}
+                        height={110}
                         priority
                         className="profile-photo-img"
                     />
@@ -80,15 +80,17 @@ export const ProfileCard: React.FC = () => {
             {/* Name */}
             <h2 className="profile-name">Abhijay Kumar Shah</h2>
 
-            {/* Short Bio Description Pill */}
+            {/* One-Line Role Tagline */}
+            <p className="profile-tagline">
+                Full-Stack Software Engineer & Applied AI Developer
+            </p>
+
+            {/* Short Bio Blurb */}
             <div className="profile-bio-badge">
                 <p>
-                    Full-Stack Software Engineer & Applied AI Developer building scalable healthcare, queue systems & production web apps.
+                    Engineering scalable healthcare queue systems, MERN platforms, and production AI workflows with measurable outcomes.
                 </p>
             </div>
-
-            {/* Divider */}
-            <hr className="profile-divider" />
 
             {/* Email Contact Block */}
             <div className="profile-contact-block">
@@ -107,10 +109,7 @@ export const ProfileCard: React.FC = () => {
                 </div>
             </div>
 
-            {/* Divider */}
-            <hr className="profile-divider" />
-
-            {/* CONNECT Section (Social Media) */}
+            {/* CONNECT Row (Social Media) */}
             <div className="profile-section">
                 <h3 className="profile-section-title">CONNECT</h3>
                 <div className="profile-social-icons">
@@ -130,12 +129,9 @@ export const ProfileCard: React.FC = () => {
                 </div>
             </div>
 
-            {/* Divider */}
-            <hr className="profile-divider" />
-
-            {/* CODING Section */}
+            {/* CODING Row (Coding Platforms) */}
             <div className="profile-section">
-                <h3 className="profile-section-title">CODING</h3>
+                <h3 className="profile-section-title">CODING PROFILES</h3>
                 <div className="profile-coding-grid">
                     {socialLinks.codingProfiles.map((item) => (
                         <a

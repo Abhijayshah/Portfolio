@@ -3,6 +3,7 @@ import ThemeToggle from '@/components/ui/ThemeToggle';
 import MobileNav from '@/components/layout/MobileNav';
 import ProfileCard from '@/components/layout/ProfileCard';
 import TopNav from '@/components/layout/TopNav';
+import LatestRail from '@/components/layout/LatestRail';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Experience from '@/components/sections/Experience';
@@ -28,17 +29,17 @@ export default function Home() {
             {/* Mobile Navigation (bottom bar on mobile phones) */}
             <MobileNav />
 
-            {/* BENTO / vCard Two-Column Layout */}
-            <div className="portfolio-layout">
-                {/* Left Column: Sticky Profile Card */}
-                <div className="portfolio-sidebar-col">
+            {/* Three-Column Application Shell */}
+            <div className="app-shell">
+                {/* Left Fixed Column: Profile Sidebar */}
+                <aside className="app-sidebar-left">
                     <ProfileCard />
-                </div>
+                </aside>
 
-                {/* Right Column: Top Navigation Bar + Main Section Cards */}
-                <main className="portfolio-content-col" id="main-content">
-                    {/* Top Horizontal Navigation Pill Bar */}
-                    <TopNav />
+                {/* Center Column: Independent Scroll Container */}
+                <main className="app-content-center" id="center-scroll-container">
+                    {/* Sticky Top Horizontal Navigation Pill Bar */}
+                    <TopNav scrollContainerId="center-scroll-container" />
 
                     <div className="portfolio-sections">
                         {/* Invisible anchor target for backwards compatibility */}
@@ -118,6 +119,11 @@ export default function Home() {
                         </section>
                     </div>
                 </main>
+
+                {/* Right Fixed Column: Latest Activity Rail */}
+                <aside className="app-rail-right">
+                    <LatestRail />
+                </aside>
             </div>
         </div>
     );

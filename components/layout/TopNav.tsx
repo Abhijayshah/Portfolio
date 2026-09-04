@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface NavTab {
     id: string;
@@ -20,22 +20,35 @@ const navTabs: NavTab[] = [
     { id: 'contact', label: 'Contact' },
 ];
 
-export const TopNav: React.FC = () => {
+interface TopNavProps {
+    scrollContainerId?: string;
+}
+
+export const TopNav: React.FC<TopNavProps> = ({ scrollContainerId = 'center-scroll-container' }) => {
     const [activeSection, setActiveSection] = useState('about');
 
     useEffect(() => {
+        const container = document.getElementById(scrollContainerId);
+
+        // Options: if container exists (desktop app shell), use it as root; otherwise fallback to window viewport
         const observerOptions: IntersectionObserverInit = {
-            root: null,
-            rootMargin: '-20% 0px -40% 0px',
-            threshold: 0.15,
+            root: container || null,
+            rootMargin: '-60px 0px -45% 0px',
+            threshold: [0, 0.1, 0.25],
         };
 
         const observerCallback: IntersectionObserverCallback = (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    setActiveSection(entry.target.id);
+            // Find intersecting entries
+            const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+            if (visibleEntries.length > 0) {
+                // Pick the entry with the highest intersection ratio or top position
+                const bestEntry = visibleEntries.reduce((prev, curr) =>
+                    curr.intersectionRatio > prev.intersectionRatio ? curr : prev
+                );
+                if (bestEntry.target.id) {
+                    setActiveSection(bestEntry.target.id);
                 }
-            });
+            }
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
@@ -45,16 +58,43 @@ export const TopNav: React.FC = () => {
             if (el) observer.observe(el);
         });
 
-        return () => observer.disconnect();
-    }, []);
+        // Add scroll listener for edge cases (top and bottom of container)
+        const handleScroll = () => {
+            if (!container) return;
+            // If near bottom of container, set to contact
+            if (container.scrollHeight - container.scrollTop - container.clientHeight < 40) {
+                setActiveSection('contact');
+            } else if (container.scrollTop < 80) {
+                setActiveSection('about');
+            }
+        };
 
-    const handleTabClick = (sectionId: string) => {
-        setActiveSection(sectionId);
-        const el = document.getElementById(sectionId);
-        if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
+        if (container) {
+            container.addEventListener('scroll', handleScroll, { passive: true });
         }
-    };
+
+        return () => {
+            observer.disconnect();
+            if (container) {
+                container.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, [scrollContainerId]);
+
+    const handleTabClick = useCallback((sectionId: string) => {
+        setActiveSection(sectionId);
+        const container = document.getElementById(scrollContainerId);
+        const target = document.getElementById(sectionId);
+
+        if (container && target) {
+            const containerRect = container.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+            const scrollOffset = targetRect.top - containerRect.top + container.scrollTop - 64;
+            container.scrollTo({ top: Math.max(0, scrollOffset), behavior: 'smooth' });
+        } else if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [scrollContainerId]);
 
     return (
         <nav className="top-nav-bar" aria-label="Section Navigation">

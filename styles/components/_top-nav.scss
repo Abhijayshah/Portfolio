@@ -1,12 +1,13 @@
 // ==========================================
-// TOP HORIZONTAL PILL NAVIGATION (Right Side)
+// TOP HORIZONTAL PILL NAVIGATION (Center Column)
 // ==========================================
 
 .top-nav-bar {
     position: sticky;
-    top: 1rem;
-    z-index: 40;
-    margin-bottom: 1.5rem;
+    top: 0;
+    z-index: 50;
+    padding-top: 0.25rem;
+    padding-bottom: 1.25rem;
     width: 100%;
 }
 
@@ -15,12 +16,12 @@
     align-items: center;
     gap: 0.35rem;
     padding: 0.45rem 0.55rem;
-    background: rgba(24, 24, 27, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(24, 24, 27, 0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     overflow-x: auto;
     scrollbar-width: none;
 
@@ -34,9 +35,9 @@
     background: transparent;
     border: 1px solid transparent;
     border-radius: 10px;
-    padding: 0.5rem 0.85rem;
+    padding: 0.48rem 0.82rem;
     color: var(--color-grey-1);
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     font-weight: 500;
     cursor: pointer;
     white-space: nowrap;
