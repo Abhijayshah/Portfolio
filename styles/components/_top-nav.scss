@@ -16,12 +16,12 @@
     align-items: center;
     gap: 0.35rem;
     padding: 0.45rem 0.55rem;
-    background: rgba(24, 24, 27, 0.94);
+    background: rgba(24, 24, 27, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
     overflow-x: auto;
     scrollbar-width: none;
 
@@ -81,9 +81,9 @@ body.light-mode,
 [data-theme="light"],
 .light-mode {
     .top-nav-container {
-        background: rgba(241, 245, 249, 0.94);
+        background: rgba(248, 250, 252, 0.98);
         border-color: #cbd5e1;
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
 
     .top-nav-tab {
