@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { CloudyBackground } from '@/components/ui/CloudyBackground';
 import '@/styles/global.scss';
 
 const poppins = Poppins({
@@ -213,6 +214,7 @@ export default function RootLayout({
             </head>
             <body>
                 <ThemeProvider>
+                    <CloudyBackground />
                     {children}
                 </ThemeProvider>
             </body>

@@ -22,14 +22,14 @@
 
         .publication-card {
             background: var(--color-black);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: var(--card-border);
             border-radius: 14px;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--card-glow-shadow);
 
             .book-spine-accent {
                 position: absolute;
@@ -42,8 +42,8 @@
 
             &:hover {
                 transform: translateY(-4px);
-                border-color: var(--color-secondary);
-                box-shadow: 0 12px 28px rgba(255, 56, 106, 0.18);
+                border-color: var(--card-border-hover);
+                box-shadow: var(--card-glow-shadow-hover);
             }
 
             .book-card-inner {
@@ -183,8 +183,8 @@ body.light-mode,
 
         .publications-grid .publication-card {
             background: #ffffff;
-            border-color: #e2e8f0;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            border: var(--card-border);
+            box-shadow: var(--card-glow-shadow);
 
             .book-card-inner {
                 .book-title {
@@ -192,7 +192,7 @@ body.light-mode,
                 }
 
                 .book-subtitle {
-                    color: #d91448;
+                    color: #e11d48;
                 }
 
                 .book-description {
@@ -200,8 +200,8 @@ body.light-mode,
                 }
 
                 .book-highlights {
-                    background: #f8fafc;
-                    border-color: #e2e8f0;
+                    background: #fff8fa;
+                    border: 1px solid rgba(244, 63, 94, 0.16);
 
                     .highlights-title {
                         color: #0f172a;
@@ -211,15 +211,15 @@ body.light-mode,
                         color: #334155;
 
                         .highlight-icon {
-                            color: #d91448;
+                            color: #e11d48;
                         }
                     }
                 }
 
                 .platform-badge {
-                    background: rgba(217, 119, 6, 0.1);
-                    color: #b45309;
-                    border-color: rgba(217, 119, 6, 0.3);
+                    background: rgba(225, 29, 72, 0.1);
+                    color: #be123c;
+                    border: 1px solid rgba(225, 29, 72, 0.25);
                 }
 
                 .published-date {
@@ -228,8 +228,8 @@ body.light-mode,
             }
 
             &:hover {
-                border-color: #d91448;
-                box-shadow: 0 16px 36px rgba(217, 20, 72, 0.12);
+                border-color: var(--card-border-hover);
+                box-shadow: var(--card-glow-shadow-hover);
             }
         }
     }

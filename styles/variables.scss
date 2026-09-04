@@ -3,26 +3,36 @@
 // ==========================================
 
 :root {
-    // COLORS - Dark Theme (Default)
-    --color-primary: #0f0f0f; // Main background (very dark)
-    --color-secondary: #ff386a; // Accent color (pink/red)
-    --color-black: #1a1a1a; // Card background
+    // COLORS - Dark Theme (Deep Dark Pink / Midnight Plum Background)
+    --color-primary: #140714; // Main background (luxurious dark pink/plum)
+    --color-secondary: #ff3366; // Accent color (vibrant hot pink)
+    --color-secondary-hover: #e11d48;
+    --color-secondary-light: rgba(255, 51, 102, 0.16);
+    --color-black: #1e0c1e; // Card background (dark obsidian plum)
+    --color-black-surface: #271027; // Elevated surface
     --color-white: #ffffff; // Primary text
-    --color-grey-0: #f8f8f8;
-    --color-grey-1: #b8b8b8; // Secondary text
-    --color-grey-2: #6c7983;
-    --color-grey-3: #3e3e3e;
-    --color-grey-4: #2a2a2a;
+    --color-grey-0: #faf5f9;
+    --color-grey-1: #d8b6d4; // Secondary text (soft mauve-tinted grey)
+    --color-grey-2: #a885a4;
+    --color-grey-3: #52224e;
+    --color-grey-4: #361434;
+    --color-grey-5: #220b22;
+
+    // CARD GLOWING SHADOWS (Dark Theme)
+    --card-glow-shadow: 0 14px 38px rgba(0, 0, 0, 0.65), 0 0 28px rgba(255, 51, 102, 0.22);
+    --card-glow-shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.82), 0 0 40px rgba(255, 51, 102, 0.42);
+    --card-border: 1px solid rgba(255, 51, 102, 0.22);
+    --card-border-hover: 1px solid rgba(255, 51, 102, 0.6);
 
     // GRADIENTS
-    --gradient-primary: linear-gradient(135deg, #ff386a 0%, #ff8a00 100%);
-    --gradient-card: linear-gradient(135deg, rgba(255, 56, 106, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+    --gradient-primary: linear-gradient(135deg, #ff3366 0%, #d91448 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 51, 102, 0.12) 0%, rgba(30, 12, 30, 0.95) 100%);
 
     // SHADOWS
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 50px rgba(255, 56, 106, 0.2);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 50px rgba(255, 51, 102, 0.25);
 
     // SPACING (Mobile-first)
     --spacing-xs: 0.5rem; // 8px
@@ -62,18 +72,29 @@ body.nav-collapsed {
     --sidebar-width: var(--desktop-nav-width-collapsed);
 }
 
-// Light Theme Variables (WCAG AA Compliant)
+// Light Theme Variables (Light Pink Background + Dark Pink Accents)
 [data-theme="light"],
 .light-mode {
-    --color-primary: #ffffff;
-    --color-secondary: #d91448; // Contrast 5.44:1 against #ffffff (WCAG AA Pass)
-    --color-black: #f5f5f5;
-    --color-white: #0f0f0f;
-    --color-grey-1: #55626d; // Contrast 5.8:1 against #ffffff (WCAG AA Pass)
-    --color-grey-2: #75828d;
-    --color-grey-3: #e0e0e0;
-    --color-grey-4: #f0f0f0;
-    --color-grey-5: #f8fafc;
-    --gradient-primary: linear-gradient(135deg, #d91448 0%, #e05e00 100%);
-    --gradient-card: linear-gradient(135deg, rgba(217, 20, 72, 0.08) 0%, rgba(245, 245, 245, 0.95) 100%);
+    --color-primary: #fff0f4; // Main background (soft airy light pink)
+    --color-secondary: #e11d48; // Accent color (vibrant dark pink/rose)
+    --color-secondary-hover: #be123c;
+    --color-secondary-light: #ffe4e9;
+    --color-black: #ffffff; // Card background (pure white card with pink glow)
+    --color-black-surface: #fff8fa;
+    --color-white: #0f172a; // Primary text (bold charcoal/dark)
+    --color-grey-0: #ffffff;
+    --color-grey-1: #475569; // Secondary text (slate)
+    --color-grey-2: #64748b;
+    --color-grey-3: #fecdd3; // Soft pink borders
+    --color-grey-4: #ffe4e6;
+    --color-grey-5: #fff1f4;
+
+    // CARD GLOWING SHADOWS (Light Theme)
+    --card-glow-shadow: 0 10px 30px rgba(225, 29, 72, 0.10), 0 0 22px rgba(251, 113, 133, 0.10);
+    --card-glow-shadow-hover: 0 16px 42px rgba(225, 29, 72, 0.20), 0 0 32px rgba(244, 63, 94, 0.18);
+    --card-border: 1px solid rgba(244, 63, 94, 0.20);
+    --card-border-hover: 1px solid rgba(225, 29, 72, 0.52);
+
+    --gradient-primary: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 240, 245, 0.85) 0%, #ffffff 100%);
 }

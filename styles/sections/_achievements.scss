@@ -22,7 +22,7 @@
 
         .achievement-card {
             background: var(--color-black);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: var(--card-border);
             border-radius: 14px;
             padding: 1.25rem 1.2rem;
             display: flex;
@@ -30,7 +30,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--card-glow-shadow);
 
             &::before {
                 content: '';
@@ -46,8 +46,8 @@
 
             &:hover {
                 transform: translateY(-4px);
-                border-color: var(--color-secondary);
-                box-shadow: 0 12px 28px rgba(255, 56, 106, 0.2);
+                border-color: var(--card-border-hover);
+                box-shadow: var(--card-glow-shadow-hover);
 
                 &::before {
                     height: 5px;
@@ -160,20 +160,20 @@ body.light-mode,
 
         .achievements-grid .achievement-card {
             background: #ffffff;
-            border-color: #e2e8f0;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            border: var(--card-border);
+            box-shadow: var(--card-glow-shadow);
 
             .achievement-top {
                 .achievement-icon-box {
-                    background: rgba(217, 20, 72, 0.08);
-                    color: #d91448;
-                    border-color: rgba(217, 20, 72, 0.2);
+                    background: #ffe4e9;
+                    color: #e11d48;
+                    border-color: rgba(225, 29, 72, 0.25);
                 }
 
                 .achievement-badge {
-                    background: rgba(22, 163, 74, 0.1);
-                    color: #15803d;
-                    border-color: rgba(22, 163, 74, 0.25);
+                    background: rgba(225, 29, 72, 0.08);
+                    color: #be123c;
+                    border-color: rgba(225, 29, 72, 0.2);
                 }
             }
 
@@ -182,7 +182,7 @@ body.light-mode,
                     color: #64748b;
 
                     .org-name {
-                        color: #d91448;
+                        color: #e11d48;
                     }
                 }
 
@@ -196,8 +196,8 @@ body.light-mode,
             }
 
             &:hover {
-                border-color: #d91448;
-                box-shadow: 0 16px 36px rgba(217, 20, 72, 0.12);
+                border-color: var(--card-border-hover);
+                box-shadow: var(--card-glow-shadow-hover);
             }
         }
     }

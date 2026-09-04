@@ -14,9 +14,10 @@
         display: flex;
         flex-direction: column;
         gap: 0.65rem;
-        background: var(--color-grey-5);
-        border: 1px solid var(--color-grey-5);
+        background: var(--color-black);
+        border: var(--card-border);
         border-radius: 12px;
+        box-shadow: var(--card-glow-shadow);
         transition: all 0.3s ease-in-out;
         position: relative;
         overflow: hidden;
@@ -28,15 +29,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 56, 106, 0.05), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255, 51, 102, 0.08), transparent);
             transform: translateX(-100%);
             transition: 0.5s;
         }
 
         &:hover {
             transform: translateY(-3px);
-            border-color: var(--color-secondary);
-            box-shadow: var(--shadow-md);
+            border-color: var(--card-border-hover);
+            box-shadow: var(--card-glow-shadow-hover);
 
             &::before {
                 transform: translateX(100%);
@@ -94,5 +95,35 @@
         cursor: pointer;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease;
+    }
+}
+
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .certificates-grid {
+        .certificate-item {
+            background: #ffffff;
+            border: var(--card-border);
+            box-shadow: var(--card-glow-shadow);
+
+            &:hover {
+                border-color: var(--card-border-hover);
+                box-shadow: var(--card-glow-shadow-hover);
+            }
+
+            h4 {
+                color: #0f172a;
+            }
+
+            .cert-date {
+                color: #e11d48;
+            }
+
+            p {
+                color: #475569;
+            }
+        }
     }
 }

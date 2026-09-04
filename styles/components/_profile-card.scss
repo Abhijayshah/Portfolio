@@ -4,14 +4,19 @@
 
 .profile-card {
     width: 100%;
-    background: #18181b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-black);
+    border: var(--card-border);
     border-radius: 20px;
     padding: 1.15rem 0.85rem;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    box-shadow: var(--card-glow-shadow);
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: var(--card-glow-shadow-hover);
+        border-color: var(--color-secondary);
+    }
 
     @media (min-width: 1024px) {
         max-height: calc(100vh - 2rem);
@@ -253,14 +258,19 @@ body.light-mode,
 [data-theme="light"],
 .light-mode {
     .profile-card {
-        background: #f8fafc;
-        border-color: #cbd5e1;
-        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+        background: #ffffff;
+        border: var(--card-border);
+        box-shadow: var(--card-glow-shadow);
+
+        &:hover {
+            box-shadow: var(--card-glow-shadow-hover);
+            border-color: var(--color-secondary);
+        }
 
         .profile-photo-frame {
             background: #ffffff;
-            border-color: rgba(217, 20, 72, 0.85);
-            box-shadow: 0 0 20px rgba(217, 20, 72, 0.22);
+            border-color: var(--color-secondary);
+            box-shadow: 0 0 20px rgba(225, 29, 72, 0.32);
         }
 
         .profile-name {

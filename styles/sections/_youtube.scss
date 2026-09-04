@@ -46,9 +46,10 @@
             gap: 1.2rem;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--color-black);
+            border: var(--card-border);
             border-radius: 16px;
+            box-shadow: var(--card-glow-shadow);
             padding: 1.2rem 2rem;
             max-width: 850px;
             margin: 0 auto;
@@ -263,14 +264,14 @@
         .youtube-video-card {
             flex: 0 0 300px;
             background: var(--color-black);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: var(--card-border);
             border-radius: 16px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--card-glow-shadow);
 
             @media (min-width: 768px) {
                 flex: 0 0 340px;
@@ -278,8 +279,8 @@
 
             &:hover {
                 transform: translateY(-8px);
-                border-color: var(--color-secondary);
-                box-shadow: 0 16px 36px rgba(255, 56, 106, 0.22);
+                border-color: var(--card-border-hover);
+                box-shadow: var(--card-glow-shadow-hover);
 
                 .video-thumbnail-img {
                     transform: scale(1.06);
@@ -562,8 +563,8 @@ body.light-mode,
 
             .youtube-subscribe-bar {
                 background: #ffffff;
-                border-color: #e2e8f0;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+                border: var(--card-border);
+                box-shadow: var(--card-glow-shadow);
 
                 .subscribe-info .channel-text {
                     .channel-title {
@@ -623,8 +624,8 @@ body.light-mode,
 
             .youtube-video-card {
                 background: #ffffff;
-                border-color: #e2e8f0;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+                border: var(--card-border);
+                box-shadow: var(--card-glow-shadow);
 
                 .video-card-body {
                     .video-title {
@@ -636,24 +637,24 @@ body.light-mode,
                     }
 
                     .video-card-footer {
-                        border-top-color: #f1f5f9;
+                        border-top-color: #ffe4e9;
 
                         .video-channel-tag {
                             color: #64748b;
                         }
 
                         .watch-external-link {
-                            color: #d91448;
+                            color: #e11d48;
                         }
                     }
                 }
 
                 &:hover {
-                    border-color: #d91448;
-                    box-shadow: 0 16px 36px rgba(217, 20, 72, 0.15);
+                    border-color: var(--card-border-hover);
+                    box-shadow: var(--card-glow-shadow-hover);
 
                     .video-title {
-                        color: #d91448;
+                        color: #e11d48;
                     }
                 }
             }

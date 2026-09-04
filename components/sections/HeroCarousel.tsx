@@ -334,13 +334,22 @@ export const HeroCarousel: React.FC = () => {
                 <div className="carousel-content" key={activeSlideData.id}>
                     {/* Badge */}
                     <div className="carousel-badge">
-                        <span className="badge-glow-dot" aria-hidden="true" />
+                        <span className="badge-sparkle-icon" aria-hidden="true">✨</span>
                         <span className="badge-label">{activeSlideData.categoryBadge}</span>
+                        <span className="badge-sparkle-icon" aria-hidden="true">✨</span>
                     </div>
 
                     {/* Headline */}
                     <h1 className="carousel-headline">
-                        {activeSlideData.title}
+                        {activeSlideData.titleHighlight && activeSlideData.title.includes(activeSlideData.titleHighlight) ? (
+                            <>
+                                {activeSlideData.title.split(activeSlideData.titleHighlight)[0]}
+                                <span className="headline-highlight">{activeSlideData.titleHighlight}</span>
+                                {activeSlideData.title.split(activeSlideData.titleHighlight)[1] || ''}
+                            </>
+                        ) : (
+                            activeSlideData.title
+                        )}
                     </h1>
 
                     {/* Description */}

@@ -8,15 +8,15 @@
     left: 0;
     right: 0;
     height: 70px;
-    background: rgba(20, 20, 22, 0.96);
+    background: rgba(24, 10, 24, 0.96);
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 51, 102, 0.18);
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0 0.5rem;
     z-index: var(--z-fixed);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5), 0 0 16px rgba(255, 51, 102, 0.15);
 
     @media (min-width: 1024px) {
         display: none; // Hide on desktop
@@ -188,13 +188,13 @@
     left: 0;
     height: 100vh;
     width: var(--sidebar-width);
-    background: #141416;
+    background: #180a18;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255, 51, 102, 0.15);
     display: none;
     z-index: var(--z-fixed);
-    box-shadow: 4px 0 28px rgba(0, 0, 0, 0.35);
+    box-shadow: 4px 0 28px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 51, 102, 0.08);
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: none;
@@ -495,9 +495,9 @@ body.light-mode,
 [data-theme="light"],
 .light-mode {
     .desktop-nav {
-        background: #f1f5f9;
-        border-right: 1px solid #cbd5e1;
-        box-shadow: 4px 0 24px rgba(15, 23, 42, 0.07);
+        background: rgba(255, 240, 244, 0.96);
+        border-right: 1px solid rgba(244, 63, 94, 0.18);
+        box-shadow: 4px 0 24px rgba(225, 29, 72, 0.08);
 
         .desktop-nav-header {
             border-bottom: 1px solid #e2e8f0;
@@ -604,9 +604,9 @@ body.light-mode,
     }
 
     .mobile-nav {
-        background: rgba(241, 245, 249, 0.96);
-        border-top: 1px solid #cbd5e1;
-        box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08);
+        background: rgba(255, 240, 244, 0.96);
+        border-top: 1px solid rgba(244, 63, 94, 0.2);
+        box-shadow: 0 -4px 20px rgba(225, 29, 72, 0.08);
 
         .mobile-nav-btn {
             color: #475569;
@@ -619,8 +619,8 @@ body.light-mode,
     }
 
     .mobile-menu {
-        background: #f8fafc;
-        border: 1px solid #cbd5e1;
+        background: #fff0f4;
+        border: 1px solid rgba(244, 63, 94, 0.2);
 
         .mobile-menu-header {
             border-bottom: 1px solid #e2e8f0;

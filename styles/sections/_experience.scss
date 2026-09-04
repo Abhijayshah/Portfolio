@@ -32,7 +32,9 @@
             }
 
             .tl-content {
-                background-color: var(--color-grey-5);
+                background-color: var(--color-black);
+                border: var(--card-border);
+                box-shadow: var(--card-glow-shadow);
                 padding: 1.15rem 1.2rem;
                 border-radius: 12px;
                 position: relative;
@@ -40,7 +42,8 @@
 
                 &:hover {
                     transform: translateY(-3px);
-                    box-shadow: var(--shadow-md);
+                    border: var(--card-border-hover);
+                    box-shadow: var(--card-glow-shadow-hover);
                 }
 
                 .tl-duration {
@@ -106,6 +109,49 @@
                             min-width: 16px;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .experience-content {
+        .timeline-container .timeline-item {
+            border-left-color: rgba(244, 63, 94, 0.25);
+
+            .tl-content {
+                background-color: #ffffff;
+                border: var(--card-border);
+                box-shadow: var(--card-glow-shadow);
+
+                &:hover {
+                    border-color: var(--card-border-hover);
+                    box-shadow: var(--card-glow-shadow-hover);
+                }
+
+                .tl-duration {
+                    background-color: #ffe4e9;
+                    color: #e11d48;
+                }
+
+                h5 {
+                    color: #e11d48;
+
+                    span {
+                        color: #475569;
+                    }
+                }
+
+                p {
+                    color: #334155;
+                }
+
+                ul li {
+                    color: #475569;
                 }
             }
         }

@@ -251,11 +251,10 @@
       display: flex;
       flex-direction: column;
       padding: 1.35rem 1.25rem;
-      background: rgba(18, 22, 32, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--color-black);
+      border: var(--card-border);
       border-radius: 16px;
+      box-shadow: var(--card-glow-shadow);
       transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: default;
 
@@ -265,9 +264,9 @@
       }
 
       &:hover {
-        border-color: rgba(217, 20, 72, 0.45);
+        border-color: var(--card-border-hover);
         transform: translateY(-4px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 15px rgba(217, 20, 72, 0.15);
+        box-shadow: var(--card-glow-shadow-hover);
       }
 
       .system-card-topbar {
@@ -404,19 +403,19 @@ body.light-mode,
 
       .system-ship-card {
         background: #ffffff;
-        border-color: #e2e8f0;
-        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+        border: var(--card-border);
+        box-shadow: var(--card-glow-shadow);
 
         &:hover {
-          border-color: #d91448;
-          box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+          border-color: var(--card-border-hover);
+          box-shadow: var(--card-glow-shadow-hover);
         }
 
         .system-card-topbar {
           .system-badge {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
-            color: #475569;
+            background: #ffe4e9;
+            border-color: rgba(225, 29, 72, 0.25);
+            color: #9f1239;
           }
         }
 
@@ -430,18 +429,18 @@ body.light-mode,
 
         .system-tech-row {
           .system-tech-pill {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
-            color: #334155;
+            background: #fff0f4;
+            border-color: rgba(244, 63, 94, 0.2);
+            color: #475569;
           }
         }
 
         .system-card-footer {
-          border-top-color: #e2e8f0;
-          color: #16a34a;
+          border-top-color: #ffe4e9;
+          color: #e11d48;
 
           .metric-icon {
-            color: #16a34a;
+            color: #e11d48;
           }
         }
       }
