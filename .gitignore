@@ -1,7 +1,8 @@
 node_modules/
 dist/
-.vite/
-.cache/
+.next/
+*.tsbuildinfo
+out/
 *.log
 npm-debug.log*
 yarn-debug.log*

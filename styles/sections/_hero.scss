@@ -1,0 +1,308 @@
+// styles/sections/_hero.scss
+
+.hero-container {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0 2rem;
+    overflow-x: hidden;
+
+    @media (min-width: 768px) {
+        padding: 2.5rem 0;
+        min-height: 100vh;
+    }
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        gap: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr; // Text takes more space on desktop
+        gap: 4rem;
+        align-items: center;
+    }
+
+    @media (min-width: 1280px) {
+        gap: 5rem;
+    }
+}
+
+// Mobile-first: Image comes on top on mobile phones and tablets (< 1024px)
+.hero-image {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: 1024px) {
+        order: 2;
+        justify-content: flex-end;
+        margin-bottom: 0;
+    }
+}
+
+.hero-img-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+
+    @media (min-width: 480px) {
+        max-width: 250px;
+    }
+
+    @media (min-width: 768px) {
+        max-width: 320px;
+    }
+
+    @media (min-width: 1024px) {
+        max-width: 450px;
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 16px 45px rgba(255, 56, 106, 0.32), 0 0 20px rgba(255, 138, 0, 0.15);
+        border: 3px solid rgba(255, 56, 106, 0.28);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    // Floating decorations (scaled cleanly for mobile to prevent overflow)
+    .hero-decoration {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-secondary), #ff8a00);
+        opacity: 0.15;
+        z-index: -1;
+        animation: float 6s ease-in-out infinite;
+
+        &--1 {
+            width: 90px;
+            height: 90px;
+            top: -15px;
+            right: -15px;
+            animation-delay: 0s;
+
+            @media (min-width: 768px) {
+                width: 160px;
+                height: 160px;
+                top: -35px;
+                right: -35px;
+            }
+
+            @media (min-width: 1024px) {
+                width: 200px;
+                height: 200px;
+                top: -50px;
+                right: -50px;
+            }
+        }
+
+        &--2 {
+            width: 65px;
+            height: 65px;
+            bottom: -10px;
+            left: -10px;
+            animation-delay: 3s;
+
+            @media (min-width: 768px) {
+                width: 120px;
+                height: 120px;
+                bottom: -25px;
+                left: -25px;
+            }
+
+            @media (min-width: 1024px) {
+                width: 150px;
+                height: 150px;
+                bottom: -40px;
+                left: -40px;
+            }
+        }
+    }
+}
+
+// Text comes second on mobile (< 1024px), centered for balanced aesthetic
+.hero-text {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    @media (min-width: 1024px) {
+        order: 1;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.hero-title {
+    font-size: clamp(1.75rem, 6vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.22;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.015em;
+
+    @media (min-width: 768px) {
+        margin-bottom: 1.25rem;
+    }
+
+    @media (min-width: 1024px) {
+        margin-bottom: 1.5rem;
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, var(--color-secondary) 0%, #ff8a00 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+}
+
+.hero-subtitle {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    line-height: 1.68;
+    color: var(--color-grey-1);
+    margin-bottom: 1.5rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+        margin-bottom: 2rem;
+        line-height: 1.8;
+    }
+
+    @media (min-width: 1024px) {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 700px;
+    }
+}
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+    max-width: 680px;
+
+    @media (min-width: 768px) {
+        gap: 0.65rem;
+        margin-bottom: 2.25rem;
+    }
+
+    @media (min-width: 1024px) {
+        justify-content: flex-start;
+        gap: 0.8rem;
+        margin-bottom: 2.5rem;
+        max-width: none;
+    }
+
+    .tag {
+        padding: 0.45rem 0.95rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        font-size: 0.82rem;
+        color: var(--color-grey-1);
+        transition: all 0.3s ease;
+
+        @media (min-width: 768px) {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        &:hover {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Hero CTA buttons (responsive stack on mobile, inline on tablet/desktop)
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: auto;
+        max-width: none;
+        margin: 0 auto;
+
+        .btn {
+            width: auto;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        justify-content: flex-start;
+        margin: 0;
+    }
+}
+
+// Light Mode Support for Hero Section
+[data-theme="light"],
+.light-mode {
+    .hero-img-wrapper {
+        img {
+            border-color: rgba(217, 20, 72, 0.25);
+            box-shadow: 0 16px 40px rgba(217, 20, 72, 0.18), 0 0 20px rgba(224, 94, 0, 0.12);
+        }
+    }
+
+    .hero-tags .tag {
+        background: #f1f5f9;
+        border-color: #cbd5e1;
+        color: #334155;
+
+        &:hover {
+            border-color: var(--color-secondary);
+            color: var(--color-secondary);
+            background: rgba(217, 20, 72, 0.06);
+        }
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}

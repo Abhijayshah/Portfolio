@@ -1,0 +1,355 @@
+.contact-content {
+    .contact-content-con {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+        gap: 3rem;
+
+        @media (min-width: 1024px) {
+            flex-direction: row;
+        }
+
+        .left-contact {
+            flex: 2;
+
+            h4 {
+                margin-top: 1rem;
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+
+                @media (min-width: 768px) {
+                    font-size: 2rem;
+                }
+            }
+
+            p {
+                margin: 1rem 0;
+                line-height: 1.8;
+                color: var(--color-grey-1);
+            }
+
+            .contact-info {
+                margin-top: 2rem;
+
+                .contact-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 1.5rem;
+
+                    .icon {
+                        display: grid;
+                        grid-template-columns: 40px 1fr;
+                        align-items: center;
+
+                        span:first-child {
+                            font-size: 1.3rem;
+                            color: var(--color-secondary);
+                        }
+
+                        span:last-child {
+                            font-size: 1rem;
+                            color: var(--color-grey-1);
+                        }
+                    }
+                }
+            }
+
+            .contact-profiles-group {
+                margin-top: 1.8rem;
+
+                .profiles-group-title {
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1.2px;
+                    color: var(--color-grey-1);
+                    margin-bottom: 0.9rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    .group-title-icon {
+                        font-size: 1rem;
+                    }
+                }
+
+                .contact-pill-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.75rem;
+
+                    .contact-profile-pill {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.55rem;
+                        padding: 0.55rem 1rem;
+                        min-height: 44px;
+                        background: rgba(255, 255, 255, 0.05);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 30px;
+                        color: var(--color-white);
+                        text-decoration: none;
+                        font-size: 0.88rem;
+                        font-weight: 600;
+                        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+                        .pill-icon {
+                            display: flex;
+                            align-items: center;
+                            font-size: 1.15rem;
+                            transition: transform 0.2s ease;
+                        }
+
+                        .pill-label {
+                            white-space: nowrap;
+                        }
+
+                        .pill-arrow {
+                            font-size: 0.75rem;
+                            opacity: 0.45;
+                            transition: transform 0.2s ease, opacity 0.2s ease;
+                        }
+
+                        &:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+
+                            .pill-icon {
+                                transform: scale(1.15);
+                            }
+
+                            .pill-arrow {
+                                opacity: 1;
+                                transform: translateX(2px) translateY(-2px);
+                            }
+                        }
+
+                        // Specific platform brand hover accents
+                        &.pill-linkedin:hover {
+                            background: rgba(10, 102, 194, 0.15);
+                            border-color: #0a66c2;
+                            color: #38bdf8;
+                            .pill-icon { color: #0a66c2; }
+                        }
+                        &.pill-twitter:hover {
+                            background: rgba(29, 155, 240, 0.15);
+                            border-color: #1d9bf0;
+                            color: #38bdf8;
+                            .pill-icon { color: #1d9bf0; }
+                        }
+                        &.pill-instagram:hover {
+                            background: rgba(225, 48, 108, 0.15);
+                            border-color: #e1306c;
+                            color: #fb7185;
+                            .pill-icon { color: #e1306c; }
+                        }
+                        &.pill-youtube:hover {
+                            background: rgba(255, 0, 0, 0.15);
+                            border-color: #ff0000;
+                            color: #fca5a5;
+                            .pill-icon { color: #ff0000; }
+                        }
+                        &.pill-github:hover {
+                            background: rgba(255, 255, 255, 0.12);
+                            border-color: rgba(255, 255, 255, 0.4);
+                            color: #ffffff;
+                            .pill-icon { color: #ffffff; }
+                        }
+                        &.pill-leetcode:hover {
+                            background: rgba(255, 161, 22, 0.15);
+                            border-color: #ffa116;
+                            color: #fdba74;
+                            .pill-icon { color: #ffa116; }
+                        }
+                        &.pill-gfg:hover {
+                            background: rgba(47, 141, 70, 0.18);
+                            border-color: #2f8d46;
+                            color: #86efac;
+                            .pill-icon { color: #2f8d46; }
+                        }
+                        &.pill-codeforces:hover {
+                            background: rgba(31, 138, 198, 0.15);
+                            border-color: #1f8ac6;
+                            color: #38bdf8;
+                            .pill-icon { color: #1f8ac6; }
+                        }
+                        &.pill-codolio:hover {
+                            background: rgba(255, 87, 34, 0.15);
+                            border-color: #ff5722;
+                            color: #fdba74;
+                            .pill-icon { color: #ff5722; }
+                        }
+                        &.pill-google-scholar:hover {
+                            background: rgba(66, 133, 244, 0.15);
+                            border-color: #4285f4;
+                            color: #93c5fd;
+                            .pill-icon { color: #4285f4; }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-contact {
+            flex: 3;
+
+            .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                .input-control {
+                    width: 100%;
+
+                    &.i-c-2 {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+
+                        @media (min-width: 768px) {
+                            flex-direction: row;
+                        }
+                    }
+
+                    input,
+                    textarea {
+                        border-radius: 30px;
+                        font-weight: inherit;
+                        font-size: inherit;
+                        font-family: inherit;
+                        padding: 0.8rem 1.5rem;
+                        outline: none;
+                        border: none;
+                        background-color: var(--color-grey-5);
+                        width: 100%;
+                        color: var(--color-white);
+                        resize: none;
+                        transition: all 0.3s ease;
+
+                        &:focus {
+                            background-color: var(--color-grey-4);
+                            box-shadow: 0 0 0 2px var(--color-secondary);
+                        }
+
+                        &::placeholder {
+                            color: var(--color-grey-2);
+                        }
+                    }
+                }
+
+                .submit-btn {
+                    display: flex;
+                    justify-content: center;
+
+                    button {
+                        padding: 0.8rem 2.5rem;
+                        width: 100%;
+                        max-width: 260px;
+                        border-radius: 30px;
+                        background-color: var(--color-secondary);
+                        color: var(--color-white);
+                        font-weight: 600;
+                        font-size: 1rem;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+
+                        &:hover {
+                            transform: translateY(-3px);
+                            box-shadow: var(--shadow-md);
+                            background-color: transparent;
+                            border: 1px solid var(--color-secondary);
+                            color: var(--color-secondary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Light Mode Styles for Contact Section
+html.light-mode,
+body.light-mode,
+[data-theme="light"],
+.light-mode {
+    .contact-content {
+        .left-contact {
+            .contact-profiles-group {
+                .profiles-group-title {
+                    color: #475569;
+                }
+
+                .contact-pill-grid {
+                    .contact-profile-pill {
+                        background: #ffffff;
+                        border-color: #cbd5e1;
+                        color: #0f172a;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+                        &:hover {
+                            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+                        }
+
+                        &.pill-linkedin:hover {
+                            border-color: #0a66c2;
+                            color: #0a66c2;
+                            background: rgba(10, 102, 194, 0.08);
+                        }
+                        &.pill-twitter:hover {
+                            border-color: #0f172a;
+                            color: #0f172a;
+                            background: rgba(15, 23, 42, 0.08);
+                        }
+                        &.pill-instagram:hover {
+                            border-color: #e1306c;
+                            color: #e1306c;
+                            background: rgba(225, 48, 108, 0.08);
+                        }
+                        &.pill-youtube:hover {
+                            border-color: #ff0000;
+                            color: #ff0000;
+                            background: rgba(255, 0, 0, 0.08);
+                        }
+                        &.pill-github:hover {
+                            border-color: #0f172a;
+                            color: #0f172a;
+                            background: rgba(15, 23, 42, 0.08);
+                        }
+                        &.pill-leetcode:hover {
+                            border-color: #ea580c;
+                            color: #ea580c;
+                            background: rgba(234, 88, 12, 0.08);
+                        }
+                        &.pill-gfg:hover {
+                            border-color: #15803d;
+                            color: #15803d;
+                            background: rgba(21, 128, 61, 0.08);
+                        }
+                        &.pill-codeforces:hover {
+                            border-color: #1f8ac6;
+                            color: #1f8ac6;
+                            background: rgba(31, 138, 198, 0.08);
+                        }
+                        &.pill-codolio:hover {
+                            border-color: #c2410c;
+                            color: #c2410c;
+                            background: rgba(194, 65, 12, 0.08);
+                        }
+                        &.pill-google-scholar:hover {
+                            border-color: #1d4ed8;
+                            color: #1d4ed8;
+                            background: rgba(29, 78, 216, 0.08);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
