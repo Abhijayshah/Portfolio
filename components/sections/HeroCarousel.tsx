@@ -9,6 +9,7 @@ import {
     FiPause,
     FiArrowRight,
     FiDownload,
+    FiX,
 } from 'react-icons/fi';
 
 export interface CarouselSlide {
@@ -33,6 +34,8 @@ export interface CarouselSlide {
         href: string;
     };
     statsBadge?: string;
+    youtubeId?: string;
+    videoTitle?: string;
 }
 
 export const carouselSlides: CarouselSlide[] = [
@@ -50,6 +53,8 @@ export const carouselSlides: CarouselSlide[] = [
         secondaryCta: { label: 'Hire for a Project', href: '#contact' },
         cvCta: { label: 'Download CV', href: '/resume.pdf' },
         statsBadge: '20+ Apps Shipped • 99.9% Uptime',
+        youtubeId: 'eZHC7uPwIYc',
+        videoTitle: 'CatCatchCode – Full Stack EdTech Platform (React + Node + MongoDB)',
     },
     {
         id: 'healthcare',
@@ -111,6 +116,23 @@ export const carouselSlides: CarouselSlide[] = [
         cvCta: { label: 'Download CV', href: '/resume.pdf' },
         statsBadge: '2 Books Published • Amazon KDP',
     },
+    {
+        id: 'tech-videos',
+        tag: 'Tech Architecture & Video Demos',
+        categoryBadge: 'Live Engineering Breakdowns',
+        title: 'Production Software Walkthroughs & Architecture Demos',
+        titleHighlight: 'Architecture Demos',
+        description:
+            'Watch in-depth engineering breakdowns: native iOS app builds with SwiftUI + Supabase + AI, full-stack EdTech platforms, and live queue telemetry on my YouTube engineering channel.',
+        image: '/img/carousel/video_slide.jpg',
+        imageAlt: 'Engineering Architecture Video Walkthroughs and Live App Demos',
+        primaryCta: { label: 'Watch Video Walkthrough', href: '#youtube' },
+        secondaryCta: { label: 'Explore YouTube Channel', href: 'https://www.youtube.com/@abhijayshah.online' },
+        cvCta: { label: 'Download CV', href: '/resume.pdf' },
+        statsBadge: '6 Production Videos • @abhijayshah.online',
+        youtubeId: 't1BB9UGqx4U',
+        videoTitle: 'I Built a Premium iOS Productivity App with SwiftUI + Supabase + AI',
+    },
 ];
 
 const AUTOPLAY_INTERVAL = 5500; // 5.5 seconds per slide
@@ -119,30 +141,34 @@ export const HeroCarousel: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isPlaying, setIsPlaying] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
+    const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
     const timerRef = useRef<NodeJS.Timeout | null>(null);
     const pillNavRef = useRef<HTMLDivElement>(null);
 
     const nextSlide = useCallback(() => {
+        setActiveVideoId(null);
         setCurrentSlide((prev) => (prev + 1) % carouselSlides.length);
     }, []);
 
     const prevSlide = useCallback(() => {
+        setActiveVideoId(null);
         setCurrentSlide((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length);
     }, []);
 
     const goToSlide = useCallback((index: number) => {
+        setActiveVideoId(null);
         setCurrentSlide(index);
     }, []);
 
-    // Autoplay timer
+    // Autoplay timer (paused when user is watching an active video)
     useEffect(() => {
         if (timerRef.current) {
             clearInterval(timerRef.current);
         }
 
-        if (isPlaying && !isHovered) {
+        if (isPlaying && !isHovered && !activeVideoId) {
             timerRef.current = setInterval(() => {
                 nextSlide();
             }, AUTOPLAY_INTERVAL);
@@ -153,7 +179,7 @@ export const HeroCarousel: React.FC = () => {
                 clearInterval(timerRef.current);
             }
         };
-    }, [isPlaying, isHovered, nextSlide, currentSlide]);
+    }, [isPlaying, isHovered, activeVideoId, nextSlide, currentSlide]);
 
     // Keep active tag in view in the horizontal pill track on mobile
     useEffect(() => {
@@ -337,6 +363,17 @@ export const HeroCarousel: React.FC = () => {
                             <FiDownload aria-hidden="true" /> {activeSlideData.cvCta.label}
                         </a>
 
+                        {activeSlideData.youtubeId && (
+                            <button
+                                type="button"
+                                className="btn carousel-cta-btn carousel-cta-btn--video"
+                                onClick={() => setActiveVideoId(activeSlideData.youtubeId || null)}
+                                aria-label="Play engineering video demo"
+                            >
+                                <FiPlay aria-hidden="true" /> Play Video Demo
+                            </button>
+                        )}
+
                         {activeSlideData.statsBadge && (
                             <div className="carousel-stats-chip" aria-label="Metric">
                                 <span>{activeSlideData.statsBadge}</span>
@@ -344,6 +381,36 @@ export const HeroCarousel: React.FC = () => {
                         )}
                     </div>
                 </div>
+
+                {/* Active Embedded Video Player Overlay */}
+                {activeVideoId && (
+                    <div className="carousel-video-overlay" role="region" aria-label="Video Walkthrough Player">
+                        <div className="carousel-video-topbar">
+                            <div className="carousel-video-meta">
+                                <span className="carousel-video-pulsedot" aria-hidden="true" />
+                                <span className="carousel-video-title">{activeSlideData.videoTitle || 'Production Engineering Walkthrough'}</span>
+                            </div>
+                            <button
+                                type="button"
+                                className="carousel-video-close-btn"
+                                onClick={() => setActiveVideoId(null)}
+                                aria-label="Close video player and return to carousel"
+                            >
+                                <FiX aria-hidden="true" />
+                                <span>Close Video</span>
+                            </button>
+                        </div>
+                        <div className="carousel-video-iframe-wrap">
+                            <iframe
+                                src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1&rel=0&modestbranding=1`}
+                                title={activeSlideData.videoTitle || 'Abhijay Shah Engineering Video Walkthrough'}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                className="carousel-video-iframe"
+                            />
+                        </div>
+                    </div>
+                )}
 
                 {/* Bottom Indicators (Pill + Dots) */}
                 <div className="carousel-indicators" role="tablist" aria-label="Select carousel slide">

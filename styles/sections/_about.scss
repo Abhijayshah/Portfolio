@@ -138,53 +138,238 @@
   }
 
   .what-i-build-section {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    width: 100%;
 
-    .what-i-build-title {
-      text-align: center;
-      font-size: 1.35rem;
-      color: var(--color-white);
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
+    .what-i-build-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
 
-    .what-i-build-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.15rem;
+      .what-i-build-title-box {
+        max-width: 600px;
 
-      @media (min-width: 680px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .service-card {
-        padding: 1.25rem 1.2rem;
-        background: var(--color-grey-5);
-        border: 1px solid var(--color-grey-5);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-
-        &:hover {
-          border-color: var(--color-secondary);
-          transform: translateY(-3px);
+        .what-i-build-title {
+          font-size: clamp(1.2rem, 2vw, 1.45rem);
+          color: var(--color-white);
+          margin: 0 0 0.25rem 0;
+          font-weight: 700;
+          letter-spacing: -0.01em;
         }
 
-        h4 {
-          font-size: 1.05rem;
-          color: var(--color-secondary);
-          margin-bottom: 0.5rem;
-          font-weight: 600;
-        }
-
-        p {
+        .what-i-build-subtitle {
+          font-size: 0.84rem;
           color: var(--color-grey-1);
-          font-size: 0.88rem;
-          line-height: 1.55;
           margin: 0;
+          line-height: 1.5;
+        }
+      }
+
+      .what-i-build-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .marquee-control-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          padding: 0.38rem 0.75rem;
+          border-radius: 9999px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: var(--color-grey-1);
+          font-size: 0.78rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-1px);
+          }
+
+          &.marquee-pause-btn {
+            padding: 0.38rem 0.55rem;
+            font-size: 0.82rem;
+          }
         }
       }
     }
+
+    // Masked scrolling track
+    .what-i-build-track-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      padding: 0.5rem 0 1rem;
+      mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    }
+
+    .what-i-build-track {
+      display: flex;
+      width: max-content;
+
+      &.paused {
+        .marquee-group {
+          animation-play-state: paused !important;
+        }
+      }
+
+      &.direction-ltr {
+        .marquee-group {
+          animation: systemsMarqueeLTR 28s linear infinite;
+        }
+      }
+
+      &.direction-rtl {
+        .marquee-group {
+          animation: systemsMarqueeRTL 28s linear infinite;
+        }
+      }
+
+      .marquee-group {
+        display: flex;
+        align-items: stretch;
+        gap: 1.25rem;
+        padding-right: 1.25rem;
+        will-change: transform;
+      }
+    }
+
+    // System card item
+    .system-ship-card {
+      width: 330px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 1.35rem 1.25rem;
+      background: rgba(18, 22, 32, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: default;
+
+      @media (max-width: 640px) {
+        width: 285px;
+        padding: 1.15rem 1rem;
+      }
+
+      &:hover {
+        border-color: rgba(217, 20, 72, 0.45);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 15px rgba(217, 20, 72, 0.15);
+      }
+
+      .system-card-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.85rem;
+
+        .system-icon-wrapper {
+          width: 36px;
+          height: 36px;
+          border-radius: 10px;
+          background: rgba(217, 20, 72, 0.14);
+          border: 1px solid rgba(217, 20, 72, 0.35);
+          color: var(--color-secondary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.15rem;
+        }
+
+        .system-badge {
+          font-size: 0.7rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          padding: 0.22rem 0.6rem;
+          border-radius: 9999px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: var(--color-grey-1);
+        }
+      }
+
+      .system-card-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 0.45rem 0;
+        letter-spacing: -0.01em;
+      }
+
+      .system-card-desc {
+        font-size: 0.83rem;
+        line-height: 1.55;
+        color: var(--color-grey-1);
+        margin: 0 0 0.9rem 0;
+        flex: 1;
+      }
+
+      .system-tech-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.32rem;
+        margin-bottom: 0.85rem;
+
+        .system-tech-pill {
+          font-size: 0.7rem;
+          padding: 0.16rem 0.48rem;
+          border-radius: 6px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #cbd5e1;
+        }
+      }
+
+      .system-card-footer {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding-top: 0.7rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 0.74rem;
+        font-weight: 600;
+        color: #2ecc71;
+
+        .metric-icon {
+          color: #2ecc71;
+          font-size: 0.85rem;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+
+// Infinite loop marquee keyframes for Systems Marquee
+@keyframes systemsMarqueeLTR {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes systemsMarqueeRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -194,16 +379,70 @@ body.light-mode,
 .light-mode {
   .about-content {
     .what-i-build-section {
-      .what-i-build-title {
-        color: #0f172a;
+      .what-i-build-header {
+        .what-i-build-title {
+          color: #0f172a;
+        }
+
+        .what-i-build-subtitle {
+          color: #64748b;
+        }
+
+        .what-i-build-controls {
+          .marquee-control-btn {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #334155;
+
+            &:hover {
+              background: #e2e8f0;
+              color: #0f172a;
+            }
+          }
+        }
       }
 
-      .service-card {
-        background: #f8fafc;
+      .system-ship-card {
+        background: #ffffff;
         border-color: #e2e8f0;
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
 
-        p {
+        &:hover {
+          border-color: #d91448;
+          box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+        }
+
+        .system-card-topbar {
+          .system-badge {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #475569;
+          }
+        }
+
+        .system-card-title {
+          color: #0f172a;
+        }
+
+        .system-card-desc {
           color: #475569;
+        }
+
+        .system-tech-row {
+          .system-tech-pill {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #334155;
+          }
+        }
+
+        .system-card-footer {
+          border-top-color: #e2e8f0;
+          color: #16a34a;
+
+          .metric-icon {
+            color: #16a34a;
+          }
         }
       }
     }

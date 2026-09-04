@@ -2,6 +2,7 @@ import React from 'react';
 import { personalInfo } from '@/lib/data/personalInfo';
 import { FaTasks, FaProjectDiagram, FaBook, FaCode } from 'react-icons/fa';
 import Card from '@/components/ui/Card';
+import WhatIBuildCarousel from '@/components/ui/WhatIBuildCarousel';
 
 export const About: React.FC = () => {
     return (
@@ -64,20 +65,8 @@ export const About: React.FC = () => {
                 </div>
             </div>
 
-            {/* What I Build Section for Business Owners & Hiring Managers */}
-            {personalInfo.whatIBuild && personalInfo.whatIBuild.length > 0 && (
-                <div className="what-i-build-section">
-                    <h3 className="what-i-build-title">What I Build & Systems I Ship</h3>
-                    <div className="what-i-build-grid">
-                        {personalInfo.whatIBuild.map((service, idx) => (
-                            <Card key={idx} className="service-card">
-                                <h4>{service.title}</h4>
-                                <p>{service.description}</p>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            )}
+            {/* What I Build Auto-Scrolling Carousel Section */}
+            <WhatIBuildCarousel />
         </div>
     );
 };
