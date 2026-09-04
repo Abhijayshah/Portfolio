@@ -31,24 +31,8 @@ export const experience: Experience[] = [
             github: "https://github.com/CatCatchCode",
             youtube: "https://youtube.com/@CatCatchCode"
         }
-    },
-    {
-        role: "Co-Founder & Project Lead",
-        company: "Satsang Vachan (Digital Preservation Initiative)",
-        duration: "September 2025 – Present",
-        type: "Remote",
-        description: "Satsang Vachan is a large-scale digital transformation project aimed at preserving five decades of spiritual heritage for a global community of 200 Million+ followers of Baba Jaigurudev.",
-        achievements: [
-            "Digital Transformation: Spearheading the digitization of archival literature (since 1969), creating a scalable system to preserve 'Patrikas' and spiritual teachings for future generations.",
-            "AI Content Pipelines: Implementing AI-assisted summarization and NLP tools to transform dense, decades-old archival text into modern, bite-sized visual content and infographics.",
-            "Multimedia Orchestration: Collaborating with global contributors to produce podcasts, animated content, and magazines, ensuring the teachings are accessible to the younger, mobile-first demographic.",
-            "Platform Leadership: Leading the frontend strategy and UX design for the web portal, ensuring accessibility and high performance across devices for a massive, diverse user base.",
-            "Social Impact: Built a scalable system for content distribution focused on promoting social ethics, vegetarianism, and meditation through modern digital storytelling."
-        ],
-        links: {
-            website: "https://satsangvachansatsangseva.online/",
-            youtube: "https://www.youtube.com/channel/UCsAvsUouGa6g1VSNGhyfO5w",
-            instagram: "https://www.instagram.com/satsang_vachan_satsang_seva/"
-        }
     }
 ];
+
+export default experience;
+

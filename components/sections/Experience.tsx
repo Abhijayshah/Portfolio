@@ -1,6 +1,6 @@
 import React from 'react';
 import { experience } from '@/lib/data/experience';
-import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube, FaInstagram, FaCat, FaPrayingHands, FaHospitalAlt } from 'react-icons/fa';
+import { FaBriefcase, FaCalendarAlt, FaGlobe, FaGithub, FaYoutube, FaInstagram, FaCat, FaHospitalAlt } from 'react-icons/fa';
 import { FiCheckCircle } from 'react-icons/fi';
 import Card from '@/components/ui/Card';
 
@@ -31,8 +31,6 @@ export const ExperienceSection: React.FC = () => {
                                 <FaHospitalAlt aria-hidden="true" />
                             ) : job.company.includes('CatCatchCode') ? (
                                 <FaCat aria-hidden="true" />
-                            ) : job.company.includes('Satsang Vachan') ? (
-                                <FaPrayingHands aria-hidden="true" />
                             ) : (
                                 <FaBriefcase aria-hidden="true" />
                             )}
