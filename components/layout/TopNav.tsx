@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 
 interface NavTab {
     id: string;
@@ -26,85 +26,173 @@ interface TopNavProps {
 
 export const TopNav: React.FC<TopNavProps> = ({ scrollContainerId = 'center-scroll-container' }) => {
     const [activeSection, setActiveSection] = useState('about');
+    const navContainerRef = useRef<HTMLDivElement>(null);
+    const isClickScrollingRef = useRef(false);
+    const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+    // Automatically scroll the top navigation track so the active tab is centered and visible to the viewer
+    useEffect(() => {
+        if (!navContainerRef.current) return;
+        const container = navContainerRef.current;
+        const activeTab = container.querySelector<HTMLElement>(`[data-tab-id="${activeSection}"]`);
+        if (activeTab) {
+            const tabLeft = activeTab.offsetLeft;
+            const tabWidth = activeTab.offsetWidth;
+            const containerWidth = container.clientWidth;
+            const scrollTarget = tabLeft - (containerWidth / 2) + (tabWidth / 2);
+
+            container.scrollTo({
+                left: Math.max(0, scrollTarget),
+                behavior: 'smooth',
+            });
+        }
+    }, [activeSection]);
 
     useEffect(() => {
-        const container = document.getElementById(scrollContainerId);
+        let isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+        let container = document.getElementById(scrollContainerId);
 
-        // Options: if container exists (desktop app shell), use it as root; otherwise fallback to window viewport
-        const observerOptions: IntersectionObserverInit = {
-            root: container || null,
-            rootMargin: '-60px 0px -45% 0px',
-            threshold: [0, 0.1, 0.25],
-        };
-
-        const observerCallback: IntersectionObserverCallback = (entries) => {
-            // Find intersecting entries
-            const visibleEntries = entries.filter((entry) => entry.isIntersecting);
-            if (visibleEntries.length > 0) {
-                // Pick the entry with the highest intersection ratio or top position
-                const bestEntry = visibleEntries.reduce((prev, curr) =>
-                    curr.intersectionRatio > prev.intersectionRatio ? curr : prev
-                );
-                if (bestEntry.target.id) {
-                    setActiveSection(bestEntry.target.id);
-                }
+        // Update desktop status on resize
+        const handleResize = () => {
+            const nowDesktop = window.innerWidth >= 1024;
+            if (nowDesktop !== isDesktop) {
+                isDesktop = nowDesktop;
+                container = document.getElementById(scrollContainerId);
             }
         };
+        window.addEventListener('resize', handleResize, { passive: true });
 
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-        navTabs.forEach((tab) => {
-            const el = document.getElementById(tab.id);
-            if (el) observer.observe(el);
-        });
-
-        // Add scroll listener for edge cases (top and bottom of container)
+        // High-precision scroll listener for real-time section detection on both desktop & mobile
+        let ticking = false;
         const handleScroll = () => {
-            if (!container) return;
-            // If near bottom of container, set to contact
-            if (container.scrollHeight - container.scrollTop - container.clientHeight < 40) {
-                setActiveSection('contact');
-            } else if (container.scrollTop < 80) {
-                setActiveSection('about');
+            if (isClickScrollingRef.current) return;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    ticking = false;
+                    const desktopMode = window.innerWidth >= 1024;
+                    const scrollElem = desktopMode ? document.getElementById(scrollContainerId) : null;
+
+                    if (desktopMode && scrollElem) {
+                        // Desktop container scroll
+                        const { scrollTop, scrollHeight, clientHeight } = scrollElem;
+                        if (scrollHeight - scrollTop - clientHeight < 50) {
+                            setActiveSection('contact');
+                            return;
+                        }
+                        if (scrollTop < 80) {
+                            setActiveSection('about');
+                            return;
+                        }
+
+                        const containerRect = scrollElem.getBoundingClientRect();
+                        const triggerY = containerRect.top + 100;
+
+                        for (let i = navTabs.length - 1; i >= 0; i--) {
+                            const el = document.getElementById(navTabs[i].id);
+                            if (el) {
+                                const rect = el.getBoundingClientRect();
+                                if (rect.top <= triggerY && rect.bottom > triggerY - 40) {
+                                    setActiveSection(navTabs[i].id);
+                                    return;
+                                }
+                            }
+                        }
+                    } else {
+                        // Mobile window scroll
+                        const scrollY = window.scrollY || document.documentElement.scrollTop;
+                        const windowHeight = window.innerHeight;
+                        const docHeight = document.documentElement.scrollHeight;
+
+                        // Edge case: bottom of the page
+                        if (windowHeight + scrollY >= docHeight - 60) {
+                            setActiveSection('contact');
+                            return;
+                        }
+                        // Edge case: top of the page
+                        if (scrollY < 80) {
+                            setActiveSection('about');
+                            return;
+                        }
+
+                        const navBar = document.querySelector('.top-nav-bar');
+                        const navHeight = navBar ? navBar.getBoundingClientRect().height : 56;
+                        const triggerY = navHeight + 80;
+
+                        for (let i = navTabs.length - 1; i >= 0; i--) {
+                            const el = document.getElementById(navTabs[i].id);
+                            if (el) {
+                                const rect = el.getBoundingClientRect();
+                                if (rect.top <= triggerY && rect.bottom > triggerY - 40) {
+                                    setActiveSection(navTabs[i].id);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                });
+                ticking = true;
             }
         };
 
+        // Attach scroll listeners: window handles mobile, container handles desktop
+        window.addEventListener('scroll', handleScroll, { passive: true });
         if (container) {
             container.addEventListener('scroll', handleScroll, { passive: true });
         }
 
+        // Run initial scroll check
+        handleScroll();
+
         return () => {
-            observer.disconnect();
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
             if (container) {
                 container.removeEventListener('scroll', handleScroll);
+            }
+            if (clickTimeoutRef.current) {
+                clearTimeout(clickTimeoutRef.current);
             }
         };
     }, [scrollContainerId]);
 
     const handleTabClick = useCallback((sectionId: string) => {
         setActiveSection(sectionId);
+
+        isClickScrollingRef.current = true;
+        if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+        clickTimeoutRef.current = setTimeout(() => {
+            isClickScrollingRef.current = false;
+        }, 850);
+
+        const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
         const container = document.getElementById(scrollContainerId);
         const target = document.getElementById(sectionId);
 
-        if (container && target) {
+        if (!target) return;
+
+        if (isDesktop && container) {
             const containerRect = container.getBoundingClientRect();
             const targetRect = target.getBoundingClientRect();
             const scrollOffset = targetRect.top - containerRect.top + container.scrollTop - 64;
             container.scrollTo({ top: Math.max(0, scrollOffset), behavior: 'smooth' });
-        } else if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            const navBar = document.querySelector('.top-nav-bar');
+            const navHeight = navBar ? navBar.getBoundingClientRect().height : 56;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+            window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
         }
     }, [scrollContainerId]);
 
     return (
         <nav className="top-nav-bar" aria-label="Section Navigation">
-            <div className="top-nav-container">
+            <div className="top-nav-container" ref={navContainerRef}>
                 {navTabs.map((tab) => {
                     const isActive = activeSection === tab.id;
                     return (
                         <button
                             key={tab.id}
                             type="button"
+                            data-tab-id={tab.id}
                             className={`top-nav-tab ${isActive ? 'active' : ''}`}
                             onClick={() => handleTabClick(tab.id)}
                             aria-current={isActive ? 'page' : undefined}
