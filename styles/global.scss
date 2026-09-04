@@ -89,28 +89,43 @@ body {
 .section {
     min-height: 100vh;
     width: 100%;
-    padding: 4rem 1rem; // Mobile padding
+    padding: 3.5rem 1.25rem; // Mobile padding
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
 
+    @media (min-width: 640px) {
+        padding: 3.75rem 1.75rem; // Small tablet / large phone
+    }
+
     @media (min-width: 768px) {
-        padding: 5rem 2rem; // Tablet padding
+        padding: 4rem 2rem; // Tablet / notepad padding
     }
 
     @media (min-width: 1024px) {
-        padding: 6rem 3rem; // Desktop padding
+        padding: 3.5rem 2.25rem; // Laptop / notebook padding (prevents column squeezing)
     }
 
     @media (min-width: 1440px) {
-        padding: 7rem 5rem; // Large desktop padding
+        padding: 4.5rem 3.5rem; // Large desktop padding
+    }
+}
+
+// Hero section uses optimized vertical spacing to keep hero above fold
+#home.section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    @media (min-width: 1024px) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 }
 
 .section-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1350px;
     margin: 0 auto;
 }
 

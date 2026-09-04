@@ -2,38 +2,51 @@
 
 .hero-container {
     width: 100%;
-    min-height: calc(100vh - 80px);
+    min-height: auto;
     display: flex;
     align-items: center;
-    padding: 1.5rem 0 2rem;
+    padding: 0.5rem 0 1rem;
     overflow-x: hidden;
 
     @media (min-width: 768px) {
-        padding: 2.5rem 0;
-        min-height: 100vh;
+        padding: 1rem 0;
+    }
+
+    @media (min-width: 1024px) {
+        min-height: calc(100vh - 5rem);
+        padding: 1rem 0;
     }
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.75rem;
     align-items: center;
     width: 100%;
 
     @media (min-width: 768px) {
-        gap: 2.5rem;
+        gap: 2.25rem;
     }
 
+    // Laptops, Notebooks & Tablets in Landscape (1024px to 1366px)
     @media (min-width: 1024px) {
         display: grid;
-        grid-template-columns: 1.25fr 1fr; // Text takes more space on desktop
-        gap: 4rem;
+        grid-template-columns: 1.35fr 1fr; // Generous space for headline and text
+        gap: 2.25rem;
         align-items: center;
     }
 
+    // Standard Desktop (1280px+)
     @media (min-width: 1280px) {
-        gap: 5rem;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 3.25rem;
+    }
+
+    // Large Desktop (1440px+)
+    @media (min-width: 1440px) {
+        grid-template-columns: 1.3fr 1fr;
+        gap: 4.5rem;
     }
 }
 
@@ -43,7 +56,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 
     @media (min-width: 1024px) {
         order: 2;
@@ -55,21 +68,33 @@
 .hero-img-wrapper {
     position: relative;
     width: 100%;
-    max-width: 220px;
+    max-width: 200px;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
 
     @media (min-width: 480px) {
-        max-width: 250px;
+        max-width: 230px;
     }
 
+    // Tablet / Notepad
     @media (min-width: 768px) {
-        max-width: 320px;
+        max-width: 270px;
     }
 
+    // Laptop / Notebook (1024px to 1366px)
     @media (min-width: 1024px) {
-        max-width: 450px;
-        margin: 0;
+        max-width: 320px;
+        margin: 0 0 0 auto;
+    }
+
+    // Standard Desktop
+    @media (min-width: 1280px) {
+        max-width: 360px;
+    }
+
+    // Large Desktop
+    @media (min-width: 1440px) {
+        max-width: 410px;
     }
 
     img {
@@ -77,12 +102,12 @@
         height: 100%;
         object-fit: cover;
         border-radius: 24px;
-        box-shadow: 0 16px 45px rgba(255, 56, 106, 0.32), 0 0 20px rgba(255, 138, 0, 0.15);
-        border: 3px solid rgba(255, 56, 106, 0.28);
+        box-shadow: 0 16px 45px rgba(255, 56, 106, 0.28), 0 0 20px rgba(255, 138, 0, 0.15);
+        border: 3px solid rgba(255, 56, 106, 0.25);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    // Floating decorations (scaled cleanly for mobile to prevent overflow)
+    // Floating decorations (scaled cleanly to eliminate any viewport bleed)
     .hero-decoration {
         position: absolute;
         border-radius: 50%;
@@ -92,52 +117,66 @@
         animation: float 6s ease-in-out infinite;
 
         &--1 {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             top: -15px;
             right: -15px;
             animation-delay: 0s;
 
             @media (min-width: 768px) {
-                width: 160px;
-                height: 160px;
-                top: -35px;
-                right: -35px;
-            }
-
-            @media (min-width: 1024px) {
-                width: 200px;
-                height: 200px;
-                top: -50px;
-                right: -50px;
-            }
-        }
-
-        &--2 {
-            width: 65px;
-            height: 65px;
-            bottom: -10px;
-            left: -10px;
-            animation-delay: 3s;
-
-            @media (min-width: 768px) {
                 width: 120px;
                 height: 120px;
-                bottom: -25px;
-                left: -25px;
+                top: -25px;
+                right: -25px;
             }
 
             @media (min-width: 1024px) {
                 width: 150px;
                 height: 150px;
-                bottom: -40px;
-                left: -40px;
+                top: -30px;
+                right: -30px;
+            }
+
+            @media (min-width: 1440px) {
+                width: 190px;
+                height: 190px;
+                top: -45px;
+                right: -45px;
+            }
+        }
+
+        &--2 {
+            width: 55px;
+            height: 55px;
+            bottom: -10px;
+            left: -10px;
+            animation-delay: 3s;
+
+            @media (min-width: 768px) {
+                width: 90px;
+                height: 90px;
+                bottom: -20px;
+                left: -20px;
+            }
+
+            @media (min-width: 1024px) {
+                width: 110px;
+                height: 110px;
+                bottom: -25px;
+                left: -25px;
+            }
+
+            @media (min-width: 1440px) {
+                width: 140px;
+                height: 140px;
+                bottom: -35px;
+                left: -35px;
             }
         }
     }
 }
 
-// Text comes second on mobile (< 1024px), centered for balanced aesthetic
+// Text comes second on mobile/tablet (< 1024px), centered for balanced aesthetic
 .hero-text {
     order: 2;
     display: flex;
@@ -154,18 +193,34 @@
 }
 
 .hero-title {
-    font-size: clamp(1.75rem, 6vw, 3.8rem);
+    // Mobile (< 640px)
+    font-size: clamp(1.55rem, 5.2vw, 1.95rem);
     font-weight: 800;
     line-height: 1.22;
     margin-bottom: 0.85rem;
     letter-spacing: -0.015em;
+    word-break: normal;
+    overflow-wrap: break-word;
 
-    @media (min-width: 768px) {
-        margin-bottom: 1.25rem;
+    // Notepad / Tablet (640px to 1023px)
+    @media (min-width: 640px) {
+        font-size: clamp(1.85rem, 3.2vw, 2.25rem);
+        line-height: 1.2;
+        margin-bottom: 1rem;
     }
 
+    // Laptop & Notebook (1024px to 1366px) - calibrated to prevent 1-word-per-line wrapping
     @media (min-width: 1024px) {
-        margin-bottom: 1.5rem;
+        font-size: clamp(2.05rem, 2.25vw, 2.55rem);
+        line-height: 1.18;
+        margin-bottom: 1.15rem;
+    }
+
+    // Large Desktop (1367px+)
+    @media (min-width: 1367px) {
+        font-size: clamp(2.55rem, 2.6vw, 3.15rem);
+        line-height: 1.16;
+        margin-bottom: 1.4rem;
     }
 
     .gradient-text {
@@ -177,23 +232,28 @@
 }
 
 .hero-subtitle {
-    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
-    line-height: 1.68;
+    font-size: clamp(0.92rem, 1.8vw, 1.05rem);
+    line-height: 1.62;
     color: var(--color-grey-1);
-    margin-bottom: 1.5rem;
-    max-width: 640px;
+    margin-bottom: 1.25rem;
+    max-width: 580px;
     margin-left: auto;
     margin-right: auto;
-
-    @media (min-width: 768px) {
-        margin-bottom: 2rem;
-        line-height: 1.8;
-    }
 
     @media (min-width: 1024px) {
         margin-left: 0;
         margin-right: 0;
-        max-width: 700px;
+        margin-bottom: 1.4rem;
+        font-size: 0.98rem;
+        line-height: 1.68;
+        max-width: 600px;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 1.08rem;
+        line-height: 1.75;
+        margin-bottom: 2rem;
+        max-width: 660px;
     }
 }
 
@@ -201,34 +261,39 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1.75rem;
-    max-width: 680px;
-
-    @media (min-width: 768px) {
-        gap: 0.65rem;
-        margin-bottom: 2.25rem;
-    }
+    gap: 0.45rem;
+    margin-bottom: 1.5rem;
+    max-width: 620px;
 
     @media (min-width: 1024px) {
         justify-content: flex-start;
-        gap: 0.8rem;
-        margin-bottom: 2.5rem;
+        gap: 0.55rem;
+        margin-bottom: 1.75rem;
         max-width: none;
     }
 
+    @media (min-width: 1440px) {
+        gap: 0.75rem;
+        margin-bottom: 2.25rem;
+    }
+
     .tag {
-        padding: 0.45rem 0.95rem;
+        padding: 0.4rem 0.85rem;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        font-size: 0.82rem;
+        font-size: 0.8rem;
         color: var(--color-grey-1);
         transition: all 0.3s ease;
 
-        @media (min-width: 768px) {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
+        @media (min-width: 1024px) {
+            padding: 0.45rem 0.95rem;
+            font-size: 0.82rem;
+        }
+
+        @media (min-width: 1440px) {
+            padding: 0.55rem 1.15rem;
+            font-size: 0.88rem;
         }
 
         &:hover {
@@ -243,7 +308,7 @@
 .btn-group {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.75rem;
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
@@ -251,7 +316,9 @@
     .btn {
         width: 100%;
         justify-content: center;
-        min-height: 48px;
+        min-height: 44px;
+        padding: 0.65rem 1.25rem;
+        font-size: 0.92rem;
     }
 
     @media (min-width: 640px) {
@@ -260,7 +327,7 @@
         justify-content: center;
         width: auto;
         max-width: none;
-        margin: 0 auto;
+        gap: 0.75rem;
 
         .btn {
             width: auto;
@@ -270,6 +337,7 @@
     @media (min-width: 1024px) {
         justify-content: flex-start;
         margin: 0;
+        gap: 0.85rem;
     }
 }
 
