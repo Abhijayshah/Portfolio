@@ -39,7 +39,10 @@ export interface Project {
 }
 
 export interface SkillCategory {
+    id?: string;
     category: string;
+    badge?: string;
+    highlight?: string;
     icon: React.ComponentType<{ className?: string; 'aria-hidden'?: boolean | 'true' | 'false' }>;
     items: string[];
 }

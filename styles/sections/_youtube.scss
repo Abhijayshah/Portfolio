@@ -208,55 +208,120 @@
                         transform: scale(0.95);
                     }
 
-                    &.active-direction {
-                        background: rgba(255, 56, 106, 0.18);
-                        border-color: var(--color-secondary);
-                        color: var(--color-secondary);
+                    &.step-arrow-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.35rem;
+                        padding: 0.4rem 0.75rem;
+                        border-radius: 20px;
+                        background: rgba(255, 51, 102, 0.08);
+                        border: 1px solid rgba(255, 51, 102, 0.25);
+                        color: #ffffff;
+                        font-size: 0.82rem;
+                        font-weight: 600;
+
+                        &:hover {
+                            background: var(--color-secondary);
+                            border-color: #ffffff;
+                            box-shadow: 0 0 12px rgba(255, 51, 102, 0.45);
+                            color: #ffffff;
+                        }
+
+                        .desktop-only-label {
+                            @media (max-width: 520px) {
+                                display: none;
+                            }
+                        }
                     }
 
                     &.pause-toggle-btn.is-paused {
-                        background: rgba(255, 255, 255, 0.15);
-                        color: #fbbf24;
+                        background: rgba(255, 170, 0, 0.15);
+                        border-color: #ffaa00;
+                        color: #ffc107;
                     }
                 }
             }
         }
 
+        // Outer wrapper for side nav buttons and scroll container
+        .youtube-carousel-outer {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+            .youtube-side-nav-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: rgba(20, 7, 20, 0.88);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 51, 102, 0.45);
+                box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 51, 102, 0.35);
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                cursor: pointer;
+                z-index: 20;
+                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+                &:hover {
+                    background: var(--color-secondary);
+                    border-color: #ffffff;
+                    transform: translateY(-50%) scale(1.14);
+                    box-shadow: 0 6px 24px rgba(255, 51, 102, 0.65);
+                }
+
+                &:active {
+                    transform: translateY(-50%) scale(0.95);
+                }
+
+                &.prev-btn {
+                    left: 4px;
+                }
+
+                &.next-btn {
+                    right: 4px;
+                }
+            }
+        }
+
+        // Masked interactive scrolling track (Touchpad, Mouse wheel, Drag & Auto-scroll)
         .youtube-carousel-track-wrapper {
             width: 100%;
-            overflow: hidden;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: auto;
             position: relative;
-            padding: 0.8rem 0 1.5rem;
+            padding: 0.8rem 0.5rem 1.5rem;
             mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+            cursor: grab;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            &:active {
+                cursor: grabbing;
+            }
 
             .youtube-carousel-track {
                 display: flex;
                 width: max-content;
-                will-change: transform;
-
-                // Animate Left to Right in loop (cards drift right ->)
-                &.direction-ltr {
-                    animation: marqueeLTR 36s linear infinite;
-                }
-
-                // Animate Right to Left in loop (cards drift left <-)
-                &.direction-rtl {
-                    animation: marqueeRTL 36s linear infinite;
-                }
-
-                &.paused {
-                    animation-play-state: paused !important;
-                }
-
-                &:hover {
-                    animation-play-state: paused !important;
-                }
 
                 .marquee-group {
                     display: flex;
                     gap: 1.6rem;
                     padding-right: 1.6rem;
+                    will-change: transform;
                 }
             }
         }

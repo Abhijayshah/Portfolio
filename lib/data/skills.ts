@@ -1,4 +1,16 @@
-import { FaCode, FaLaptopCode, FaDatabase, FaServer, FaCloud, FaShieldAlt } from 'react-icons/fa';
+import {
+    FaCode,
+    FaLaptopCode,
+    FaServer,
+    FaDatabase,
+    FaBolt,
+    FaCloud,
+    FaNetworkWired,
+    FaBrain,
+    FaPlug,
+    FaTools,
+    FaGraduationCap
+} from 'react-icons/fa';
 import { SkillCategory } from '@/types';
 
 export const headlineSkills: string[] = [
@@ -9,88 +21,196 @@ export const headlineSkills: string[] = [
     "MongoDB & Redis",
     "C++ & DSA",
     "Docker & CI/CD",
-    "WebSockets & REST APIs",
-    "Tailwind CSS",
-    "Razorpay & Integrations"
+    "WebSockets & Socket.IO",
+    "System Design (LLD/HLD)",
+    "AI Agents & Gemini API"
 ];
 
 export const skills: SkillCategory[] = [
     {
-        category: "Languages & Core Tech",
+        id: "languages",
+        category: "Languages",
+        badge: "Core Syntax",
+        highlight: "Modern ES6+, Systems & Typed Code",
         icon: FaCode,
         items: [
-            "C++",
             "JavaScript (ES6+)",
             "TypeScript",
+            "C++",
             "Python",
+            "Java",
             "SQL",
-            "Data Structures & Algorithms",
-            "OOPs",
-            "DBMS",
-            "Operating Systems"
+            "HTML5",
+            "CSS3"
         ]
     },
     {
-        category: "Frontend Architecture",
+        id: "frontend",
+        category: "Frontend",
+        badge: "Client Architecture",
+        highlight: "Responsive, State-Driven Web Apps",
         icon: FaLaptopCode,
         items: [
             "React.js",
-            "Next.js",
+            "Next.js (App Router)",
             "Tailwind CSS",
+            "Zustand",
             "Redux",
             "Context API",
-            "Recharts",
-            "Server Components",
             "Framer Motion",
-            "Vite",
-            "SwiftUI"
+            "Recharts"
         ]
     },
     {
-        category: "Backend & Databases",
+        id: "backend",
+        category: "Backend",
+        badge: "APIs & Services",
+        highlight: "High-Throughput Microservices & Auth",
         icon: FaServer,
         items: [
             "Node.js",
             "Express.js",
-            "MongoDB",
-            "PostgreSQL",
+            "Next.js Route Handlers",
             "RESTful APIs",
-            "WebSockets",
-            "Redis",
-            "Mongoose",
-            "FastAPI"
+            "JWT",
+            "Google OAuth",
+            "Bcrypt"
         ]
     },
     {
-        category: "Cloud, DevOps & Tools",
+        id: "database-caching",
+        category: "Database & Caching",
+        badge: "Data & Persistence",
+        highlight: "ACID Transactions & High-Speed Cache",
+        icon: FaDatabase,
+        items: [
+            "MongoDB (Mongoose)",
+            "PostgreSQL",
+            "MySQL",
+            "Supabase",
+            "Redis (Upstash)",
+            "Advanced Aggregation Pipelines",
+            "Row-Level Security (RLS)"
+        ]
+    },
+    {
+        id: "message-queues",
+        category: "Message Queues & Real-time",
+        badge: "Streaming & Async",
+        highlight: "Sub-50ms Pub/Sub & Event Streams",
+        icon: FaBolt,
+        items: [
+            "Socket.IO",
+            "Supabase Realtime",
+            "Redis Pub/Sub",
+            "WebSockets",
+            "Server-Sent Events (SSE)",
+            "Kafka",
+            "RabbitMQ",
+            "BullMQ"
+        ]
+    },
+    {
+        id: "devops-infra",
+        category: "DevOps & Infrastructure",
+        badge: "Cloud & Deployment",
+        highlight: "Automated Deployments & Containerization",
         icon: FaCloud,
         items: [
-            "Git",
-            "GitHub",
+            "Git & GitHub",
             "Docker",
             "AWS (Basic)",
             "Vercel",
             "Render",
             "Railway",
-            "Postman",
-            "CI/CD Pipelines",
-            "GitHub Actions"
+            "Cloudflare R2",
+            "CI/CD Pipelines"
         ]
     },
     {
-        category: "Security & Integrations",
-        icon: FaShieldAlt,
+        id: "system-design",
+        category: "System Design & Architecture",
+        badge: "Distributed Architecture",
+        highlight: "Fault-Tolerant, Scalable Systems",
+        icon: FaNetworkWired,
         items: [
-            "JWT",
-            "RBAC",
-            "Supabase",
+            "REST API Design",
+            "Microservices Concepts",
+            "Role-Based Access Control (RBAC)",
+            "JWT Refresh Token Rotation (RTR)",
+            "Database Modeling",
+            "Monorepo Setup",
+            "Rate Limiting",
+            "Low Level Design (LLD)",
+            "High Level Design (HLD)",
+            "Load Balancer",
+            "API Gateway",
+            "Nginx",
+            "Microservices",
+            "Caching"
+        ]
+    },
+    {
+        id: "ai-automation",
+        category: "AI & Automation",
+        badge: "Applied GenAI",
+        highlight: "Agentic Workflows & Tool-Calling LLMs",
+        icon: FaBrain,
+        items: [
+            "Gemini API",
+            "OpenRouter",
+            "n8n",
+            "Prompt Engineering",
+            "LLM Integrations",
+            "AI Agent Architecture",
+            "Generative AI"
+        ]
+    },
+    {
+        id: "third-party",
+        category: "Third-Party Integrations",
+        badge: "External Services",
+        highlight: "Payment, Media & Communication APIs",
+        icon: FaPlug,
+        items: [
+            "Cloudinary (HLS Streaming)",
             "Razorpay",
-            "Cloudinary",
             "Meilisearch",
             "Twilio",
             "MSG91",
-            "Gemini API",
-            "AI Orchestration (LLMs)"
+            "Resend"
+        ]
+    },
+    {
+        id: "tools-skills",
+        category: "Additional Tools & Skills",
+        badge: "Productivity & Tooling",
+        highlight: "Modern Developer Workflows & Prototyping",
+        icon: FaTools,
+        items: [
+            "Postman CLI",
+            "Figma",
+            "UI/UX Prototyping",
+            "Technical Writing",
+            "Cursor",
+            "Antigravity",
+            "Agile Methodology"
+        ]
+    },
+    {
+        id: "coursework",
+        category: "Coursework",
+        badge: "CS Fundamentals",
+        highlight: "Core Academic Foundations & Theory",
+        icon: FaGraduationCap,
+        items: [
+            "Data Structures & Algorithms (DSA)",
+            "Object-Oriented Programming (OOP)",
+            "Database Management Systems (DBMS)",
+            "Operating Systems",
+            "Computer Networks"
         ]
     }
 ];
+
+export default skills;

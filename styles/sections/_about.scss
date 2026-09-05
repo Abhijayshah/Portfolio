@@ -190,50 +190,117 @@
 
           &:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 51, 102, 0.15);
+            border-color: var(--color-secondary);
             transform: translateY(-1px);
+          }
+
+          &.step-arrow-btn {
+            background: rgba(255, 51, 102, 0.09);
+            border-color: rgba(255, 51, 102, 0.28);
+            color: #ffffff;
+
+            &:hover {
+              background: var(--color-secondary);
+              border-color: #ffffff;
+              box-shadow: 0 0 12px rgba(255, 51, 102, 0.45);
+            }
           }
 
           &.marquee-pause-btn {
             padding: 0.38rem 0.55rem;
             font-size: 0.82rem;
+
+            &.is-paused {
+              background: rgba(255, 170, 0, 0.15);
+              border-color: #ffaa00;
+              color: #ffc107;
+            }
+          }
+
+          .desktop-only-label {
+            @media (max-width: 520px) {
+              display: none;
+            }
           }
         }
       }
     }
 
-    // Masked scrolling track
+    // Outer wrapper for side nav buttons and scroll container
+    .what-i-build-carousel-outer {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .what-i-build-side-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(20, 7, 20, 0.88);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 51, 102, 0.45);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 51, 102, 0.35);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        cursor: pointer;
+        z-index: 20;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          background: var(--color-secondary);
+          border-color: #ffffff;
+          transform: translateY(-50%) scale(1.14);
+          box-shadow: 0 6px 24px rgba(255, 51, 102, 0.65);
+        }
+
+        &:active {
+          transform: translateY(-50%) scale(0.95);
+        }
+
+        &.prev-btn {
+          left: 4px;
+        }
+
+        &.next-btn {
+          right: 4px;
+        }
+      }
+    }
+
+    // Masked interactive scrolling track (Mouse wheel, Touchpad, Drag & Auto-scroll)
     .what-i-build-track-wrapper {
       position: relative;
       width: 100%;
-      overflow: hidden;
-      padding: 0.5rem 0 1rem;
-      mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: auto;
+      padding: 0.5rem 0.5rem 1.25rem;
+      mask-image: linear-gradient(to right, transparent 0%, black 3.5%, black 96.5%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3.5%, black 96.5%, transparent 100%);
+      cursor: grab;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
     }
 
     .what-i-build-track {
       display: flex;
       width: max-content;
-
-      &.paused {
-        .marquee-group {
-          animation-play-state: paused !important;
-        }
-      }
-
-      &.direction-ltr {
-        .marquee-group {
-          animation: systemsMarqueeLTR 28s linear infinite;
-        }
-      }
-
-      &.direction-rtl {
-        .marquee-group {
-          animation: systemsMarqueeRTL 28s linear infinite;
-        }
-      }
 
       .marquee-group {
         display: flex;
