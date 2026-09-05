@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Abhijay Kumar Shah - Full-Stack Software Engineer',
+        name: 'Abhijay Shah - Full-Stack Software Engineer',
         short_name: 'Abhijay Shah',
         description:
-            'Official portfolio and software engineering showcase of Abhijay Kumar Shah, Full-Stack Software Engineer & Applied AI Developer.',
+            'Official portfolio and software engineering showcase of Abhijay Shah, Full-Stack Software Engineer & Applied AI Developer.',
         start_url: '/',
         display: 'standalone',
         background_color: '#0d0e11',

@@ -276,7 +276,7 @@ export const HeroCarousel: React.FC = () => {
                 tabIndex={0}
                 role="region"
                 aria-roledescription="carousel"
-                aria-label="Abhijay Kumar Shah Portfolio Highlights"
+                aria-label="Abhijay Shah Portfolio Highlights"
             >
                 {/* Background Images Crossfade Layer */}
                 <div className="carousel-bg-container" aria-hidden="true">
@@ -290,7 +290,8 @@ export const HeroCarousel: React.FC = () => {
                                 alt={slide.imageAlt}
                                 fill
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1200px"
-                                priority
+                                priority={idx === 0}
+                                loading={idx === 0 ? 'eager' : 'lazy'}
                                 className="carousel-bg-img"
                             />
                             <div className="carousel-gradient-overlay" />

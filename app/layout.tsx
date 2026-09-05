@@ -14,13 +14,12 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     metadataBase: new URL('https://abhijayshah.online'),
     title: {
-        default: 'Abhijay Kumar Shah | Full-Stack Software Engineer & Applied AI Developer',
-        template: '%s | Abhijay Kumar Shah',
+        default: 'Abhijay Shah | Full-Stack Software Engineer & Applied AI Developer',
+        template: '%s | Abhijay Shah',
     },
     description:
-        'Official portfolio of Abhijay Kumar Shah, Full-Stack Software Engineer and Applied AI Developer. Specialized in scalable MERN stack, Next.js, hospital management systems (Dr. Heal Hospital), distributed architectures, and competitive programming.',
+        'Official portfolio of Abhijay Shah, Full-Stack Software Engineer and Applied AI Developer. Specialized in scalable MERN stack, Next.js, hospital management systems (Dr. Heal Hospital), distributed architectures, and competitive programming.',
     keywords: [
-        'Abhijay Kumar Shah',
         'Abhijay Shah',
         'abhijayshah',
         'abhijayshah74',
@@ -49,9 +48,9 @@ export const metadata: Metadata = {
         'Production Software Engineer',
         'Amazon KDP Published Author',
     ],
-    authors: [{ name: 'Abhijay Kumar Shah', url: 'https://abhijayshah.online' }],
-    creator: 'Abhijay Kumar Shah',
-    publisher: 'Abhijay Kumar Shah',
+    authors: [{ name: 'Abhijay Shah', url: 'https://abhijayshah.online' }],
+    creator: 'Abhijay Shah',
+    publisher: 'Abhijay Shah',
     formatDetection: {
         email: false,
         address: false,
@@ -72,11 +71,11 @@ export const metadata: Metadata = {
         },
     },
     openGraph: {
-        title: 'Abhijay Kumar Shah | Full-Stack Software Engineer & Applied AI Developer',
+        title: 'Abhijay Shah | Full-Stack Software Engineer & Applied AI Developer',
         description:
             'Full-Stack Software Engineer specializing in scalable web systems, healthcare queue engines (Dr. Heal Hospital), POS platforms, and AI workflows.',
         url: 'https://abhijayshah.online',
-        siteName: 'Abhijay Kumar Shah Portfolio',
+        siteName: 'Abhijay Shah Portfolio',
         locale: 'en_US',
         type: 'profile',
         firstName: 'Abhijay',
@@ -88,7 +87,7 @@ export const metadata: Metadata = {
                 url: '/img/abhijay_photo_chat.webp',
                 width: 800,
                 height: 800,
-                alt: 'Abhijay Kumar Shah - Full-Stack Software Engineer',
+                alt: 'Abhijay Shah - Full-Stack Software Engineer',
             },
         ],
     },
@@ -96,7 +95,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         site: '@Abhijay_74',
         creator: '@Abhijay_74',
-        title: 'Abhijay Kumar Shah | Full-Stack Software Engineer & Applied AI Developer',
+        title: 'Abhijay Shah | Full-Stack Software Engineer & Applied AI Developer',
         description:
             'Full-Stack Software Engineer specializing in scalable web systems, healthcare queue engines (Dr. Heal Hospital), POS platforms, and AI workflows.',
         images: ['/img/abhijay_photo_chat.webp'],
@@ -112,7 +111,7 @@ const jsonLd = {
         {
             '@type': 'Person',
             '@id': 'https://abhijayshah.online/#person',
-            name: 'Abhijay Kumar Shah',
+            name: 'Abhijay Shah',
             alternateName: ['Abhijay Shah', 'abhijayshah', 'abhijayshah74'],
             givenName: 'Abhijay',
             familyName: 'Shah',
@@ -180,9 +179,9 @@ const jsonLd = {
             '@type': 'WebSite',
             '@id': 'https://abhijayshah.online/#website',
             url: 'https://abhijayshah.online',
-            name: 'Abhijay Kumar Shah - Full-Stack Software Engineer Portfolio',
+            name: 'Abhijay Shah - Full-Stack Software Engineer Portfolio',
             description:
-                'Official portfolio and systems showcase of Abhijay Kumar Shah, Full-Stack Software Engineer & Applied AI Developer.',
+                'Official portfolio and systems showcase of Abhijay Shah, Full-Stack Software Engineer & Applied AI Developer.',
             publisher: {
                 '@id': 'https://abhijayshah.online/#person',
             },
@@ -191,7 +190,7 @@ const jsonLd = {
             '@type': 'ProfilePage',
             '@id': 'https://abhijayshah.online/#webpage',
             url: 'https://abhijayshah.online',
-            name: 'Abhijay Kumar Shah | Full-Stack Software Engineer & Applied AI Developer',
+            name: 'Abhijay Shah | Full-Stack Software Engineer & Applied AI Developer',
             mainEntity: {
                 '@id': 'https://abhijayshah.online/#person',
             },

@@ -60,8 +60,8 @@ export const socialLinks: SocialLinks = {
         },
         {
             name: "Google Scholar",
-            link: "https://scholar.google.com/citations?view_op=search_authors&mauthors=Abhijay+Kumar+Shah",
-            username: "Abhijay Kumar Shah",
+            link: "https://scholar.google.com/citations?view_op=search_authors&mauthors=Abhijay+Shah",
+            username: "Abhijay Shah",
             category: "coding",
         },
     ],
@@ -105,7 +105,7 @@ export const socialLinks: SocialLinks = {
         },
         {
             name: "Google Scholar",
-            link: "https://scholar.google.com/citations?view_op=search_authors&mauthors=Abhijay+Kumar+Shah",
+            link: "https://scholar.google.com/citations?view_op=search_authors&mauthors=Abhijay+Shah",
         },
     ],
 };

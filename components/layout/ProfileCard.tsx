@@ -62,13 +62,13 @@ export const ProfileCard: React.FC = () => {
     };
 
     return (
-        <aside className="profile-card" aria-label="Abhijay Kumar Shah Profile">
+        <aside className="profile-card" aria-label="Abhijay Shah Profile">
             {/* Top Photo with Glowing Rounded Frame */}
             <div className="profile-photo-wrapper">
                 <div className="profile-photo-frame">
                     <Image
                         src="/img/abhijay_photo_chat.webp"
-                        alt="Abhijay Kumar Shah"
+                        alt="Abhijay Shah"
                         width={110}
                         height={110}
                         priority
@@ -78,7 +78,7 @@ export const ProfileCard: React.FC = () => {
             </div>
 
             {/* Name */}
-            <h2 className="profile-name">Abhijay Kumar Shah</h2>
+            <h2 className="profile-name">Abhijay Shah</h2>
 
             {/* One-Line Role Tagline */}
             <p className="profile-tagline">

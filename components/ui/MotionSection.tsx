@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion, useReducedMotion, Variants } from 'framer-motion';
 
 interface MotionSectionProps {
     children: React.ReactNode;
@@ -9,39 +8,19 @@ interface MotionSectionProps {
     delay?: number;
 }
 
+/**
+ * High-performance section wrapper ensuring immediate, zero-delay rendering
+ * across all portfolio sections (About, Experience, Skills, Projects, etc.)
+ * Eliminates sluggish intersection observer freezes and opacity: 0 blank flashes.
+ */
 export const MotionSection: React.FC<MotionSectionProps> = ({
     children,
     className = '',
-    delay = 0
 }) => {
-    const shouldReduceMotion = useReducedMotion();
-
-    const variants: Variants = {
-        hidden: {
-            opacity: 0,
-            y: shouldReduceMotion ? 0 : 24
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                delay,
-                ease: 'easeOut'
-            }
-        }
-    };
-
     return (
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={variants}
-            className={className}
-        >
+        <div className={`motion-section-instant ${className}`}>
             {children}
-        </motion.div>
+        </div>
     );
 };
 

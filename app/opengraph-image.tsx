@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Abhijay Kumar Shah | Full-Stack Software Engineer & Applied AI Developer';
+export const alt = 'Abhijay Shah | Full-Stack Software Engineer & Applied AI Developer';
 export const size = {
     width: 1200,
     height: 630,
@@ -44,7 +44,7 @@ export default async function Image() {
                         marginBottom: '24px',
                     }}
                 >
-                    Abhijay Kumar Shah
+                    Abhijay Shah
                 </div>
                 <div
                     style={{

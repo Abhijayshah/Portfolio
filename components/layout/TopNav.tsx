@@ -155,6 +155,58 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollContainerId = 'center-scro
         };
     }, [scrollContainerId]);
 
+    // Fast, responsive smooth scroll capped at 350ms with easeOutCubic curve
+    const smoothScrollTo = (targetElem: HTMLElement | null, isDesktop: boolean, container: HTMLElement | null) => {
+        if (!targetElem) return;
+
+        if (isDesktop && container) {
+            const containerRect = container.getBoundingClientRect();
+            const targetRect = targetElem.getBoundingClientRect();
+            const startY = container.scrollTop;
+            const targetY = Math.max(0, targetRect.top - containerRect.top + startY - 64);
+            const diff = targetY - startY;
+            if (Math.abs(diff) < 2) return;
+
+            const duration = Math.min(380, Math.max(200, Math.abs(diff) * 0.15));
+            const startTime = performance.now();
+
+            const step = (currentTime: number) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // easeOutCubic: fast departure, soft landing
+                const ease = 1 - Math.pow(1 - progress, 3);
+                container.scrollTop = startY + diff * ease;
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        } else {
+            const navBar = document.querySelector('.top-nav-bar');
+            const navHeight = navBar ? navBar.getBoundingClientRect().height : 56;
+            const startY = window.scrollY || document.documentElement.scrollTop;
+            const targetTop = Math.max(0, targetElem.getBoundingClientRect().top + startY - navHeight - 12);
+            const diff = targetTop - startY;
+            if (Math.abs(diff) < 2) return;
+
+            const duration = Math.min(380, Math.max(200, Math.abs(diff) * 0.15));
+            const startTime = performance.now();
+
+            const step = (currentTime: number) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const ease = 1 - Math.pow(1 - progress, 3);
+                window.scrollTo(0, startY + diff * ease);
+
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    };
+
     const handleTabClick = useCallback((sectionId: string) => {
         setActiveSection(sectionId);
 
@@ -162,25 +214,13 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollContainerId = 'center-scro
         if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
         clickTimeoutRef.current = setTimeout(() => {
             isClickScrollingRef.current = false;
-        }, 850);
+        }, 450);
 
         const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
         const container = document.getElementById(scrollContainerId);
         const target = document.getElementById(sectionId);
 
-        if (!target) return;
-
-        if (isDesktop && container) {
-            const containerRect = container.getBoundingClientRect();
-            const targetRect = target.getBoundingClientRect();
-            const scrollOffset = targetRect.top - containerRect.top + container.scrollTop - 64;
-            container.scrollTo({ top: Math.max(0, scrollOffset), behavior: 'smooth' });
-        } else {
-            const navBar = document.querySelector('.top-nav-bar');
-            const navHeight = navBar ? navBar.getBoundingClientRect().height : 56;
-            const targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 12;
-            window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-        }
+        smoothScrollTo(target, isDesktop, container);
     }, [scrollContainerId]);
 
     return (

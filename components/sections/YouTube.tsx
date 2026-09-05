@@ -39,23 +39,37 @@ export const YouTube: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Working Official YouTube Subscribe Embed */}
                     <div className="subscribe-actions">
-                        <div className="yt-subscribe-embed-wrapper" title="Official YouTube Subscribe Button">
-                            <iframe
-                                src={`https://www.youtube.com/subscribe_embed?channelid=${youtubeChannelInfo.channelId}&layout=default&theme=default`}
-                                title="Subscribe to Abhijay Shah on YouTube"
-                                className="yt-subscribe-iframe"
-                                loading="lazy"
-                            />
-                        </div>
+                        {/* Direct High-Performance Official YouTube Subscribe Button */}
+                        <a
+                            href={`${youtubeChannelInfo.channelUrl}?sub_confirmation=1`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn--primary btn--sm yt-subscribe-direct-btn"
+                            aria-label="Subscribe to Abhijay Shah on YouTube"
+                            style={{
+                                backgroundColor: '#cc0000',
+                                borderColor: '#cc0000',
+                                color: '#ffffff',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.45rem',
+                                fontWeight: 600,
+                                borderRadius: '24px',
+                                padding: '0.45rem 1.1rem',
+                                boxShadow: '0 4px 14px rgba(204, 0, 0, 0.4)'
+                            }}
+                        >
+                            <FaYoutube aria-hidden="true" style={{ fontSize: '1.15rem' }} />
+                            <span>Subscribe</span>
+                        </a>
 
                         {/* Direct Channel Fallback Button */}
                         <a
                             href={youtubeChannelInfo.channelUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn--primary btn--sm channel-cta-btn"
+                            className="btn btn--secondary btn--sm channel-cta-btn"
                             aria-label="View all videos on official YouTube Channel"
                         >
                             <FaYoutube aria-hidden="true" />

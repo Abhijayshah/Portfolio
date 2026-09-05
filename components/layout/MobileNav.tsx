@@ -67,10 +67,24 @@ export const MobileNav: React.FC = () => {
     }, []);
 
     const handleNavClick = (sectionId: string) => {
+        setIsMenuOpen(false);
+        setActiveSection(sectionId);
         const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-            setIsMenuOpen(false);
+        if (!section) return;
+
+        const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 1024;
+        const container = document.getElementById('center-scroll-container');
+
+        if (isDesktop && container) {
+            const containerRect = container.getBoundingClientRect();
+            const targetRect = section.getBoundingClientRect();
+            const targetY = Math.max(0, targetRect.top - containerRect.top + container.scrollTop - 64);
+            container.scrollTo({ top: targetY, behavior: 'smooth' });
+        } else {
+            const navBar = document.querySelector('.top-nav-bar');
+            const navHeight = navBar ? navBar.getBoundingClientRect().height : 56;
+            const targetTop = Math.max(0, section.getBoundingClientRect().top + window.scrollY - navHeight - 12);
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
     };
 
