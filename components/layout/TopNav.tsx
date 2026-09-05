@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 interface NavTab {
     id: string;
@@ -79,54 +80,52 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollContainerId = 'center-scro
                             setActiveSection('contact');
                             return;
                         }
-                        if (scrollTop < 80) {
+
+                        const sectionOffsets = navTabs.map((tab) => {
+                            const elem = document.getElementById(tab.id);
+                            if (!elem) return { id: tab.id, top: Infinity };
+                            const rect = elem.getBoundingClientRect();
+                            const containerRect = scrollElem.getBoundingClientRect();
+                            return {
+                                id: tab.id,
+                                top: rect.top - containerRect.top,
+                            };
+                        });
+
+                        const threshold = 140;
+                        const past = sectionOffsets.filter((s) => s.top <= threshold);
+                        if (past.length > 0) {
+                            setActiveSection(past[past.length - 1].id);
+                        } else {
                             setActiveSection('about');
-                            return;
-                        }
-
-                        const containerRect = scrollElem.getBoundingClientRect();
-                        const triggerY = containerRect.top + 100;
-
-                        for (let i = navTabs.length - 1; i >= 0; i--) {
-                            const el = document.getElementById(navTabs[i].id);
-                            if (el) {
-                                const rect = el.getBoundingClientRect();
-                                if (rect.top <= triggerY && rect.bottom > triggerY - 40) {
-                                    setActiveSection(navTabs[i].id);
-                                    return;
-                                }
-                            }
                         }
                     } else {
                         // Mobile window scroll
                         const scrollY = window.scrollY || document.documentElement.scrollTop;
-                        const windowHeight = window.innerHeight;
                         const docHeight = document.documentElement.scrollHeight;
+                        const winHeight = window.innerHeight;
 
-                        // Edge case: bottom of the page
-                        if (windowHeight + scrollY >= docHeight - 60) {
+                        if (docHeight - (scrollY + winHeight) < 50) {
                             setActiveSection('contact');
                             return;
                         }
-                        // Edge case: top of the page
-                        if (scrollY < 80) {
+
+                        const sectionOffsets = navTabs.map((tab) => {
+                            const elem = document.getElementById(tab.id);
+                            if (!elem) return { id: tab.id, top: Infinity };
+                            const rect = elem.getBoundingClientRect();
+                            return {
+                                id: tab.id,
+                                top: rect.top,
+                            };
+                        });
+
+                        const threshold = 150;
+                        const past = sectionOffsets.filter((s) => s.top <= threshold);
+                        if (past.length > 0) {
+                            setActiveSection(past[past.length - 1].id);
+                        } else {
                             setActiveSection('about');
-                            return;
-                        }
-
-                        const navBar = document.querySelector('.top-nav-bar');
-                        const navHeight = navBar ? navBar.getBoundingClientRect().height : 56;
-                        const triggerY = navHeight + 80;
-
-                        for (let i = navTabs.length - 1; i >= 0; i--) {
-                            const el = document.getElementById(navTabs[i].id);
-                            if (el) {
-                                const rect = el.getBoundingClientRect();
-                                if (rect.top <= triggerY && rect.bottom > triggerY - 40) {
-                                    setActiveSection(navTabs[i].id);
-                                    return;
-                                }
-                            }
                         }
                     }
                 });
@@ -244,6 +243,7 @@ export const TopNav: React.FC<TopNavProps> = ({ scrollContainerId = 'center-scro
                     );
                 })}
             </div>
+            <ThemeToggle />
         </nav>
     );
 };

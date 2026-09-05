@@ -124,12 +124,12 @@ body {
     }
 }
 
-// Left Column: Fixed Profile Sidebar (Never Scrolls)
+// Left Column: Fixed Left Sidebar (Auto-scrolling Recent Activity Rail)
 .app-sidebar-left {
     width: 100%;
 
     @media (min-width: 1024px) {
-        width: 240px;
+        width: 245px;
         flex-shrink: 0;
         height: 100%;
         overflow: hidden;
@@ -138,7 +138,7 @@ body {
     }
 
     @media (min-width: 1440px) {
-        width: 250px;
+        width: 255px;
     }
 }
 
@@ -171,12 +171,12 @@ body {
     }
 }
 
-// Right Column: Fixed Latest Activity Rail
+// Right Column: Fixed Profile Sidebar
 .app-rail-right {
     width: 100%;
 
     @media (min-width: 1024px) {
-        width: 230px;
+        width: 245px;
         flex-shrink: 0;
         height: 100%;
         overflow: hidden;
@@ -185,7 +185,7 @@ body {
     }
 
     @media (min-width: 1440px) {
-        width: 240px;
+        width: 255px;
     }
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import ThemeToggle from '@/components/ui/ThemeToggle';
 import MobileNav from '@/components/layout/MobileNav';
 import ProfileCard from '@/components/layout/ProfileCard';
 import TopNav from '@/components/layout/TopNav';
@@ -23,9 +22,6 @@ export const dynamic = 'force-static';
 export default function Home() {
     return (
         <div className="app">
-            {/* Theme Toggle (floating top-right) */}
-            <ThemeToggle />
-
             {/* Mobile Navigation (bottom bar on mobile phones) */}
             <MobileNav />
 

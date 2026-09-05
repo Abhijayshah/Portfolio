@@ -7,32 +7,19 @@
     background: var(--color-black);
     border: var(--card-border);
     border-radius: 20px;
-    padding: 1.15rem 0.85rem;
+    padding: 1.1rem 0.85rem 0.85rem;
     box-shadow: var(--card-glow-shadow);
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.65rem;
     height: 100%;
     max-height: calc(100vh - 2rem);
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 51, 102, 0.2) transparent;
+    overflow: hidden;
     transition: all 0.3s ease;
 
     &:hover {
         border: var(--card-border-hover);
         box-shadow: var(--card-glow-shadow-hover);
-    }
-
-    &::-webkit-scrollbar {
-        width: 4px;
-    }
-    &::-webkit-scrollbar-track {
-        background: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 4px;
     }
 }
 
@@ -41,29 +28,88 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.6rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     .rail-title-group {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.45rem;
     }
 
     .latest-rail-title {
-        font-size: 0.92rem;
+        font-size: 0.9rem;
         font-weight: 700;
         color: var(--color-white);
         letter-spacing: -0.2px;
         margin: 0;
     }
 
+    .rail-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+
+        .rail-nav-btn {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.18s ease;
+
+            &:hover {
+                background: rgba(255, 51, 102, 0.2);
+                border-color: var(--color-secondary);
+                color: #ffffff;
+                transform: translateY(-1px);
+            }
+
+            &.pause-btn.is-paused {
+                background: rgba(255, 170, 0, 0.18);
+                border-color: #ffaa00;
+                color: #ffc107;
+            }
+        }
+    }
+}
+
+// Subtitle bar with auto-scroll indicator
+.rail-subtitle-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 0 0.1rem;
+
     .rail-subtitle {
-        font-size: 0.68rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
         color: var(--color-grey-2);
+    }
+
+    .rail-scroll-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        color: var(--color-secondary);
+        font-size: 0.64rem;
+
+        .scroll-pulse-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--color-secondary);
+            box-shadow: 0 0 6px var(--color-secondary);
+            animation: pulseDot 2s infinite ease-in-out;
+        }
     }
 }
 
@@ -98,6 +144,30 @@
     75%, 100% {
         transform: scale(2.2);
         opacity: 0;
+    }
+}
+
+// Interactive Vertical Auto-Scrolling Viewport
+.latest-rail-viewport {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: auto;
+    position: relative;
+    padding: 0.35rem 0.1rem;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+    cursor: grab;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:active {
+        cursor: grabbing;
     }
 }
 

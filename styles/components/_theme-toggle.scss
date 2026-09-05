@@ -1,32 +1,32 @@
 .theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    width: 50px;
-    height: 50px;
-    background: var(--color-black);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-full);
+    position: relative;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    background: rgba(30, 12, 30, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: var(--card-border);
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-white);
     cursor: pointer;
-    transition: all var(--transition-normal);
-    z-index: var(--z-tooltip);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--card-glow-shadow);
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 
     svg {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         transition: transform var(--transition-fast);
     }
 
     &:hover {
-        background: var(--color-secondary);
+        background: rgba(255, 51, 102, 0.2);
         border-color: var(--color-secondary);
-        transform: scale(1.1) rotate(15deg);
-        box-shadow: var(--shadow-xl);
+        color: #ffffff;
+        transform: translateY(-1px);
+        box-shadow: var(--card-glow-shadow-hover);
 
         svg {
             transform: rotate(20deg);
@@ -35,12 +35,5 @@
 
     &:active {
         transform: scale(0.95);
-    }
-
-    @media (min-width: 1024px) {
-        top: 1.5rem;
-        right: 1.5rem;
-        width: 55px;
-        height: 55px;
     }
 }
